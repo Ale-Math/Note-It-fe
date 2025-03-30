@@ -1,10 +1,11 @@
 import './App.css'
+import { Logo } from './Components/Icons/Logo'
 
 function App() {
 
   return (
     <>
-      Hi
+      <Logo></Logo>
     </>
   )
 }
