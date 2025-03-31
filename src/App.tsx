@@ -1,12 +1,17 @@
 import './App.css'
-import { Logo } from './Components/Icons/Logo'
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { Landing } from './Pages/Landing'
 
 function App() {
 
   return (
-    <>
-      <Logo></Logo>
-    </>
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Landing/>}/>
+      {/* <Route path="/signin" element={<Signin/>}/>
+      <Route path="/dashboard" element={<Dashboard/>}/> */}
+    </Routes>
+  </BrowserRouter>  
   )
 }
 
