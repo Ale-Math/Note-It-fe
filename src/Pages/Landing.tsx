@@ -1,9 +1,11 @@
+import { Android } from "../assets/Android"
+import { Apple } from "../assets/Apple"
 import { Logo } from "../Components/Icons/Logo"
 import { Button } from "../Components/UI/Button"
 
 export function Landing() {
     return <div> 
-    <div className="flex justify-between p-4 items-center fixed w-screen">
+    <div className="flex justify-between p-4 items-center w-screen sticky bg-white -top-0">
         <a href="/">
         <Logo/>
         </a>
@@ -12,8 +14,22 @@ export function Landing() {
         <Button variant="primary" size="lg" text="Start for free" onClick={()=>{}}></Button>
         </div>
     </div>
-    <div>
-        <h1>Organise your work and life, finally.</h1>
+    <div className="flex items-center">
+        <div className="flex-col">
+        <p className="text-5xl">Organise your work and life, finally.</p>
+        <p>Simplify life for both you and your team with the world's #1 task manager and to-do list app.</p>
+        <div className="flex items-center">
+        <p className="text-gray-600">500K+ ★★★★★ reviews from </p>
+        <div className="flex items-center">
+        <Apple></Apple>
+        <Android></Android>
+        </div>
+        </div>
+        <Button variant="primary" size="lg" text="Start for free" onClick={()=>{}}></Button>
+        </div>
+        <div>
+            <img src="/appbg.avif" className="w-100 h-80"></img>
+        </div>
     </div>
     </div>
 }
