@@ -31,5 +31,10 @@ export function Landing() {
             <img src="/appbg.avif" className="w-100 h-80"></img>
         </div>
     </div>
+    <div className="bg-[url('/Noteit.png')]">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
     </div>
 }
