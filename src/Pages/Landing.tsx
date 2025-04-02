@@ -58,19 +58,23 @@ export function Landing() {
           </div>
         </div>
       </div>
-      <div className="flex justify-center bg-[url(/bg-image.avif)] bg-contain">
-        <div className=" flex justify-around p-20 text-lg font-mono w-5/6">
-          <div className=" flex-col justify-center">
-            <h1>“Simple, straightforward, and super powerful”</h1>
+      <div className="flex justify-center bg-[url(/bg-image.avif)] bg-transparent">
+        <div className=" flex justify-around p-20 text-xl italic font-serif w-5/6 items-center">
+          <div className=" flex-col flex items-center space-y-10">
+            <h1>
+              “Simple, straightforward,<br></br> and super powerful”
+            </h1>
             <img src="/verge.png" className="w-15 h-5"></img>
           </div>
-          <div className="flex-col justify-center">
-            <h1>“The best to-do list app on the market”</h1>
-            <img src="/verge.png" className="w-15 h-5"></img>
+          <div className="flex-col flex items-center space-y-10 border-gray-400 border-y-0 border-x-2 px-8">
+            <h1>
+              “The best to-do list app <br></br> on the market”
+            </h1>
+            <img src="/pcmag.png" className="w-15 h-10"></img>
           </div>
-          <div className="flex-col justify-center">
+          <div className="flex-col flex items-center space-y-10">
             <h1>“Nothing short of stellar”</h1>
-            <img src="/verge.png" className="w-15 h-5"></img>
+            <img src="/techradar.png" className="w-15 h-5"></img>
           </div>
         </div>
       </div>
