@@ -38,7 +38,7 @@ export function Landing() {
             <p className="text-5xl font-mono font-bold pb-3 ">
               Organize your work and life,finally.
             </p>
-            <p className="text-2xl text-gray-600 font-sans">
+            <p className="text-2xl/7 text-gray-600 font-mono">
               Simplify life for both you and your team with the world's #1 task
               manager and to-do list app.
             </p>
@@ -65,8 +65,8 @@ export function Landing() {
           </div>
         </div>
       </div>
-      <div className="flex justify-center bg-[url(/bg-image.avif)] bg-transparent">
-        <div className=" flex justify-around p-20 text-xl italic font-serif w-5/6 items-center">
+      <div className="flex justify-center bg-[url(/bg-image.avif)] my-10">
+        <div className=" flex justify-around p-20 text-xl/9 italic font-serif w-5/6 items-center">
           <div className=" flex-col flex items-center space-y-10">
             <h1>
               “Simple, straightforward,<br></br> and super powerful”
@@ -84,6 +84,28 @@ export function Landing() {
             <img src="/techradar.png" className="w-15 h-5"></img>
           </div>
         </div>
+      </div>
+      <div className="w-5/6">
+        <div className=" flex-col items-center w-1/2">
+          <div>
+            <p>Clear your mind</p>
+            <p>Capture tasks at the speed of thought</p>
+            <p>
+              We've spent over a decade refining Todoist to be an extension of
+              your mind. Capture and organize tasks instantly using
+              easy-flowing, natural language.
+            </p>
+          </div>
+          <div>
+            <p>Focus on what's important</p>
+            <p>Stay organized and focused</p>
+            <p>
+              Achieve mental clarity by sorting tasks into Today, Upcoming, or
+              using custom filters. See only what you need, when you need it.
+            </p>
+          </div>
+        </div>
+        <div></div>
       </div>
     </div>
   );
