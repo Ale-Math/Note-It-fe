@@ -14,6 +14,13 @@ export function Landing() {
           <Button
             variant="secondary"
             size="lg"
+            text="Pricing"
+            onClick={() => {}}
+          ></Button>
+          |
+          <Button
+            variant="secondary"
+            size="lg"
             text="Log in"
             onClick={() => {}}
           ></Button>
