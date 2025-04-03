@@ -86,7 +86,7 @@ export function Landing() {
         </div>
       </div>
       <div className="flex justify-center">
-        <div className="w-11/12">
+        <div className="w-11/12 flex justify-center">
           <div className=" flex-col items-center w-1/2 space-y-48">
             <div className="space-y-7">
               <p className="text-md font-semibold text-orange-700">
@@ -102,15 +102,24 @@ export function Landing() {
               </p>
             </div>
             <div className="space-y-7">
-              <p>Focus on what's important</p>
-              <p>Stay organized and focused</p>
-              <p>
-                Achieve mental clarity by sorting tasks into Today, Upcoming, or
-                using custom filters. See only what you need, when you need it.
+              <p className="text-md font-semibold text-cyan-800">
+                Focus on what's important
+              </p>
+              <p className="text-4xl font-bold">
+                Stay organized and<br></br> focused
+              </p>
+              <p className="text-xl text-gray-600">
+                Achieve mental clarity by sorting tasks<br></br> into Today,
+                Upcoming, or using custom<br></br> filters. See only what you
+                need,<br></br> when you need it.
               </p>
             </div>
           </div>
-          <div className=" w-1/2"></div>
+          <div className=" w-1/2 space-y-20">
+            <img src="/appbg.avif" className=" bg-red-100 rounded-2xl"></img>
+            <br></br>
+            <img src="/appbg.avif" className=" bg-red-100 rounded-2xl"></img>
+          </div>
         </div>
       </div>
     </div>
