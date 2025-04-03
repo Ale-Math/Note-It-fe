@@ -35,15 +35,15 @@ export function Landing() {
       <div className="flex justify-center">
         <div className="flex justify-between p-5 pl-24 space-x-5">
           <div className="space-y-5 w-1/3">
-            <p className="text-5xl font-mono font-bold pb-3 ">
+            <p className="text-5xl font-bold pb-3 ">
               Organize your work and life,finally.
             </p>
-            <p className="text-2xl/7 text-gray-600 font-mono">
+            <p className="text-2xl/7 text-gray-600">
               Simplify life for both you and your team with the world's #1 task
               manager and to-do list app.
             </p>
             <div className="flex items-center">
-              <p className="text-gray-600 font-semibold font-mono">
+              <p className="text-gray-600 font-semibold">
                 500K+ ★★★★★ reviews from
               </p>
               <div className="flex items-center">
@@ -89,7 +89,7 @@ export function Landing() {
         <div className="w-11/12 flex justify-center">
           <div className=" flex-col items-center w-1/2 space-y-48">
             <div className="space-y-7">
-              <p className="text-md font-semibold text-orange-700">
+              <p className="text-lg font-bold text-orange-700">
                 Clear your mind
               </p>
               <p className="text-4xl font-bold">
@@ -102,7 +102,7 @@ export function Landing() {
               </p>
             </div>
             <div className="space-y-7">
-              <p className="text-md font-semibold text-cyan-800">
+              <p className="text-lg font-bold text-cyan-800 ">
                 Focus on what's important
               </p>
               <p className="text-4xl font-bold">
@@ -119,6 +119,45 @@ export function Landing() {
             <img src="/appbg.avif" className=" bg-red-100 rounded-2xl"></img>
             <br></br>
             <img src="/appbg.avif" className=" bg-red-100 rounded-2xl"></img>
+          </div>
+        </div>
+      </div>
+      <div className="flex justify-center py-36">
+        <div className="w-5/6 space-y-10">
+          <div className="flex-col flex items-center">
+            <p className="text-4xl font-bold pb-10">
+              Kickstart your next project with NoteIt! Templates
+            </p>
+            <p className="text-xl text-gray-600">
+              No need to create projects or setups from scratch when we have
+            </p>
+            <p className="text-xl text-gray-600">50+ templates made for you.</p>
+          </div>
+          <div className="flex justify-center">
+            <Button
+              variant="tertiary"
+              size="lg"
+              text="Work"
+              onClick={() => {}}
+            ></Button>
+            <Button
+              variant="tertiary"
+              size="lg"
+              text="Personal"
+              onClick={() => {}}
+            ></Button>
+            <Button
+              variant="tertiary"
+              size="lg"
+              text="Education"
+              onClick={() => {}}
+            ></Button>
+            <Button
+              variant="tertiary"
+              size="lg"
+              text="Management"
+              onClick={() => {}}
+            ></Button>
           </div>
         </div>
       </div>

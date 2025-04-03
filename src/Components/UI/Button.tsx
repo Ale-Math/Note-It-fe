@@ -1,5 +1,5 @@
 interface ButtonProps {
-  variant: "primary" | "secondary";
+  variant: "primary" | "secondary" | "tertiary";
   size: "sm" | "md" | "lg";
   text: String;
   onClick: () => void;
@@ -10,6 +10,8 @@ const variantStyles = {
     "bg-orange-500 text-white rounded-lg px-2 shadow-md hover:bg-orange-600 font-bold font-mono",
   secondary:
     "bg-stone-50 text-black rounded-md px-2 hover:bg-gray-200 font-mono",
+  tertiary:
+    "bg-gray-100 text-black rounded-md hover:bg-gray-300 font-mono active:bg-color-green-300 shadow-md",
 };
 
 const sizeStyles = {
