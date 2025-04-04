@@ -51,10 +51,10 @@ export function Landing() {
                 <Android></Android>
               </div>
             </div>
-            <div className="pt-5">
+            <div>
               <Button
                 variant="shadow"
-                size="lg"
+                size="md"
                 text="Start for free"
                 onClick={() => {}}
               ></Button>

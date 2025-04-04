@@ -13,12 +13,12 @@ const variantStyles = {
   tertiary:
     "bg-gray-100 text-black rounded-md hover:bg-gray-300 font-mono active:bg-color-green-300 font-semibold text-md",
   shadow:
-    "bg-orange-500 text-white rounded-t-lg rounded-b-2xl font-bold font-mono shadow-2xl shadow-orange-500 transition duration-700 ease-in hover:border-b-4 active:border-b-0 ",
+    "bg-orange-500 text-white rounded-2xl font-bold font-mono border-b-8 border-orange-300 transition smooth duration-150ms ease-in-out  hover:border-b-4 hover:translate-y-1 active:border-b-0 active:translate-y-2 ",
 };
 
 const sizeStyles = {
   sm: "px-1 py-1",
-  md: "px-2 py-2",
+  md: "px-4 py-4",
   lg: "py-2 px-4 mx-2",
   xl: "py-4 px-5 mx-2",
 };
