@@ -53,7 +53,7 @@ export function Landing() {
             </div>
             <div className="pt-5">
               <Button
-                variant="primary"
+                variant="shadow"
                 size="lg"
                 text="Start for free"
                 onClick={() => {}}
@@ -136,26 +136,38 @@ export function Landing() {
           <div className="flex justify-center">
             <Button
               variant="tertiary"
-              size="lg"
+              size="xl"
               text="Work"
               onClick={() => {}}
             ></Button>
             <Button
               variant="tertiary"
-              size="lg"
+              size="xl"
               text="Personal"
               onClick={() => {}}
             ></Button>
             <Button
               variant="tertiary"
-              size="lg"
+              size="xl"
               text="Education"
               onClick={() => {}}
             ></Button>
             <Button
               variant="tertiary"
-              size="lg"
+              size="xl"
               text="Management"
+              onClick={() => {}}
+            ></Button>
+            <Button
+              variant="tertiary"
+              size="xl"
+              text="Marketing & Sales"
+              onClick={() => {}}
+            ></Button>
+            <Button
+              variant="tertiary"
+              size="xl"
+              text="Customer Support"
               onClick={() => {}}
             ></Button>
           </div>
