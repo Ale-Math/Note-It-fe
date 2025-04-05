@@ -11,7 +11,7 @@ export function Card(props: CardProps) {
   return (
     <div
       className="w-64 h-80 border-slate-300 border border-solid rounded-xl flex-col hover:border-slate-600 whitespace-pre-wrap
- relative"
+ relative hover:cursor-pointer"
     >
       <div className="h-2/5">
         <img
