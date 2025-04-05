@@ -6,7 +6,7 @@ export function List() {
       viewBox="0 0 24 24"
       stroke-width="1.5"
       stroke="currentColor"
-      className="size-4"
+      className="size-3 border border-solid border-gray-600 rounded-sm"
     >
       <path
         stroke-linecap="round"
