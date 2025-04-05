@@ -2,6 +2,7 @@ import { Android } from "../assets/Android";
 import { Apple } from "../assets/Apple";
 import { Logo } from "../Components/Icons/Logo";
 import { Button } from "../Components/UI/Button";
+import { Card } from "../Components/UI/Card";
 
 export function Landing() {
   return (
@@ -122,7 +123,7 @@ export function Landing() {
           </div>
         </div>
       </div>
-      <div className="flex justify-center py-36">
+      <div className="flex justify-center py-10">
         <div className="w-5/6 space-y-10">
           <div className="flex-col flex items-center">
             <p className="text-4xl font-bold pb-10">
@@ -172,6 +173,17 @@ export function Landing() {
             ></Button>
           </div>
         </div>
+      </div>
+      <div className="flex justify-center space-x-4">
+        <Card
+          src="/A-Tasks.png"
+          alt="Accounting Tasks"
+          title="Accounting Tasks"
+          description="Create a system to keep your books, receipts, and invoices organized."
+        ></Card>
+        <Card></Card>
+        <Card></Card>
+        <Card></Card>
       </div>
     </div>
   );
