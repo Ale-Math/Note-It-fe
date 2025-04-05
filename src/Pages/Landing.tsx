@@ -1,38 +1,13 @@
 import { Android } from "../assets/Android";
 import { Apple } from "../assets/Apple";
-import { Logo } from "../Components/Icons/Logo";
+import { Header } from "../Components/LandingComponents/Header";
 import { Button } from "../Components/UI/Button";
 import { Card } from "../Components/UI/Card";
 
 export function Landing() {
   return (
     <div className="w-screen h-screen overflow-x-hidden bg-stone-50 font-mono">
-      <div className="flex justify-between p-5 items-center w-screen sticky -top-0 bg-stone-50 mb-24">
-        <a href="/">
-          <Logo />
-        </a>
-        <div>
-          <Button
-            variant="secondary"
-            size="lg"
-            text="Pricing"
-            onClick={() => {}}
-          ></Button>
-          |
-          <Button
-            variant="secondary"
-            size="lg"
-            text="Log in"
-            onClick={() => {}}
-          ></Button>
-          <Button
-            variant="primary"
-            size="lg"
-            text="Start for free"
-            onClick={() => {}}
-          ></Button>
-        </div>
-      </div>
+      <Header></Header>
       <div className="flex justify-center">
         <div className="flex justify-between p-5 pl-24 space-x-5">
           <div className="space-y-5 w-1/3">
@@ -86,7 +61,7 @@ export function Landing() {
           </div>
         </div>
       </div>
-      <div className="flex justify-center">
+      <div className="flex justify-center py-20">
         <div className="w-11/12 flex justify-center">
           <div className=" flex-col items-center w-1/2 space-y-48">
             <div className="space-y-7">
@@ -123,7 +98,7 @@ export function Landing() {
           </div>
         </div>
       </div>
-      <div className="flex justify-center py-10">
+      <div className="flex justify-center pt-20">
         <div className="w-5/6 space-y-10">
           <div className="flex-col flex items-center">
             <p className="text-4xl font-bold pb-10">
@@ -134,7 +109,7 @@ export function Landing() {
             </p>
             <p className="text-xl text-gray-600">50+ templates made for you.</p>
           </div>
-          <div className="flex justify-center">
+          <div className="flex justify-center pt-10">
             <Button
               variant="tertiary"
               size="xl"
@@ -174,7 +149,7 @@ export function Landing() {
           </div>
         </div>
       </div>
-      <div className="flex justify-center space-x-4">
+      <div className="flex justify-center space-x-4 py-10">
         <Card
           src="/A-Tasks.png"
           alt="Accounting Tasks"
