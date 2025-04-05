@@ -2,11 +2,13 @@ import { Android } from "../assets/Android";
 import { Apple } from "../assets/Apple";
 import { Header } from "../Components/LandingComponents/Header";
 import { WorkCard } from "../Components/LandingComponents/WorkCard";
+import { PersonalCard } from "../Components/LandingComponents/PersonalCard";
+import { EducationCard } from "../Components/LandingComponents/EducationCard";
 import { Button } from "../Components/UI/Button";
 
 export function Landing() {
   return (
-    <div className="w-screen h-screen overflow-x-hidden bg-stone-50 font-mono">
+    <div className="w-screen h-screen overflow-x-hidden bg-stone-50 font-mono relative">
       <Header></Header>
       <div className="flex justify-center">
         <div className="flex justify-between p-5 pl-24 space-x-5">
@@ -150,6 +152,8 @@ export function Landing() {
         </div>
       </div>
       <WorkCard></WorkCard>
+      <PersonalCard></PersonalCard>
+      <EducationCard></EducationCard>
     </div>
   );
 }
