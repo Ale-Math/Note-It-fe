@@ -11,7 +11,7 @@ export function Card(props: CardProps) {
   return (
     <div
       className="w-64 h-80 border-slate-300 border border-solid rounded-xl flex-col hover:border-slate-600 whitespace-pre-wrap
- relative hover:cursor-pointer"
+ relative hover:cursor-pointer z-0"
     >
       <div className="h-2/5">
         <img
@@ -20,10 +20,10 @@ export function Card(props: CardProps) {
           alt={props.alt}
         ></img>
       </div>
-      <div className="h-3/5 space-y-4 p-4">
+      <div className="h-3/5 space-y-4 p-4 z-10">
         <p className="font-bold text-md">{props.title}</p>
         <p className="text-gray-600 text-md">{props.description}</p>
-        <div className="flex items-center space-x-2 absolute bottom-2">
+        <div className="flex items-center space-x-2 absolute bottom-2 z-20">
           <List></List>
           <p className="text-gray-600 text-sm">List</p>
         </div>

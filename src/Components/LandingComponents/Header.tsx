@@ -3,7 +3,7 @@ import { Button } from "../UI/Button";
 
 export function Header() {
   return (
-    <div className="flex justify-between p-5 items-center w-screen sticky -top-0 bg-stone-50 mb-24">
+    <div className="flex justify-between p-5 items-center w-screen sticky top-0 bg-stone-50 mb-24 z-30">
       <a href="/">
         <Logo />
       </a>

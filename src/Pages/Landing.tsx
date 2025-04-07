@@ -5,8 +5,13 @@ import { WorkCard } from "../Components/LandingComponents/WorkCard";
 import { PersonalCard } from "../Components/LandingComponents/PersonalCard";
 import { EducationCard } from "../Components/LandingComponents/EducationCard";
 import { Button } from "../Components/UI/Button";
+import { useState } from "react";
+import { ManagementCard } from "../Components/LandingComponents/ManagementCard";
+import { MarketingCard } from "../Components/LandingComponents/MarketingCard";
+import { CustomerSupportCard } from "../Components/LandingComponents/CustomerSupportCard";
 
 export function Landing() {
+  const [cards, setCards] = useState(<WorkCard />);
   return (
     <div className="w-screen h-screen overflow-x-hidden bg-stone-50 font-mono relative">
       <Header></Header>
@@ -100,8 +105,8 @@ export function Landing() {
           </div>
         </div>
       </div>
-      <div className="flex justify-center pt-20">
-        <div className="w-5/6 space-y-10">
+      <div className="flex justify-center py-20 pb-52">
+        <div className="w-5/6 static">
           <div className="flex-col flex items-center">
             <p className="text-4xl font-bold pb-10">
               Kickstart your next project with NoteIt! Templates
@@ -111,49 +116,78 @@ export function Landing() {
             </p>
             <p className="text-xl text-gray-600">50+ templates made for you.</p>
           </div>
-          <div className="flex justify-center pt-10">
+          <div className="flex justify-center pt-20">
             <Button
               variant="tertiary"
               size="xl"
               text="Work"
-              onClick={() => {}}
+              onClick={() => {
+                setCards(<WorkCard />);
+              }}
             ></Button>
             <Button
               variant="tertiary"
               size="xl"
               text="Personal"
-              onClick={() => {}}
+              onClick={() => {
+                setCards(<PersonalCard />);
+              }}
             ></Button>
             <Button
               variant="tertiary"
               size="xl"
               text="Education"
-              onClick={() => {}}
+              onClick={() => {
+                setCards(<EducationCard />);
+              }}
             ></Button>
             <Button
               variant="tertiary"
               size="xl"
               text="Management"
-              onClick={() => {}}
+              onClick={() => {
+                setCards(<ManagementCard />);
+              }}
             ></Button>
             <Button
               variant="tertiary"
               size="xl"
               text="Marketing & Sales"
-              onClick={() => {}}
+              onClick={() => {
+                setCards(<MarketingCard />);
+              }}
             ></Button>
             <Button
               variant="tertiary"
               size="xl"
               text="Customer Support"
-              onClick={() => {}}
+              onClick={() => {
+                setCards(<CustomerSupportCard />);
+              }}
             ></Button>
           </div>
+          {cards}
         </div>
       </div>
-      <WorkCard></WorkCard>
-      <PersonalCard></PersonalCard>
-      <EducationCard></EducationCard>
+      <div className="flex justify-center pb-36">
+        <div className="w-11/12">
+          <div className="w-1/2 space-y-8">
+            <p className="text-orange-600 font-bold text-xl">
+              In it for the long haul
+            </p>
+            <p className="font-extrabold text-4xl">
+              A task manager you can<br></br> trust for life
+            </p>
+            <p className="text-gray-600 text-2xl">
+              We've been building Note it! for 18<br></br> years and 68 days.
+              Rest assured that<br></br> we'll never sell out to the highest
+              <br></br>
+              bidder.
+            </p>
+          </div>
+          <div className="w-1/2"></div>
+        </div>
+      </div>
     </div>
   );
 }
