@@ -188,6 +188,21 @@ export function Landing() {
           <div className="w-1/2"></div>
         </div>
       </div>
+      <div>
+        <div>
+          <p>
+            Gain calmness and clarity with the world's most beloved productivity
+            app
+          </p>
+          <p>374000+ ★★★★★ reviews on Google Play and App Store</p>
+          <Button
+            variant="shadow"
+            text="Start for free"
+            size="lg"
+            onClick={() => {}}
+          ></Button>
+        </div>
+      </div>
     </div>
   );
 }
