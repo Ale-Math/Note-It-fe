@@ -9,6 +9,7 @@ import { useState } from "react";
 import { ManagementCard } from "../Components/LandingComponents/ManagementCard";
 import { MarketingCard } from "../Components/LandingComponents/MarketingCard";
 import { CustomerSupportCard } from "../Components/LandingComponents/CustomerSupportCard";
+import { Logo } from "../Components/Icons/Logo";
 
 export function Landing() {
   const [cards, setCards] = useState(<WorkCard />);
@@ -188,19 +189,50 @@ export function Landing() {
           <div className="w-1/2"></div>
         </div>
       </div>
-      <div>
-        <div>
-          <p>
-            Gain calmness and clarity with the world's most beloved productivity
-            app
+      <div className=" bg-gradient-to-b from-slate-50 to-orange-100">
+        <div className="flex-col flex items-center space-y-10">
+          <p className="text-5xl font-bold">
+            &nbsp;Gain calmness and clarity with the<br></br> world's most
+            beloved productivity app
           </p>
-          <p>374000+ ★★★★★ reviews on Google Play and App Store</p>
+          <p className="text-gray-600 text-2xl">
+            374000+ ★★★★★ reviews on Google Play and App Store
+          </p>
           <Button
             variant="shadow"
             text="Start for free"
-            size="lg"
+            size="md"
             onClick={() => {}}
           ></Button>
+        </div>
+        <div>
+          <div className="space-y-5 w-2/5 p-5">
+            <Logo></Logo>
+            <p className="text-xl">
+              Join millions of people who organize<br></br> work and life with
+              Note it!
+            </p>
+            <div>
+              <Button
+                variant="secondary"
+                size="sm"
+                text="Security"
+                onClick={() => {}}
+              ></Button>
+              <Button
+                variant="secondary"
+                size="sm"
+                text="Privacy"
+                onClick={() => {}}
+              ></Button>
+              <Button
+                variant="secondary"
+                size="sm"
+                text="Terms"
+                onClick={() => {}}
+              ></Button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
