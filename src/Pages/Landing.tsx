@@ -9,7 +9,7 @@ import { useState } from "react";
 import { ManagementCard } from "../Components/LandingComponents/ManagementCard";
 import { MarketingCard } from "../Components/LandingComponents/MarketingCard";
 import { CustomerSupportCard } from "../Components/LandingComponents/CustomerSupportCard";
-import { Logo } from "../Components/Icons/Logo";
+import { ColorlessLogo } from "../Components/Icons/ColorlessLogo";
 
 export function Landing() {
   const [cards, setCards] = useState(<WorkCard />);
@@ -170,7 +170,7 @@ export function Landing() {
           {cards}
         </div>
       </div>
-      <div className="flex justify-center pb-36">
+      <div className="flex justify-center">
         <div className="w-11/12">
           <div className="w-1/2 space-y-8">
             <p className="text-orange-600 font-bold text-xl">
@@ -189,8 +189,8 @@ export function Landing() {
           <div className="w-1/2"></div>
         </div>
       </div>
-      <div className=" bg-gradient-to-b from-slate-50 to-orange-100">
-        <div className="flex-col flex items-center space-y-10">
+      <div className=" bg-gradient-to-b from-slate-50 to-orange-100 pt-48">
+        <div className="flex-col flex items-center space-y-10 pb-36 ">
           <p className="text-5xl font-bold">
             &nbsp;Gain calmness and clarity with the<br></br> world's most
             beloved productivity app
@@ -198,21 +198,23 @@ export function Landing() {
           <p className="text-gray-600 text-2xl">
             374000+ ★★★★★ reviews on Google Play and App Store
           </p>
-          <Button
-            variant="shadow"
-            text="Start for free"
-            size="md"
-            onClick={() => {}}
-          ></Button>
+          <div className="">
+            <Button
+              variant="shadow"
+              text="Start for free"
+              size="md"
+              onClick={() => {}}
+            ></Button>
+          </div>
         </div>
-        <div>
-          <div className="space-y-5 w-2/5 p-5">
-            <Logo></Logo>
+        <div className="border-t border-solid border-gray-400">
+          <div className="space-y-5 w-2/5">
+            <ColorlessLogo></ColorlessLogo>
             <p className="text-xl">
               Join millions of people who organize<br></br> work and life with
               Note it!
             </p>
-            <div className="flex items-center">
+            <div className="flex items-center bottom-0">
               <Button
                 variant="footer"
                 size="sm"
@@ -233,8 +235,8 @@ export function Landing() {
                 text="Terms"
                 onClick={() => {}}
               ></Button>
-              <p className="text-sm fonr-sans pl-3">
-                &#169;alexandermathew.co.in © Doist Inc.
+              <p className="text-sm font-sans pl-3">
+                &#169; alexandermathew.co.in
               </p>
             </div>
           </div>
