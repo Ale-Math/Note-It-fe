@@ -8,13 +8,12 @@ interface ButtonProps {
 const variantStyles = {
   primary:
     "bg-orange-500 text-white rounded-lg px-2 shadow-md hover:bg-orange-600 font-bold font-mono",
-  secondary:
-    "bg-stone-50 text-black rounded-md px-2 hover:bg-gray-200 font-mono",
+  secondary: "text-black rounded-md px-2 hover:bg-slate-100 font-mono",
   tertiary:
     "bg-gray-100 text-black rounded-2xl hover:bg-gray-300 font-mono focus:bg-cyan-100 font-semibold text-lg",
   shadow:
-    "bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 text-white rounded-2xl font-bold font-mono border-b-8 border-orange-300 duration-300 ease-in-out  hover:border-b-4 hover:bg-gradient-to-br hover:translate-y-1 active:border-b-0 active:translate-y-2 ",
-  footer: " text-black hover:underline font-mono text-sm",
+    "absolute bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 text-white rounded-2xl font-bold font-mono border-b-8 border-orange-300 duration-300 ease-in-out  hover:border-b-4 hover:bg-gradient-to-br hover:translate-y-1 active:border-b-0 active:translate-y-2 ",
+  footer: " text-gray-600 hover:underline font-mono text-sm",
 };
 
 const sizeStyles = {

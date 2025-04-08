@@ -10,6 +10,8 @@ import { ManagementCard } from "../Components/LandingComponents/ManagementCard";
 import { MarketingCard } from "../Components/LandingComponents/MarketingCard";
 import { CustomerSupportCard } from "../Components/LandingComponents/CustomerSupportCard";
 import { ColorlessLogo } from "../Components/Icons/ColorlessLogo";
+import { IconButton } from "../Components/UI/IconButton";
+import { Twitter } from "../Components/Icons/Twitter";
 
 export function Landing() {
   const [cards, setCards] = useState(<WorkCard />);
@@ -189,16 +191,16 @@ export function Landing() {
           <div className="w-1/2"></div>
         </div>
       </div>
-      <div className=" bg-gradient-to-b from-slate-50 to-orange-100 pt-48">
-        <div className="flex-col flex items-center space-y-10 pb-36 ">
+      <div className=" bg-gradient-to-b from-slate-50 to-orange-100 pt-48 relative">
+        <div className="flex-col flex items-center space-y-10 pb-36">
           <p className="text-5xl font-bold">
             &nbsp;Gain calmness and clarity with the<br></br> world's most
             beloved productivity app
           </p>
           <p className="text-gray-600 text-2xl">
-            374000+ ★★★★★ reviews on Google Play and App Store
+            500000+ ★★★★★ reviews on Google Play and App Store
           </p>
-          <div className="">
+          <div className="flex justify-center">
             <Button
               variant="shadow"
               text="Start for free"
@@ -207,14 +209,14 @@ export function Landing() {
             ></Button>
           </div>
         </div>
-        <div className="border-t border-solid border-gray-400">
+        <div className="border-t border-solid border-gray-400 p-5 pt-10 flex space-x-10 ">
           <div className="space-y-5 w-2/5">
             <ColorlessLogo></ColorlessLogo>
-            <p className="text-xl">
+            <p className="text-lg">
               Join millions of people who organize<br></br> work and life with
               Note it!
             </p>
-            <div className="flex items-center bottom-0">
+            <div className="flex items-center text-gray-600">
               <Button
                 variant="footer"
                 size="sm"
@@ -239,6 +241,102 @@ export function Landing() {
                 &#169; alexandermathew.co.in
               </p>
             </div>
+          </div>
+          <div className="flex-col flex items-start space-y-2">
+            <p className="font-bold text-lg pb-4">Features</p>
+            <Button
+              variant="secondary"
+              size="sm"
+              text="How It Works"
+              onClick={() => {}}
+            ></Button>
+            <Button
+              variant="secondary"
+              size="sm"
+              text="For Teams"
+              onClick={() => {}}
+            ></Button>
+            <Button
+              variant="secondary"
+              size="sm"
+              text="Pricing"
+              onClick={() => {}}
+            ></Button>
+            <Button
+              variant="secondary"
+              size="sm"
+              text="Templates"
+              onClick={() => {}}
+            ></Button>
+          </div>
+          <div className="flex-col flex items-start space-y-2">
+            <p className="font-bold text-lg pb-4">Resources</p>
+            <Button
+              variant="secondary"
+              size="sm"
+              text="Download Apps"
+              onClick={() => {}}
+            ></Button>
+            <Button
+              variant="secondary"
+              size="sm"
+              text="Help Center"
+              onClick={() => {}}
+            ></Button>
+            <Button
+              variant="secondary"
+              size="sm"
+              text="Productivity Methods"
+              onClick={() => {}}
+            ></Button>
+            <Button
+              variant="secondary"
+              size="sm"
+              text="Integrations"
+              onClick={() => {}}
+            ></Button>
+            <Button
+              variant="secondary"
+              size="sm"
+              text="Developer API"
+              onClick={() => {}}
+            ></Button>
+            <Button
+              variant="secondary"
+              size="sm"
+              text="Status"
+              onClick={() => {}}
+            ></Button>
+          </div>
+          <div className="flex-col flex items-start space-y-2">
+            <p className="font-bold text-lg pb-4">Company</p>
+            <Button
+              variant="secondary"
+              size="sm"
+              text="About Us"
+              onClick={() => {}}
+            ></Button>
+            <Button
+              variant="secondary"
+              size="sm"
+              text="Careers"
+              onClick={() => {}}
+            ></Button>
+            <Button
+              variant="secondary"
+              size="sm"
+              text="Inspiration Hub"
+              onClick={() => {}}
+            ></Button>
+            <Button
+              variant="secondary"
+              size="sm"
+              text="Press"
+              onClick={() => {}}
+            ></Button>
+          </div>
+          <div>
+            <IconButton text={<Twitter />} onClick={() => {}}></IconButton>
           </div>
         </div>
       </div>
