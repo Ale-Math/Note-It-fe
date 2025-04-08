@@ -1,6 +1,11 @@
+import { useNavigate } from "react-router-dom";
 import { Logo } from "../Icons/Logo";
 import { Button } from "../UI/Button";
 
+function loader() {
+  const navigate = useNavigate();
+  navigate("/loader");
+}
 export function Header() {
   return (
     <div className="flex justify-between p-5 items-center w-screen sticky top-0 bg-stone-50 mb-24 z-30">
@@ -12,7 +17,7 @@ export function Header() {
           variant="secondary"
           size="lg"
           text="Pricing"
-          onClick={() => {}}
+          onClick={loader}
         ></Button>
         |
         <Button
@@ -25,7 +30,7 @@ export function Header() {
           variant="primary"
           size="lg"
           text="Start for free"
-          onClick={() => {}}
+          onClick={loader}
         ></Button>
       </div>
     </div>

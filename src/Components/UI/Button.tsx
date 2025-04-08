@@ -7,7 +7,7 @@ interface ButtonProps {
 
 const variantStyles = {
   primary:
-    "bg-orange-500 text-white rounded-lg px-2 shadow-md hover:bg-orange-600 font-bold font-mono",
+    "bg-orange-500 text-white rounded-lg px-2 shadow-md hover:bg-orange-600 font-bold font-mono active:bg-orange-800",
   secondary: "text-black rounded-md px-2 hover:bg-orange-200 font-mono",
   tertiary:
     "bg-gray-100 text-black rounded-2xl hover:bg-slate-300 font-mono focus:bg-orange-100 font-semibold text-lg",
