@@ -8,7 +8,7 @@ interface ButtonProps {
 export function IconButton(props: ButtonProps) {
   return (
     <button
-      className="bg-gray-100 text-black rounded-2xl hover:bg-gray-300 font-mono focus:bg-cyan-100 font-semibold text-lg"
+      className="font-sans text-black rounded-2xl hover:bg-orange-200 focus:bg-cyan-100 font-semibold text-lg p-3"
       onClick={props.onClick}
     >
       {props.text}

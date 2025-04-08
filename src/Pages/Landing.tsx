@@ -12,6 +12,10 @@ import { CustomerSupportCard } from "../Components/LandingComponents/CustomerSup
 import { ColorlessLogo } from "../Components/Icons/ColorlessLogo";
 import { IconButton } from "../Components/UI/IconButton";
 import { Twitter } from "../Components/Icons/Twitter";
+import { Youtube } from "../Components/Icons/Youtube";
+import { Facebook } from "../Components/Icons/Facebook";
+import { Instagram } from "../Components/Icons/Instagram";
+import { Copyright } from "../Components/Icons/Copyright";
 
 export function Landing() {
   const [cards, setCards] = useState(<WorkCard />);
@@ -209,14 +213,16 @@ export function Landing() {
             ></Button>
           </div>
         </div>
-        <div className="border-t border-solid border-gray-400 p-5 pt-10 flex space-x-10 ">
-          <div className="space-y-5 w-2/5">
-            <ColorlessLogo></ColorlessLogo>
+        <div className="border-t border-solid border-gray-300 p-5 pt-14 flex space-x-10 pb-44 relative">
+          <div className="space-y-5 w-2/5 ">
+            <a href="/">
+              <ColorlessLogo></ColorlessLogo>
+            </a>
             <p className="text-lg">
               Join millions of people who organize<br></br> work and life with
               Note it!
             </p>
-            <div className="flex items-center text-gray-600">
+            <div className="flex items-center text-gray-600 bottom-2 absolute font-sans">
               <Button
                 variant="footer"
                 size="sm"
@@ -237,9 +243,10 @@ export function Landing() {
                 text="Terms"
                 onClick={() => {}}
               ></Button>
-              <p className="text-sm font-sans pl-3">
-                &#169; alexandermathew.co.in
-              </p>
+              <div className="pl-3 flex items-center">
+                <Copyright></Copyright>
+                <p className="text-sm pb-1">&nbsp;alexandermathew.co.in</p>
+              </div>
             </div>
           </div>
           <div className="flex-col flex items-start space-y-2">
@@ -335,8 +342,13 @@ export function Landing() {
               onClick={() => {}}
             ></Button>
           </div>
-          <div>
-            <IconButton text={<Twitter />} onClick={() => {}}></IconButton>
+          <div className="pl-14">
+            <div className="flex-col flex items-end space-y-2">
+              <IconButton text={<Twitter />} onClick={() => {}}></IconButton>
+              <IconButton text={<Youtube />} onClick={() => {}}></IconButton>
+              <IconButton text={<Facebook />} onClick={() => {}}></IconButton>
+              <IconButton text={<Instagram />} onClick={() => {}}></IconButton>
+            </div>
           </div>
         </div>
       </div>
