@@ -212,25 +212,30 @@ export function Landing() {
               Join millions of people who organize<br></br> work and life with
               Note it!
             </p>
-            <div>
+            <div className="flex items-center">
               <Button
-                variant="secondary"
+                variant="footer"
                 size="sm"
                 text="Security"
                 onClick={() => {}}
               ></Button>
+              |
               <Button
-                variant="secondary"
+                variant="footer"
                 size="sm"
                 text="Privacy"
                 onClick={() => {}}
               ></Button>
+              |
               <Button
-                variant="secondary"
+                variant="footer"
                 size="sm"
                 text="Terms"
                 onClick={() => {}}
               ></Button>
+              <p className="text-sm fonr-sans pl-3">
+                &#169;alexandermathew.co.in © Doist Inc.
+              </p>
             </div>
           </div>
         </div>
