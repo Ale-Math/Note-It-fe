@@ -2,11 +2,8 @@ import { useNavigate } from "react-router-dom";
 import { Logo } from "../Icons/Logo";
 import { Button } from "../UI/Button";
 
-function loader() {
-  const navigate = useNavigate();
-  navigate("/loader");
-}
 export function Header() {
+  const navigate = useNavigate();
   return (
     <div className="flex justify-between p-5 items-center w-screen sticky top-0 bg-stone-50 mb-24 z-30">
       <a href="/">
@@ -17,7 +14,7 @@ export function Header() {
           variant="secondary"
           size="lg"
           text="Pricing"
-          onClick={loader}
+          onClick={() => {}}
         ></Button>
         |
         <Button
@@ -30,7 +27,9 @@ export function Header() {
           variant="primary"
           size="lg"
           text="Start for free"
-          onClick={loader}
+          onClick={() => {
+            navigate("/loader");
+          }}
         ></Button>
       </div>
     </div>

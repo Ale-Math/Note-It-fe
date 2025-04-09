@@ -4,7 +4,7 @@ export function Spinner() {
       <div role="status">
         <svg
           aria-hidden="true"
-          className="inline w-6 h-6 text-gray-200 animate-spin dark:text-orange-200 fill-orange-600"
+          className="inline w-6 h-6 text-orange-200 animate-spin dark:text-orange-200 fill-orange-600"
           viewBox="0 0 100 101"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -18,7 +18,6 @@ export function Spinner() {
             fill="currentFill"
           />
         </svg>
-        <span className="sr-only">Loading...</span>
       </div>
     </div>
   );

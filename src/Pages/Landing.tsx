@@ -55,21 +55,23 @@ export function Landing() {
           </div>
         </div>
       </div>
-      <div className="flex justify-center bg-[url(/bg-image.avif)] my-10">
-        <div className=" flex justify-around p-20 text-xl/9 italic font-serif w-5/6 items-center">
-          <div className=" flex-col flex items-center space-y-10">
+      <div className="flex justify-center bg-[url(/bg-image.avif)] my-10 items-center">
+        <div className=" flex justify-between p-20 text-xl/9 italic font-serif w-5/6 items-center">
+          <div className=" flex-col flex items-center justify-center space-y-14 pt-3">
             <h1>
-              “Simple, straightforward,<br></br> and super powerful”
+              “Simple, straightforward,<br></br>{" "}
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and super powerful”
             </h1>
             <img src="/verge.png" className="w-15 h-5"></img>
           </div>
-          <div className="flex-col flex items-center space-y-10 border-gray-400 border-y-0 border-x-2 px-12">
+          <div className="flex-col flex items-center space-y-10 border-gray-400 border-y-0 border-x-2 px-12 pt-5">
             <h1>
-              “The best to-do list app <br></br> on the market”
+              “The best to-do list app <br></br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp; on the market”
             </h1>
             <img src="/pcmag.png" className="w-15 h-10"></img>
           </div>
-          <div className="flex-col flex items-center space-y-10">
+          <div className="flex-col flex items-center space-y-14">
             <h1>“Nothing short of stellar”</h1>
             <img src="/techradar.png" className="w-15 h-5"></img>
           </div>
