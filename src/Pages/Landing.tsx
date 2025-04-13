@@ -20,15 +20,15 @@ import { Copyright } from "../Components/Icons/Copyright";
 export function Landing() {
   const [cards, setCards] = useState(<WorkCard />);
   return (
-    <div className="lg:max-w-5xl md:max-w-2xl mx-auto bg-orange-50 font-mono relative">
+    <div className="lg:max-w-7xl md:max-w-5xl sm:max-w-3xl max-w-xl mx-auto bg-orange-50 font-mono relative">
       <Header></Header>
       <div className="flex justify-center">
         <div className="flex justify-between p-5 pl-24 space-x-5">
           <div className="space-y-5 w-1/3">
-            <p className="text-6xl font-bold pb-3 ">
+            <p className="lg:text-6xl md:text-4xl sm:text-2xl text-xl font-bold pb-3 ">
               Organize your work and life, finally.
             </p>
-            <p className="text-2xl text-gray-600">
+            <p className="lg:text-2xl md:text-xl sm:text-md text-xs text-gray-600">
               Simplify life for you and your team with the world's #1 task
               manager and to-do list app.
             </p>
@@ -197,7 +197,7 @@ export function Landing() {
           <div className="w-1/2"></div>
         </div>
       </div>
-      <div className=" bg-gradient-to-b from-orange-50 to-orange-200 pt-48 relative">
+      <div className=" bg-gradient-to-b from-orange-50 via-orange-100 to-orange-200 pt-48 relative">
         <div className="flex-col flex items-center space-y-10 pb-36">
           <p className="text-5xl font-bold">
             &nbsp;Gain calmness and clarity with the<br></br> world's most
