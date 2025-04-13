@@ -20,16 +20,16 @@ import { Copyright } from "../Components/Icons/Copyright";
 export function Landing() {
   const [cards, setCards] = useState(<WorkCard />);
   return (
-    <div className="w-screen h-screen overflow-x-hidden bg-stone-50 font-mono relative">
+    <div className="lg:max-w-5xl md:max-w-2xl mx-auto bg-orange-50 font-mono relative">
       <Header></Header>
       <div className="flex justify-center">
         <div className="flex justify-between p-5 pl-24 space-x-5">
           <div className="space-y-5 w-1/3">
-            <p className="text-5xl font-bold pb-3 ">
-              Organize your work and life,finally.
+            <p className="text-6xl font-bold pb-3 ">
+              Organize your work and life, finally.
             </p>
-            <p className="text-2xl/7 text-gray-600">
-              Simplify life for both you and your team with the world's #1 task
+            <p className="text-2xl text-gray-600">
+              Simplify life for you and your team with the world's #1 task
               manager and to-do list app.
             </p>
             <div className="flex items-center">
@@ -51,7 +51,7 @@ export function Landing() {
             </div>
           </div>
           <div className="w-2/3 pl-2">
-            <img src="/appbg.avif" className=" bg-red-100 rounded-2xl"></img>
+            <img src="/appbg.avif" className=" bg-orange-100 rounded-2xl"></img>
           </div>
         </div>
       </div>
@@ -108,9 +108,9 @@ export function Landing() {
             </div>
           </div>
           <div className=" w-1/2 space-y-20">
-            <img src="/appbg.avif" className=" bg-red-100 rounded-2xl"></img>
+            <img src="/appbg.avif" className=" bg-orange-100 rounded-2xl"></img>
             <br></br>
-            <img src="/appbg.avif" className=" bg-red-100 rounded-2xl"></img>
+            <img src="/appbg.avif" className=" bg-orange-100 rounded-2xl"></img>
           </div>
         </div>
       </div>
@@ -189,7 +189,7 @@ export function Landing() {
             </p>
             <p className="text-gray-600 text-2xl">
               We've been building Note it! for 18<br></br> years and 68 days.
-              Rest assured that<br></br> we'll never sell out to the highest
+              Rest assuorange that<br></br> we'll never sell out to the highest
               <br></br>
               bidder.
             </p>
@@ -197,7 +197,7 @@ export function Landing() {
           <div className="w-1/2"></div>
         </div>
       </div>
-      <div className=" bg-gradient-to-b from-slate-50 to-orange-100 pt-48 relative">
+      <div className=" bg-gradient-to-b from-orange-50 to-orange-200 pt-48 relative">
         <div className="flex-col flex items-center space-y-10 pb-36">
           <p className="text-5xl font-bold">
             &nbsp;Gain calmness and clarity with the<br></br> world's most
@@ -346,10 +346,10 @@ export function Landing() {
           </div>
           <div className="pl-14">
             <div className="flex-col flex items-end space-y-2">
-              <IconButton text={<Twitter />} onClick={() => {}}></IconButton>
-              <IconButton text={<Youtube />} onClick={() => {}}></IconButton>
-              <IconButton text={<Facebook />} onClick={() => {}}></IconButton>
-              <IconButton text={<Instagram />} onClick={() => {}}></IconButton>
+              <IconButton icon={<Twitter />} onClick={() => {}}></IconButton>
+              <IconButton icon={<Youtube />} onClick={() => {}}></IconButton>
+              <IconButton icon={<Facebook />} onClick={() => {}}></IconButton>
+              <IconButton icon={<Instagram />} onClick={() => {}}></IconButton>
             </div>
           </div>
         </div>
