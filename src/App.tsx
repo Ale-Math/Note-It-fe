@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
+import { Routes, Route, HashRouter } from "react-router-dom";
 import { Landing } from "./Pages/Landing";
 import { Loader } from "./Pages/Loader";
 import { SignUp } from "./Pages/SignUp";
