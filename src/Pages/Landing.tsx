@@ -20,7 +20,7 @@ import { Copyright } from "../Components/Icons/Copyright";
 export function Landing() {
   const [cards, setCards] = useState(<WorkCard />);
   return (
-    <div className="lg:max-w-7xl md:max-w-5xl sm:max-w-3xl max-w-xl mx-auto bg-orange-50 font-mono relative">
+    <div className="lg:max-w-7xl md:max-w-5xl sm:max-w-3xl max-w-xl mx-auto bg-slate-50 font-mono relative">
       <Header></Header>
       <div className="flex justify-center">
         <div className="flex justify-between p-5 pl-24 space-x-5">
@@ -51,33 +51,11 @@ export function Landing() {
             </div>
           </div>
           <div className="w-2/3 pl-2">
-            <img src="/appbg.avif" className=" bg-orange-100 rounded-2xl"></img>
+            <img src="/appbg.avif" className=" bg-orange-50 rounded-2xl"></img>
           </div>
         </div>
       </div>
-      <div className="flex justify-center bg-[url(/bg-image.avif)] my-10 items-center">
-        <div className=" flex justify-between p-20 text-xl/9 italic font-serif w-5/6 items-center">
-          <div className=" flex-col flex items-center justify-center space-y-14 pt-3">
-            <h1>
-              “Simple, straightforward,<br></br>{" "}
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and super powerful”
-            </h1>
-            <img src="/verge.png" className="w-15 h-5"></img>
-          </div>
-          <div className="flex-col flex items-center space-y-10 border-gray-400 border-y-0 border-x-2 px-12 pt-5">
-            <h1>
-              “The best to-do list app <br></br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              &nbsp; on the market”
-            </h1>
-            <img src="/pcmag.png" className="w-15 h-10"></img>
-          </div>
-          <div className="flex-col flex items-center space-y-14">
-            <h1>“Nothing short of stellar”</h1>
-            <img src="/techradar.png" className="w-15 h-5"></img>
-          </div>
-        </div>
-      </div>
-      <div className="flex justify-center py-20">
+      <div className="flex justify-center py-36">
         <div className="w-11/12 flex justify-center">
           <div className=" flex-col items-center w-1/2 space-y-48">
             <div className="space-y-7">
@@ -108,9 +86,9 @@ export function Landing() {
             </div>
           </div>
           <div className=" w-1/2 space-y-20">
-            <img src="/appbg.avif" className=" bg-orange-100 rounded-2xl"></img>
+            <img src="/appbg.avif" className=" bg-orange-50 rounded-2xl"></img>
             <br></br>
-            <img src="/appbg.avif" className=" bg-orange-100 rounded-2xl"></img>
+            <img src="/appbg.avif" className=" bg-orange-50 rounded-2xl"></img>
           </div>
         </div>
       </div>
@@ -197,7 +175,7 @@ export function Landing() {
           <div className="w-1/2"></div>
         </div>
       </div>
-      <div className=" bg-gradient-to-b from-orange-50 via-orange-100 to-orange-200 pt-48 relative">
+      <div className=" bg-gradient-to-b from-slate-50 via-orange-50 to-orange-100 pt-48 relative">
         <div className="flex-col flex items-center space-y-10 pb-36">
           <p className="text-5xl font-bold">
             &nbsp;Gain calmness and clarity with the<br></br> world's most

@@ -5,7 +5,7 @@ import { Button } from "../UI/Button";
 export function Header() {
   const navigate = useNavigate();
   return (
-    <div className="flex lg:max-w-7xl md:max-w-5xl sm:max-w-3xl max-w-xl justify-between p-5 items-center sticky top-0 bg-orange-50 mb-24 mx-auto z-30">
+    <div className="flex lg:max-w-7xl md:max-w-5xl sm:max-w-3xl max-w-xl justify-between p-5 items-center sticky top-0 bg-slate-50 mb-24 mx-auto z-30">
       <a href="/">
         <Logo />
       </a>
