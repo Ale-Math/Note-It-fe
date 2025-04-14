@@ -23,17 +23,17 @@ export function Landing() {
     <div className="lg:max-w-7xl md:max-w-5xl sm:max-w-3xl max-w-xl mx-auto bg-slate-50 font-mono relative">
       <Header></Header>
       <div className="flex justify-center">
-        <div className="flex justify-between p-5 pl-24 space-x-5">
+        <div className="flex flex-col md:flex-row justify-between p-5 pl-24 space-x-5">
           <div className="space-y-5 w-1/3">
             <p className="lg:text-6xl md:text-4xl sm:text-2xl text-xl font-bold pb-3 ">
               Organize your work and life, finally.
             </p>
-            <p className="lg:text-2xl md:text-xl sm:text-md text-xs text-gray-600">
+            <p className="lg:text-xl md:text-lg sm:text-sm text-xs text-gray-600">
               Simplify life for you and your team with the world's #1 task
               manager and to-do list app.
             </p>
             <div className="flex items-center">
-              <p className="text-gray-600 font-semibold">
+              <p className="text-gray-600 font-semibold lg:text-lg md:text-sm text-xs">
                 500K+ ★★★★★ reviews from
               </p>
               <div className="flex items-center">
