@@ -1,11 +1,11 @@
 {
-  "homepage": "https://ale-math.github.io/Note-It-fe/",
+  "homepage": "http://ale-math.github.io/Note-It-fe",
   "name": "noteit-fe",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "start": "vite",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "build": "tsc -b && vite build",
