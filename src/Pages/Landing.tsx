@@ -59,29 +59,29 @@ export function Landing() {
         <div className="w-11/12 flex justify-center">
           <div className=" flex-col items-center w-1/2 space-y-48">
             <div className="space-y-7">
-              <p className="text-lg font-bold text-orange-700">
+              <p className="lg:text-lg md:text-md text-sm font-bold text-orange-700">
                 Clear your mind
               </p>
-              <p className="text-4xl font-bold">
-                Capture tasks at the speed<br></br> of thought
+              <p className="lg:text-5xl md:text-3xl text-xl font-bold">
+                Capture tasks at the speed of thought
               </p>
-              <p className="text-xl text-gray-600">
+              <p className="lg:text-xl md:text-lg text-md text-gray-600">
                 We've spent over a decade refining Noteit!<br></br> to be an
                 extension of your mind. Capture<br></br> and organize tasks
                 instantly using<br></br> easy-flowing, natural language.
               </p>
             </div>
             <div className="space-y-7">
-              <p className="text-lg font-bold text-cyan-800 ">
+              <p className="lg:text-lg md:text-md text-sm font-bold text-cyan-800 ">
                 Focus on what's important
               </p>
-              <p className="text-4xl font-bold">
+              <p className="lg:text-5xl md:text-3xl text-xl font-bold">
                 Stay organized and<br></br> focused
               </p>
-              <p className="text-xl text-gray-600">
-                Achieve mental clarity by sorting tasks<br></br> into Today,
-                Upcoming, or using custom<br></br> filters. See only what you
-                need,<br></br> when you need it.
+              <p className="lg:text-xl md:text-lg text-md text-gray-600">
+                Achieve mental clarity by sorting tasks into Today, Upcoming, or
+                using custom<br></br> filters. See only what you need,<br></br>{" "}
+                when you need it.
               </p>
             </div>
           </div>
