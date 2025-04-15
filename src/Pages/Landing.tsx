@@ -65,7 +65,7 @@ export function Landing() {
               <p className="lg:text-5xl md:text-3xl text-xl font-bold">
                 Capture tasks at the speed of thought
               </p>
-              <p className="lg:text-xl md:text-lg text-md text-gray-600">
+              <p className="lg:text-xl md:text-lg text-md text-gray-600 w-4/5">
                 We've spent over a decade refining Noteit! to be an extension of
                 your mind. Capture and organize tasks instantly using
                 easy-flowing, natural language.
@@ -78,7 +78,7 @@ export function Landing() {
               <p className="lg:text-5xl md:text-3xl text-xl font-bold">
                 Stay organized and focused
               </p>
-              <p className="lg:text-xl md:text-lg text-md text-gray-600">
+              <p className="lg:text-xl md:text-lg text-md text-gray-600 w-4/5">
                 Achieve mental clarity by sorting tasks into Today, Upcoming, or
                 using custom filters. See only what you need, when you need it.
               </p>
@@ -176,7 +176,7 @@ export function Landing() {
       </div>
       <div className=" bg-gradient-to-b from-slate-50 via-orange-50 to-orange-100 pt-48 relative">
         <div className="flex-col flex items-center space-y-10 pb-36">
-          <p className="lg:text-5xl md:text-3xl text-xl font-bold">
+          <p className="lg:text-5xl md:text-3xl text-xl font-bold w-4/5">
             &nbsp;Gain calmness and clarity with the world's most beloved
             productivity app
           </p>
@@ -197,7 +197,7 @@ export function Landing() {
             <a href="/">
               <ColorlessLogo></ColorlessLogo>
             </a>
-            <p className="lg:text-lg md:text-md text-sm">
+            <p className="lg:text-lg md:text-md text-sm w-4/5">
               Join millions of people who organize work and life with Note it!
             </p>
             <div className="flex items-center text-gray-600 bottom-2 md:absolute font-sans">
