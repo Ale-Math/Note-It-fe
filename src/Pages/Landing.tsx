@@ -66,9 +66,9 @@ export function Landing() {
                 Capture tasks at the speed of thought
               </p>
               <p className="lg:text-xl md:text-lg text-md text-gray-600">
-                We've spent over a decade refining Noteit!<br></br> to be an
-                extension of your mind. Capture<br></br> and organize tasks
-                instantly using<br></br> easy-flowing, natural language.
+                We've spent over a decade refining Noteit! to be an extension of
+                your mind. Capture and organize tasks instantly using
+                easy-flowing, natural language.
               </p>
             </div>
             <div className="space-y-7">
@@ -76,12 +76,11 @@ export function Landing() {
                 Focus on what's important
               </p>
               <p className="lg:text-5xl md:text-3xl text-xl font-bold">
-                Stay organized and<br></br> focused
+                Stay organized and focused
               </p>
               <p className="lg:text-xl md:text-lg text-md text-gray-600">
                 Achieve mental clarity by sorting tasks into Today, Upcoming, or
-                using custom<br></br> filters. See only what you need,<br></br>{" "}
-                when you need it.
+                using custom filters. See only what you need, when you need it.
               </p>
             </div>
           </div>
@@ -95,13 +94,15 @@ export function Landing() {
       <div className="flex justify-center py-20 pb-52">
         <div className="w-5/6 static">
           <div className="flex-col flex items-center">
-            <p className="text-4xl font-bold pb-10">
+            <p className="lg:text-4xl md:text-2xl text-xl font-bold pb-10">
               Kickstart your next project with NoteIt! Templates
             </p>
-            <p className="text-xl text-gray-600">
+            <p className="lg:text-xl md:text-lg text-md text-gray-600">
               No need to create projects or setups from scratch when we have
             </p>
-            <p className="text-xl text-gray-600">50+ templates made for you.</p>
+            <p className="lg:text-xl md:text-lg text-md text-gray-600">
+              50+ templates made for you.
+            </p>
           </div>
           <div className="flex justify-center pt-20">
             <Button
@@ -159,17 +160,15 @@ export function Landing() {
       <div className="flex justify-center">
         <div className="w-11/12">
           <div className="w-1/2 space-y-8">
-            <p className="text-orange-600 font-bold text-xl">
+            <p className="text-orange-600 font-bold lg:text-xl md:text-lg text-md">
               In it for the long haul
             </p>
-            <p className="font-extrabold text-4xl">
-              A task manager you can<br></br> trust for life
+            <p className="font-extrabold lg:text-4xl md:text-2xl text-xl">
+              A task manager you can trust for life
             </p>
-            <p className="text-gray-600 text-2xl">
-              We've been building Note it! for 18<br></br> years and 68 days.
-              Rest assuorange that<br></br> we'll never sell out to the highest
-              <br></br>
-              bidder.
+            <p className="text-gray-600 lg:text-2xl md:text-xl text-lg">
+              We've been building Note it! for 18 years and 68 days. Rest
+              assuorange that we'll never sell out to the highest bidder.
             </p>
           </div>
           <div className="w-1/2"></div>
@@ -177,11 +176,11 @@ export function Landing() {
       </div>
       <div className=" bg-gradient-to-b from-slate-50 via-orange-50 to-orange-100 pt-48 relative">
         <div className="flex-col flex items-center space-y-10 pb-36">
-          <p className="text-5xl font-bold">
-            &nbsp;Gain calmness and clarity with the<br></br> world's most
-            beloved productivity app
+          <p className="lg:text-5xl md:text-3xl text-xl font-bold">
+            &nbsp;Gain calmness and clarity with the world's most beloved
+            productivity app
           </p>
-          <p className="text-gray-600 text-2xl">
+          <p className="text-gray-600 lg:text-2xl md:text-xl text-lg">
             500000+ ★★★★★ reviews on Google Play and App Store
           </p>
           <div className="flex justify-center">
@@ -198,11 +197,10 @@ export function Landing() {
             <a href="/">
               <ColorlessLogo></ColorlessLogo>
             </a>
-            <p className="text-lg">
-              Join millions of people who organize<br></br> work and life with
-              Note it!
+            <p className="lg:text-lg md:text-md text-sm">
+              Join millions of people who organize work and life with Note it!
             </p>
-            <div className="flex items-center text-gray-600 bottom-2 absolute font-sans">
+            <div className="flex items-center text-gray-600 bottom-2 md:absolute font-sans">
               <Button
                 variant="footer"
                 size="sm"
@@ -225,12 +223,16 @@ export function Landing() {
               ></Button>
               <div className="pl-3 flex items-center">
                 <Copyright></Copyright>
-                <p className="text-sm pb-1">&nbsp;alexandermathew.co.in</p>
+                <p className="md:text-sm text-xs pb-1">
+                  &nbsp;alexandermathew.co.in
+                </p>
               </div>
             </div>
           </div>
           <div className="flex-col flex items-start space-y-2">
-            <p className="font-bold text-lg pb-4">Features</p>
+            <p className="font-bold lg:text-lg md:text-md text-sm pb-4">
+              Features
+            </p>
             <Button
               variant="secondary"
               size="sm"
@@ -257,7 +259,9 @@ export function Landing() {
             ></Button>
           </div>
           <div className="flex-col flex items-start space-y-2">
-            <p className="font-bold text-lg pb-4">Resources</p>
+            <p className="font-bold lg:text-lg md:text-md text-sm pb-4">
+              Resources
+            </p>
             <Button
               variant="secondary"
               size="sm"
@@ -296,7 +300,9 @@ export function Landing() {
             ></Button>
           </div>
           <div className="flex-col flex items-start space-y-2">
-            <p className="font-bold text-lg pb-4">Company</p>
+            <p className="font-bold lg:text-lg md:text-md text-sm pb-4">
+              Company
+            </p>
             <Button
               variant="secondary"
               size="sm"
