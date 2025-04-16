@@ -1,20 +1,23 @@
 import { Logo } from "../Components/Icons/Logo";
 import { Button } from "../Components/UI/Button";
+import { GoogleAuth } from "../Components/UI/GoogleAuth";
 import { InfoCard } from "../Components/UI/InfoCard";
 
 export function Login() {
   return (
     <div className="w-screen h-screen flex justify-center font-mono">
-      <div className="w-4/5 p-5 space-y-18">
+      <div className="w-4/5 p-5 space-y-24">
         <a href="/">
           <Logo />
         </a>
         <div className="w-full flex items-center">
-          <div className="w-1/2 space-y-5">
+          <div className="w-1/2 space-y-10">
             <p className="lg:text-3xl md:text-xl text-md font-extrabold">
               Log in
             </p>
             <div className="w-5/6 space-y-5 flex flex-col items-center">
+              <GoogleAuth />
+              <div className="border-t border-solid w-full"></div>
               <InfoCard
                 heading="Email"
                 placeholder="Enter your email..."
