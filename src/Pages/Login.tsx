@@ -53,7 +53,10 @@ export function Login() {
               </p>
               <p className="text-xs flex justify-center">
                 Don't have an account?&nbsp;
-                <a className="underline text-orange-500 cursor-pointer">
+                <a
+                  href="/signup"
+                  className="underline text-orange-500 cursor-pointer"
+                >
                   Sign up
                 </a>
               </p>

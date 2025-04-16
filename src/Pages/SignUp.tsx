@@ -48,7 +48,10 @@ export function SignUp() {
               </p>
               <p className="text-xs flex justify-center">
                 Already signed up?&nbsp;
-                <a className="underline text-orange-500 cursor-pointer">
+                <a
+                  href="/login"
+                  className="underline text-orange-500 cursor-pointer"
+                >
                   Go to login
                 </a>
               </p>
