@@ -1,6 +1,15 @@
+import { useEffect } from "react";
 import { Spinner } from "../Components/Icons/Spinner";
+import { useNavigate } from "react-router-dom";
 
 export function Loader() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    setTimeout(() => {
+      navigate("/signup");
+    }, 2000);
+  }, []);
   return (
     <div className="w-screen h-screen flex justify-center items-center bg-orange-50">
       <div>

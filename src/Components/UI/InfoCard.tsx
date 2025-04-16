@@ -1,13 +1,20 @@
-export function InfoCard() {
+interface InfoCardProps {
+  heading: String;
+  placeholder: string;
+  type: string;
+}
+
+export function InfoCard(props: InfoCardProps) {
   return (
-    <div className="border border-solid rounded-xl w-5/6 h-14 p-2">
-      <div className="text-xs">
-        <p>Email</p>
+    <div className="border border-solid rounded-xl w-full  h-14 p-2">
+      <div className="text-xs pb-1">
+        <p>{props.heading}</p>
       </div>
       <div className="">
         <input
-          className="w-full bg-stone-50 focus:border-none"
-          placeholder="Enter your personal or work email..."
+          type={props.type}
+          className="w-full focus:outline-none"
+          placeholder={props.placeholder}
         ></input>
       </div>
     </div>
