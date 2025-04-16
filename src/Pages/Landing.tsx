@@ -206,6 +206,7 @@ export function Landing() {
                 size="sm"
                 text="Security"
                 onClick={() => {}}
+                decoration="hover:underline"
               ></Button>
               |
               <Button
@@ -213,6 +214,7 @@ export function Landing() {
                 size="sm"
                 text="Privacy"
                 onClick={() => {}}
+                decoration="hover:underline"
               ></Button>
               |
               <Button
@@ -220,6 +222,7 @@ export function Landing() {
                 size="sm"
                 text="Terms"
                 onClick={() => {}}
+                decoration="hover:underline"
               ></Button>
               <div className="pl-3 flex items-center">
                 <Copyright></Copyright>

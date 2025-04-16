@@ -1,4 +1,3 @@
-import { GoogleLoginButton } from "react-social-login-buttons";
 import { LoginSocialGoogle } from "reactjs-social-login";
 import { Button } from "./Button";
 import { GoogleIcon } from "../Icons/Google";

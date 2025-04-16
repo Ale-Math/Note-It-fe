@@ -1,8 +1,10 @@
+import { useNavigate } from "react-router-dom";
 import { Logo } from "../Components/Icons/Logo";
 import { Button } from "../Components/UI/Button";
 import { InfoCard } from "../Components/UI/InfoCard";
 
 export function SignUp() {
+  const navigate = useNavigate();
   return (
     <div className="w-screen h-screen flex justify-center font-mono">
       <div className="w-4/5 p-5 space-y-18">
@@ -28,7 +30,9 @@ export function SignUp() {
               <Button
                 variant="primary"
                 text="Sign up with Email"
-                onClick={() => {}}
+                onClick={() => {
+                  navigate("/dashboard");
+                }}
                 size="xl"
                 width="w-full"
               ></Button>
