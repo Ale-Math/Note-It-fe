@@ -2,7 +2,7 @@ import { Card } from "../UI/Card";
 
 export function ManagementCard() {
   return (
-    <div className="flex justify-center space-x-4 py-10">
+    <div className="grid-cols-2 grid md:flex-row md:flex justify-center md:space-x-4 md:py-10 py-5 gap-4">
       <Card
         src="/1-1-Meeting.png"
         alt="1-on-1 Meeting"

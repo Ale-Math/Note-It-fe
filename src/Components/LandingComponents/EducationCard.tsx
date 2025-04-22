@@ -2,7 +2,7 @@ import { Card } from "../UI/Card";
 
 export function EducationCard() {
   return (
-    <div className="flex justify-center space-x-4 py-10">
+    <div className="grid-cols-2 grid md:flex-row md:flex justify-center md:space-x-4 md:py-10 py-5 ">
       <Card
         src="/Class-Planning.png"
         alt="Class Planning"

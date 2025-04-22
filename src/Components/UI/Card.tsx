@@ -10,7 +10,7 @@ interface CardProps {
 export function Card(props: CardProps) {
   return (
     <div
-      className="w-64 h-80 border-slate-300 border border-solid rounded-xl flex-col hover:border-slate-600 whitespace-pre-wrap
+      className="md:w-64 md:h-80 w-40 h-56 border-slate-300 border border-solid rounded-xl flex flex-col hover:border-slate-600 whitespace-pre-wrap
  relative hover:cursor-pointer z-0"
     >
       <div className="h-2/5">
@@ -20,12 +20,12 @@ export function Card(props: CardProps) {
           alt={props.alt}
         ></img>
       </div>
-      <div className="h-3/5 space-y-4 p-4 z-10">
-        <p className="font-bold text-md">{props.title}</p>
-        <p className="text-gray-600 text-md">{props.description}</p>
+      <div className="h-3/5 md:space-y-4 md:p-4 p-1 space-y-2  z-10">
+        <p className="font-bold md:text-lg text-xs">{props.title}</p>
+        <p className="text-gray-600 md:text-md text-xs">{props.description}</p>
         <div className="flex items-center space-x-2 absolute bottom-2 z-20">
           <List></List>
-          <p className="text-gray-600 text-sm">List</p>
+          <p className="text-gray-600 md:text-sm text-xs">List</p>
         </div>
       </div>
     </div>
