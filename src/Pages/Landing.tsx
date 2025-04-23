@@ -10,9 +10,12 @@ import { ManagementCard } from "../Components/LandingComponents/ManagementCard";
 import { MarketingCard } from "../Components/LandingComponents/MarketingCard";
 import { CustomerSupportCard } from "../Components/LandingComponents/CustomerSupportCard";
 import { Footer } from "../Components/LandingComponents/Footer";
+import { useNavigate } from "react-router-dom";
 
 export function Landing() {
   const [cards, setCards] = useState(<WorkCard />);
+  const navigate = useNavigate();
+
   return (
     <div className="lg:max-w-7xl md:max-w-5xl sm:max-w-3xl max-w-xl mx-auto bg-slate-50 font-mono relative">
       <Header></Header>
@@ -40,7 +43,9 @@ export function Landing() {
                 variant="shadow"
                 size="md"
                 text="Start for free"
-                onClick={() => {}}
+                onClick={() => {
+                  navigate("/loader");
+                }}
               ></Button>
             </div>
           </div>
@@ -182,7 +187,9 @@ export function Landing() {
               variant="shadow"
               text="Start for free"
               size="md"
-              onClick={() => {}}
+              onClick={() => {
+                navigate("/loader");
+              }}
             ></Button>
           </div>
         </div>

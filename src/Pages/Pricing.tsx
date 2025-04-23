@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { Android } from "../assets/Android";
 import { Apple } from "../assets/Apple";
 import { OliveLeft } from "../Components/Icons/OliveLeft";
@@ -6,8 +7,11 @@ import { Telegraph } from "../Components/Icons/Telegraph";
 import { Footer } from "../Components/LandingComponents/Footer";
 import { Header } from "../Components/LandingComponents/Header";
 import { Button } from "../Components/UI/Button";
+import { PriceCard } from "../Components/UI/PriceCard";
 
 export function Pricing() {
+  const navigate = useNavigate();
+
   return (
     <div className="lg:max-w-7xl md:max-w-5xl sm:max-w-3xl max-w-xl mx-auto bg-slate-50 font-mono relative">
       <Header></Header>
@@ -25,7 +29,9 @@ export function Pricing() {
               variant="shadow"
               size="md"
               text="Start for free"
-              onClick={() => {}}
+              onClick={() => {
+                navigate("/loader");
+              }}
             ></Button>
           </div>
           <div className="flex items-center pt-10">
@@ -38,6 +44,11 @@ export function Pricing() {
             </div>
           </div>
         </div>
+      </div>
+      <div className="flex justify-center pt-24">
+        <PriceCard />
+        <PriceCard />
+        <PriceCard />
       </div>
       <div className="bg-gradient-to-b from-slate-50 via-orange-50 to-orange-100 pt-48">
         <div className="flex flex-wrap justify-center items-stretch py-10 text-gray-600 gap-12">
@@ -84,7 +95,9 @@ export function Pricing() {
               variant="shadow"
               size="md"
               text="Start for free"
-              onClick={() => {}}
+              onClick={() => {
+                navigate("/loader");
+              }}
             ></Button>
           </div>
         </div>

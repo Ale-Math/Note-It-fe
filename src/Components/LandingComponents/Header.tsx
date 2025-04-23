@@ -15,7 +15,9 @@ export function Header() {
           variant="secondary"
           size="lg"
           text="Pricing"
-          onClick={() => {}}
+          onClick={() => {
+            navigate("/pricing");
+          }}
         ></Button>
         |
         <Button
