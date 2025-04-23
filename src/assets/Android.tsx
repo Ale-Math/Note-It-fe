@@ -1,9 +1,14 @@
-export function Android() {
+interface SizeProps {
+  width: string;
+  height: string;
+}
+
+export function Android(props: SizeProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="16"
-      height="16"
+      width={props.width}
+      height={props.height}
       fill="currentColor"
       className="bi bi-android text-gray-600"
       viewBox="0 0 16 16"
