@@ -16,11 +16,11 @@ export function Pricing() {
     <div className="lg:max-w-7xl md:max-w-5xl sm:max-w-3xl max-w-xl mx-auto bg-slate-50 font-mono relative">
       <Header></Header>
       <div className="flex justify-center">
-        <div className="flex-col flex w-3/5 text-center items-center space-y-4">
-          <p className="lg:text-6xl md:text-4xl text-2xl font-bold ">
+        <div className="flex-col flex md:w-3/5 w-4/5 text-center items-center space-y-4">
+          <p className="lg:text-6xl md:text-5xl text-4xl font-bold ">
             Choose your path to productivity
           </p>
-          <p className="lg:text-xl md:text-lg sm:text-sm text-xs text-gray-600 text-center">
+          <p className="lg:text-xl md:text-lg text-md text-gray-600 text-center">
             Use Todoist for free forever or upgrade to unlock our most powerful
             features for work and collaboration.
           </p>
@@ -35,7 +35,7 @@ export function Pricing() {
             ></Button>
           </div>
           <div className="flex items-center pt-10">
-            <p className="text-gray-600 font-semibold lg:text-lg md:text-sm text-xs">
+            <p className="text-gray-600 font-semibold md:text-lg text-md">
               500K+ ★★★★★ reviews from
             </p>
             <div className="flex items-center">
@@ -45,10 +45,33 @@ export function Pricing() {
           </div>
         </div>
       </div>
-      <div className="flex justify-center pt-24">
-        <PriceCard />
-        <PriceCard />
-        <PriceCard />
+      <div className="md:flex-row flex flex-col items-center space-y-4 md:space-y-0 justify-center pt-24">
+        <PriceCard
+          title="Beginner"
+          description="Start organizing your life for free"
+          price={0}
+          image="/Beginner.png"
+        />
+        <PriceCard
+          title="Pro"
+          description="Organize your work and life finally
+
+"
+          price={175}
+          image="/Pro.png"
+          priceInfo="per user/month
+₹2100 billed yearly"
+        />
+        <PriceCard
+          title="Business"
+          description="Manage your teamwork and business, too
+
+"
+          price={519.5}
+          image="/Business.png"
+          priceInfo="per user/month
+₹6234 billed yearly"
+        />
       </div>
       <div className="bg-gradient-to-b from-slate-50 via-orange-50 to-orange-100 pt-48">
         <div className="flex flex-wrap justify-center items-stretch py-10 text-gray-600 gap-12">
@@ -84,10 +107,10 @@ export function Pricing() {
           </div>
         </div>
         <div className="relative flex-col flex items-center pb-48 space-y-5">
-          <p className="lg:text-4xl md:text-2xl text-lg font-bold w-3/5 text-center">
+          <p className="md:text-4xl text-2xl font-bold md:w-3/5 w-4/5 text-center">
             Join 30 million+ people who rely on Todoist to manage work and life
           </p>
-          <p className="lg:text-xl md:text-lg sm:text-sm text-xs text-gray-600 text-center">
+          <p className="md:text-xl w-4/5  text-md text-gray-600 text-center">
             Plus tens of thousands of teams from companies of all sizes.
           </p>
           <div className="py-10 flex justify-center">
