@@ -54,23 +54,18 @@ export function Pricing() {
         />
         <PriceCard
           title="Pro"
-          description="Organize your work and life finally
-
-"
+          description="Organize your work and life finally"
           price={175}
           image="/Pro.png"
           priceInfo="per user/month
-₹2100 billed yearly"
+                ₹2100 billed yearly"
         />
         <PriceCard
           title="Business"
-          description="Manage your teamwork and business, too
-
-"
+          description="Manage your teamwork and business, too"
           price={519.5}
           image="/Business.png"
-          priceInfo="per user/month
-₹6234 billed yearly"
+          priceInfo="per user/month ₹6234 billed yearly"
         />
       </div>
       <div className="bg-gradient-to-b from-slate-50 via-orange-50 to-orange-100 pt-48">
