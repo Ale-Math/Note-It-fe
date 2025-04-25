@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { Logo } from "../Components/Icons/Logo";
 import { Button } from "../Components/UI/Button";
-import { GoogleAuth } from "../Components/UI/GoogleAuth";
 import { InfoCard } from "../Components/UI/InfoCard";
 
 export function Login() {
@@ -18,7 +17,6 @@ export function Login() {
               Log in
             </p>
             <div className="w-5/6 space-y-5 flex flex-col items-center">
-              <GoogleAuth />
               <div className="border-t border-solid w-full"></div>
               <InfoCard
                 heading="Email"

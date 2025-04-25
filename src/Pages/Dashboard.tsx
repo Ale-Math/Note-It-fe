@@ -6,7 +6,7 @@ export function Dashboard() {
     <div className="w-screen h-screen flex">
       <div className="w-1/5 bg-orange-50"></div>
       <div className="w-4/5 bg-slate-50 p-20 space-y-5">
-        <p className="text-2xl font-bold">Today</p>
+        <p className="text-2xl font-bold">To-Do's</p>
         <div className="">
           <Button
             variant="footer"
