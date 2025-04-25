@@ -63,7 +63,7 @@ export function Pricing() {
         <PriceCard
           title="Business"
           description="Manage your teamwork and business, too"
-          price={519.5}
+          price={500}
           image="/Business.png"
           priceInfo="per user/month ₹6234 billed yearly"
         />

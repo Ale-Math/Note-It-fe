@@ -22,15 +22,15 @@ export function Landing() {
       <div className="flex justify-center">
         <div className="flex flex-col md:flex-row justify-between p-5 w-11/12 items-center md:space-x-5 space-y-5">
           <div className="space-y-5 md:w-1/3 w-full">
-            <p className="lg:text-6xl md:text-4xl text-2xl font-bold pb-3 ">
+            <p className="md:text-6xl text-4xl font-bold pb-3 ">
               Organize your work and life, finally.
             </p>
-            <p className="lg:text-xl md:text-lg sm:text-sm text-xs text-gray-600">
+            <p className="lg:text-xl md:text-lg text-md text-gray-600">
               Simplify life for you and your team with the world's #1 task
               manager and to-do list app.
             </p>
             <div className="flex items-center">
-              <p className="text-gray-600 font-semibold lg:text-lg md:text-sm text-xs">
+              <p className="text-gray-600 font-semibold md:text-lg text-sm">
                 500K+ ★★★★★ reviews from
               </p>
               <div className="flex items-center">
@@ -51,6 +51,26 @@ export function Landing() {
           </div>
           <div className="md:w-2/3 w-full md:pl-2 flex justify-center">
             <img src="/appbg.avif" className=" bg-orange-50 rounded-2xl"></img>
+          </div>
+        </div>
+      </div>
+      <div className="flex justify-center bg-[url(/bg-image.avif)] py-20 mt-20 bg-cover md:bg-cover">
+        <div className=" space-y-5 md:space-y-0 flex-col flex  md:flex-row justify-around md:text-xl/9 italic font-serif w-5/6 text-center items-center">
+          <div className=" flex-col flex items-center space-y-5 md:space-y-10 md:w-1/3 ">
+            <h1>
+              “Simple, straightforward,<br></br> and super powerful”
+            </h1>
+            <img src="/verge.png" className="md:w-20 md:h-4 w-16 h-3"></img>
+          </div>
+          <div className="w-full py-4 md:py-0 md:w-1/3 flex-col flex items-center space-y-5 md:space-y-8 border-gray-400 border-y-2 md:border-y-0 md:border-x-2 border-x-0">
+            <h1>
+              “The best to-do list app <br></br> on the market”
+            </h1>
+            <img src="/pcmag.png" className="md:w-8 md:h-10 w-6 h-8"></img>
+          </div>
+          <div className=" md:w-1/3 flex-col flex items-center md:space-y-12 space-y-5">
+            <h1>“Nothing short of stellar”</h1>
+            <img src="/techradar.png" className="md:w-20 md:h-4 w-16 h-3"></img>
           </div>
         </div>
       </div>
@@ -91,16 +111,14 @@ export function Landing() {
         </div>
       </div>
       <div className="flex justify-center py-20 pb-52">
-        <div className="w-5/6 static">
+        <div className="w-5/6 static space-y-10 md:space-y-0">
           <div className="flex-col flex items-center space-y-5">
-            <p className="lg:text-4xl md:text-2xl text-xl font-bold pb-10">
+            <p className="md:text-4xl text-2xl font-bold pb-10 text-center">
               Kickstart your next project with NoteIt! Templates
             </p>
-            <p className="lg:text-xl md:text-lg text-md text-gray-600">
+            <p className="lg:text-xl md:text-lg text-md text-gray-600 text-center">
               No need to create projects or setups from scratch when we have
-            </p>
-            <p className="lg:text-xl md:text-lg text-md text-gray-600">
-              50+ templates made for you.
+              <br></br> 50+ templates made for you.
             </p>
           </div>
           <div className="flex-col flex md:flex-row justify-center md:pt-20 space-y-3 md:space-y-0">
@@ -175,7 +193,7 @@ export function Landing() {
       </div>
       <div className=" bg-gradient-to-b from-slate-50 via-orange-50 to-orange-100 pt-48">
         <div className="flex-col flex items-center space-y-10 pb-36">
-          <p className="lg:text-5xl md:text-3xl text-xl font-bold w-4/5 text-center">
+          <p className="lg:text-5xl md:text-3xl text-2xl font-bold w-4/5 text-center">
             Gain calmness and clarity with the world's most beloved productivity
             app
           </p>
