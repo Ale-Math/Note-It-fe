@@ -16,11 +16,14 @@ export function SignUp() {
     const email = emailRef.current?.value;
     const password = passwordRef.current?.value;
     try {
-      const response = await axios.post(`http://localhost:3000/api/v1/signup`, {
-        name,
-        email,
-        password,
-      });
+      const response = await axios.post(
+        `${import.meta.env.VITE_BACKEND_URL}/api/v1/signup`,
+        {
+          name,
+          email,
+          password,
+        }
+      );
       const jwt = response.data.token;
       localStorage.setItem("token", jwt);
       navigate("/dashboard");

@@ -4,7 +4,6 @@ import { Button } from "../Components/UI/Button";
 import { InfoCard } from "../Components/UI/InfoCard";
 import { useRef } from "react";
 import axios from "axios";
-import "dotenv/config";
 
 export function Login() {
   const emailRef = useRef<HTMLInputElement>(null);
@@ -15,11 +14,13 @@ export function Login() {
     const email = emailRef.current?.value;
     const password = passwordRef.current?.value;
 
-    const response = await axios.post(`http://localhost:3000/api/v1/signin`, {
-      email,
-      password,
-    });
-    console.log(import.meta.env.VITE_BACKEND_URL);
+    const response = await axios.post(
+      `${import.meta.env.VITE_BACKEND_URL}/api/v1/signin`,
+      {
+        email,
+        password,
+      }
+    );
     const jwt = response.data.token;
     localStorage.setItem("token", jwt);
     navigate("/dashboard");
