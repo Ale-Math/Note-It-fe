@@ -2,9 +2,33 @@ import { useNavigate } from "react-router-dom";
 import { Logo } from "../Components/Icons/Logo";
 import { Button } from "../Components/UI/Button";
 import { InfoCard } from "../Components/UI/InfoCard";
+import { useRef } from "react";
+import axios from "axios";
 
 export function SignUp() {
   const navigate = useNavigate();
+  const nameRef = useRef<HTMLInputElement>(null);
+  const emailRef = useRef<HTMLInputElement>(null);
+  const passwordRef = useRef<HTMLInputElement>(null);
+
+  async function signup() {
+    const name = nameRef.current?.value;
+    const email = emailRef.current?.value;
+    const password = passwordRef.current?.value;
+    try {
+      const response = await axios.post(`http://localhost:3000/api/v1/signup`, {
+        name,
+        email,
+        password,
+      });
+      const jwt = response.data.token;
+      localStorage.setItem("token", jwt);
+      navigate("/dashboard");
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
   return (
     <div className="w-screen h-screen flex justify-center font-mono">
       <div className="w-4/5 p-5 space-y-18">
@@ -17,12 +41,21 @@ export function SignUp() {
               Sign up
             </p>
             <div className="w-5/6 space-y-5 flex flex-col items-center">
+              <div className="border-t border-solid w-full"></div>
               <InfoCard
+                ref={nameRef}
+                heading="Name"
+                placeholder="Enter your name..."
+                type="text"
+              ></InfoCard>
+              <InfoCard
+                ref={emailRef}
                 heading="Email"
                 placeholder="Enter your email..."
                 type="text"
               ></InfoCard>
               <InfoCard
+                ref={passwordRef}
                 heading="Password"
                 placeholder="Enter your password..."
                 type="password"
@@ -30,17 +63,14 @@ export function SignUp() {
               <Button
                 variant="primary"
                 text="Sign up with Email"
-                onClick={() => {
-                  navigate("/dashboard");
-                }}
+                onClick={signup}
                 size="xl"
                 width="w-full"
               ></Button>
             </div>
             <div className="space-y-6 flex-col flex w-5/6">
               <p className="text-xs">
-                By continuing with Google, Apple, or Email, you agree to
-                NoteIt's{" "}
+                By continuing with Google, or Email, you agree to NoteIt's{" "}
                 <a className="underline text-orange-500 cursor-pointer">
                   Terms of Service
                 </a>{" "}

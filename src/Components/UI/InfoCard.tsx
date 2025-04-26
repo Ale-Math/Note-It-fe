@@ -2,6 +2,7 @@ interface InfoCardProps {
   heading: String;
   placeholder: string;
   type: string;
+  ref?: any;
 }
 
 export function InfoCard(props: InfoCardProps) {
@@ -12,6 +13,7 @@ export function InfoCard(props: InfoCardProps) {
       </div>
       <div className="">
         <input
+          ref={props.ref}
           type={props.type}
           className="w-full focus:outline-none hover:bg-orange-50"
           placeholder={props.placeholder}
