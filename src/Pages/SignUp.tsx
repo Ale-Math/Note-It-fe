@@ -66,6 +66,7 @@ export function SignUp() {
               <Button
                 variant="primary"
                 text="Sign up with Email"
+                decoration="lg:text-lg md:text-md text-sm"
                 onClick={signup}
                 size="xl"
                 width="w-full"

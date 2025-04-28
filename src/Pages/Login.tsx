@@ -54,6 +54,7 @@ export function Login() {
               <Button
                 variant="primary"
                 text="Log in"
+                decoration="lg:text-lg md:text-md text-sm"
                 onClick={signin}
                 size="xl"
                 width="w-full"

@@ -32,6 +32,7 @@ export function Header() {
           variant="primary"
           size="lg"
           text="Start for free"
+          decoration="lg:text-lg md:text-md text-sm"
           onClick={() => {
             navigate("/loader");
           }}

@@ -1,5 +1,6 @@
 import { PlusIcon } from "../Components/Icons/PlusIcon";
 import { Button } from "../Components/UI/Button";
+import { TodoCard } from "../Components/UI/TodoCard";
 
 export function Dashboard() {
   return (
@@ -18,6 +19,7 @@ export function Dashboard() {
             width="w-4/5"
             decoration="text-gray-600"
           ></Button>
+          <TodoCard></TodoCard>
         </div>
       </div>
     </div>

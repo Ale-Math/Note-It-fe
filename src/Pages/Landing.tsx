@@ -54,23 +54,23 @@ export function Landing() {
           </div>
         </div>
       </div>
-      <div className="flex justify-center bg-[url(/bg-image.avif)] py-20 mt-20 bg-cover md:bg-cover">
-        <div className=" space-y-5 md:space-y-0 flex-col flex  md:flex-row justify-around md:text-xl/9 italic font-serif w-5/6 text-center items-center">
-          <div className=" flex-col flex items-center space-y-5 md:space-y-10 md:w-1/3 ">
+      <div className="flex items-center justify-center bg-[url(/bg-image.avif)] py-20 mt-20 bg-cover md:bg-cover">
+        <div className="md:space-y-0 flex-col flex  md:flex-row justify-around md:text-xl italic font-serif w-5/6 text-center items-center">
+          <div className="md:pb-0 pb-3 flex-col flex items-center space-y-5 md:space-y-10 md:w-1/3">
             <h1>
               “Simple, straightforward,<br></br> and super powerful”
             </h1>
-            <img src="/verge.png" className="md:w-20 md:h-4 w-16 h-3"></img>
+            <img src="/verge.png" className="md:w-28 md:h-5 w-18 h-3"></img>
           </div>
-          <div className="w-full py-4 md:py-0 md:w-1/3 flex-col flex items-center space-y-5 md:space-y-8 border-gray-400 border-y-2 md:border-y-0 md:border-x-2 border-x-0">
+          <div className=" md:py-0 py-3 md:w-1/3 flex-col flex items-center space-y-5 md:space-y-8 border-gray-300 border-y-2 md:border-y-0 md:border-x-2 border-x-0">
             <h1>
               “The best to-do list app <br></br> on the market”
             </h1>
-            <img src="/pcmag.png" className="md:w-8 md:h-10 w-6 h-8"></img>
+            <img src="/pcmag.png" className="md:w-8 md:h-11 w-6 h-8"></img>
           </div>
           <div className=" md:w-1/3 flex-col flex items-center md:space-y-12 space-y-5">
             <h1>“Nothing short of stellar”</h1>
-            <img src="/techradar.png" className="md:w-20 md:h-4 w-16 h-3"></img>
+            <img src="/techradar.png" className="md:w-32 md:h-5 w-20 h-4"></img>
           </div>
         </div>
       </div>
@@ -126,6 +126,7 @@ export function Landing() {
               variant="tertiary"
               size="xl"
               text="Work"
+              decoration="lg:text-lg md:text-md text-sm font-semibold"
               onClick={() => {
                 setCards(<WorkCard />);
               }}
@@ -134,6 +135,7 @@ export function Landing() {
               variant="tertiary"
               size="xl"
               text="Personal"
+              decoration="lg:text-lg md:text-md text-sm font-semibold"
               onClick={() => {
                 setCards(<PersonalCard />);
               }}
@@ -142,6 +144,7 @@ export function Landing() {
               variant="tertiary"
               size="xl"
               text="Education"
+              decoration="lg:text-lg md:text-md text-sm font-semibold"
               onClick={() => {
                 setCards(<EducationCard />);
               }}
@@ -150,6 +153,7 @@ export function Landing() {
               variant="tertiary"
               size="xl"
               text="Management"
+              decoration="lg:text-lg md:text-md text-sm font-semibold"
               onClick={() => {
                 setCards(<ManagementCard />);
               }}
@@ -158,6 +162,7 @@ export function Landing() {
               variant="tertiary"
               size="xl"
               text="Marketing & Sales"
+              decoration="lg:text-lg md:text-md text-sm font-semibold"
               onClick={() => {
                 setCards(<MarketingCard />);
               }}
@@ -166,6 +171,7 @@ export function Landing() {
               variant="tertiary"
               size="xl"
               text="Customer Support"
+              decoration="lg:text-lg md:text-md text-sm font-semibold"
               onClick={() => {
                 setCards(<CustomerSupportCard />);
               }}
