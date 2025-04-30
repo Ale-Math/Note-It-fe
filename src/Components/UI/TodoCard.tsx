@@ -1,6 +1,6 @@
 import { Button } from "./Button";
 
-export function TodoCard() {
+export function TodoCard(props: any) {
   return (
     <div className="flex bg-slate-50">
       <div className="w-5/6 border rounded-xl h-28">
@@ -21,7 +21,7 @@ export function TodoCard() {
             variant="tertiary"
             text="Cancel"
             size="xl2"
-            onClick={() => {}}
+            onClick={props.toggle}
             decoration="text-xs p-2"
           />
           <Button
