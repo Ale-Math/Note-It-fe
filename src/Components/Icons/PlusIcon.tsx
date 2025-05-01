@@ -6,7 +6,7 @@ export function PlusIcon() {
       viewBox="0 0 24 24"
       stroke-width="1.5"
       stroke="currentColor"
-      className="size-4 text-orange-600"
+      className="size-4 text-orange-600 rounded-full group-hover:text-white group-hover:bg-orange-600"
     >
       <path
         stroke-linecap="round"

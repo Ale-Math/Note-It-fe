@@ -1,11 +1,17 @@
 import { Button } from "./Button";
 
-export function TodoCard(props: any) {
+interface TodoCardProps {
+  ref: any;
+  toggle: () => void;
+}
+
+export function TodoCard(props: TodoCardProps) {
   return (
     <div className="flex bg-slate-50">
-      <div className="w-5/6 border rounded-xl h-28">
+      <div className="w-5/6 border rounded-xl h-28 focus-within:border-gray-600">
         <div className="flex-col flex p-2 pb-3 space-y-1">
           <input
+            ref={props.ref}
             className=" bg-slate-50 focus:border-0 text-sm font-semibold outline-none"
             placeholder="Task name"
             type="text"

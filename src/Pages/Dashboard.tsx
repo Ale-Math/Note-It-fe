@@ -1,13 +1,15 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { PlusIcon } from "../Components/Icons/PlusIcon";
 import { Button } from "../Components/UI/Button";
 import { TodoCard } from "../Components/UI/TodoCard";
 
 export function Dashboard() {
   const [showCard, setShowCard] = useState(false);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const cardToggle = () => {
     setShowCard(!showCard);
+    inputRef.current?.focus();
   };
 
   return (
@@ -25,10 +27,10 @@ export function Dashboard() {
               icon={<PlusIcon />}
               space="&nbsp;"
               width="w-4/5"
-              decoration="text-gray-600"
+              decoration="text-gray-600 group"
             ></Button>
           )}
-          {showCard && <TodoCard toggle={cardToggle}></TodoCard>}
+          {showCard && <TodoCard toggle={cardToggle} ref={inputRef}></TodoCard>}
         </div>
       </div>
     </div>
