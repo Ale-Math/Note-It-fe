@@ -25,7 +25,7 @@ export function Header() {
           size="lg"
           text="Log in"
           onClick={() => {
-            navigate("/login");
+            navigate("/loginloader");
           }}
         ></Button>
         <Button

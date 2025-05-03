@@ -6,6 +6,7 @@ import { SignUp } from "./Pages/SignUp";
 import { Login } from "./Pages/Login";
 import { Dashboard } from "./Pages/Dashboard";
 import { Pricing } from "./Pages/Pricing";
+import { LoginLoader } from "./Pages/LoginLoader";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element={<Landing />} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/loader" element={<Loader />} />
+        <Route path="/loginloader" element={<LoginLoader />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />

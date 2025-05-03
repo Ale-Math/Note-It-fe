@@ -27,7 +27,7 @@ export function SideBar(props: SideBarProps) {
   return (
     <div className="w-1/5 bg-orange-50">
       <div className="p-4 flex space-x-2 items-center">
-        <p className="bg-orange-400 md:w-7 md:h-7 w-5 h-5 md:pt-1 text-center rounded-full md:text-sm text-xs">
+        <p className="bg-orange-400 text-white font-bold md:w-7 md:h-7 w-5 h-5 md:pt-1 text-center rounded-full md:text-sm text-xs">
           {initial}
         </p>
         <p>{name}</p>
