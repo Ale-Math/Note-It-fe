@@ -3,9 +3,11 @@ import { PlusIcon } from "../Components/Icons/PlusIcon";
 import { Button } from "../Components/UI/Button";
 import { TodoCard } from "../Components/UI/TodoCard";
 import { SideBar } from "../Components/UI/SideBar";
+import { useTodo } from "../Hooks/useTodo";
 
 export function Dashboard() {
   const [showCard, setShowCard] = useState(false);
+  const todo = useTodo();
 
   const cardToggle = () => {
     setShowCard(!showCard);
@@ -18,6 +20,7 @@ export function Dashboard() {
         <p className="md:text-2xl text-xl font-bold">
           What do you want to do today?
         </p>
+        <div></div>
         <div>
           {!showCard && (
             <Button

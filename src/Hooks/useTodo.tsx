@@ -7,13 +7,13 @@ export function useTodo() {
   useEffect(() => {
     const data = localStorage.getItem("token");
     axios
-      .get(`${process.env.BACKEND_URL}/api/v1/todo`, {
+      .get(`${import.meta.env.VITE_BACKEND_URL}/api/v1/todos`, {
         headers: {
           authorization: data,
         },
       })
       .then((response) => {
-        setTodos(response.data.foundTodo);
+        setTodos(response.data.allTodos);
       });
   }, []);
 
