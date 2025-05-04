@@ -19,7 +19,7 @@ export function SideBar(props: SideBarProps) {
   const name = useFindName();
 
   return (
-    <div className="w-2/5 md:w-1/5 bg-orange-50">
+    <div className="w-2/5 md:w-1/5 bg-orange-50 max-h-full h-screen">
       <div className="p-4 flex space-x-2 items-center">
         <div>
           <Button
@@ -54,6 +54,7 @@ export function SideBar(props: SideBarProps) {
             <div></div>
           )}
         </div>
+        <div></div>
       </div>
       <div className="m-4 hover:bg-orange-100 group">
         <Button
