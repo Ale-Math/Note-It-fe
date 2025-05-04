@@ -14,8 +14,10 @@ export function Dashboard() {
   return (
     <div className="w-screen h-screen flex">
       <SideBar toggle={cardToggle}></SideBar>
-      <div className="w-4/5 bg-slate-50 p-20 space-y-5">
-        <p className="text-2xl font-bold">To-Do's</p>
+      <div className="w-4/5 bg-slate-50 md:p-20 p-10 space-y-5">
+        <p className="md:text-2xl text-xl font-bold">
+          What do you want to do today?
+        </p>
         <div>
           {!showCard && (
             <Button
@@ -25,7 +27,7 @@ export function Dashboard() {
               onClick={cardToggle}
               icon={<PlusIcon />}
               space="&nbsp;"
-              width="w-4/5"
+              width="md:w-4/5 w-full"
               decoration="text-gray-600 group"
             ></Button>
           )}

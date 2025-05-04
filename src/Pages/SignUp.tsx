@@ -12,7 +12,15 @@ export function SignUp() {
   const passwordRef = useRef<HTMLInputElement>(null);
 
   async function signup() {
-    const name = nameRef.current?.value;
+    function Capitalize(str: string | undefined) {
+      if (str == undefined) {
+        return null;
+      } else {
+        return str.charAt(0).toUpperCase() + str.slice(1);
+      }
+    }
+
+    const name = Capitalize(nameRef.current?.value);
     const email = emailRef.current?.value;
     const password = passwordRef.current?.value;
     try {
@@ -26,7 +34,11 @@ export function SignUp() {
       );
       const jwt = response.data.token;
       localStorage.setItem("token", jwt);
-      navigate("/dashboard");
+      if (jwt == undefined) {
+        return console.log("error");
+      } else {
+        navigate("/dashboard");
+      }
     } catch (e) {
       console.log(e);
     }

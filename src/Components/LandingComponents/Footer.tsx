@@ -160,10 +160,22 @@ export function Footer() {
       </div>
       <div className="md:pl-14 pt-5 md:pt-0 md:border-t-0 border-t border-gray-300 ">
         <div className="md:flex-col flex items-end space-y-2">
-          <IconButton icon={<Twitter />} onClick={() => {}}></IconButton>
-          <IconButton icon={<Youtube />} onClick={() => {}}></IconButton>
-          <IconButton icon={<Facebook />} onClick={() => {}}></IconButton>
-          <IconButton icon={<Instagram />} onClick={() => {}}></IconButton>
+          <IconButton
+            icon={<Twitter />}
+            onClick={() => window.open("https://x.com/", "_blank")}
+          ></IconButton>
+          <IconButton
+            icon={<Youtube />}
+            onClick={() => window.open("https://www.youtube.com/", "_blank")}
+          ></IconButton>
+          <IconButton
+            icon={<Facebook />}
+            onClick={() => window.open("https://www.facebook.com/", "_blank")}
+          ></IconButton>
+          <IconButton
+            icon={<Instagram />}
+            onClick={() => window.open("https://www.instagram.com/", "_blank")}
+          ></IconButton>
         </div>
       </div>
     </div>

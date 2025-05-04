@@ -1,36 +1,59 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Button } from "./Button";
 import { PlusIcon } from "../Icons/PlusIcon";
+import { DropArrow } from "../Icons/DownArrow";
+import { useFindName } from "../../Hooks/useFindName";
+import { Initial } from "../Icons/Initial";
+import { Logout } from "../Icons/Logout";
 
 interface SideBarProps {
   toggle: () => void;
 }
 
 export function SideBar(props: SideBarProps) {
-  const [name, setName] = useState("");
-  useEffect(() => {
-    const data = localStorage.getItem("token");
-    axios
-      .get(`${import.meta.env.VITE_BACKEND_URL}/api/v1/userdetails`, {
-        headers: {
-          authorization: data,
-        },
-      })
-      .then((response) => {
-        setName(response.data.data[0].name);
-      });
-  }, []);
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => {
+    setOpen(!open);
+  };
 
-  const initial = name.charAt(0);
+  const name = useFindName();
 
   return (
-    <div className="w-1/5 bg-orange-50">
+    <div className="w-2/5 md:w-1/5 bg-orange-50">
       <div className="p-4 flex space-x-2 items-center">
-        <p className="bg-orange-400 text-white font-bold md:w-7 md:h-7 w-5 h-5 md:pt-1 text-center rounded-full md:text-sm text-xs">
-          {initial}
-        </p>
-        <p>{name}</p>
+        <div>
+          <Button
+            variant="secondary"
+            size="sm"
+            icon={<Initial />}
+            space="&nbsp;&nbsp;"
+            text={name}
+            spacePost="&nbsp;"
+            postIcon={<DropArrow />}
+            decoration="flex items-center relative"
+            onClick={handleOpen}
+          ></Button>
+          {open ? (
+            <div className="absolute bg-slate-50 shadow-lg md:w-2/12 w-3/12 rounded-xl p-2 flex justify-center">
+              <div className="w-full">
+                <Button
+                  variant="footer"
+                  size="sm"
+                  icon={<Logout />}
+                  space="&nbsp;"
+                  text="Log out"
+                  onClick={() => {
+                    localStorage.clear();
+                    window.location.href = "/";
+                  }}
+                  decoration="rounded-lg w-full flex justify-center hover:bg-orange-100"
+                ></Button>
+              </div>
+            </div>
+          ) : (
+            <div></div>
+          )}
+        </div>
       </div>
       <div className="m-4 hover:bg-orange-100 group">
         <Button
