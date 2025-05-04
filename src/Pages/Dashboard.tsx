@@ -24,19 +24,6 @@ export function Dashboard() {
           </p>
           <div className="w-4/5">
             <TodoDisplay></TodoDisplay>
-            <TodoDisplay></TodoDisplay>
-            <TodoDisplay></TodoDisplay>
-            <TodoDisplay></TodoDisplay>
-            <TodoDisplay></TodoDisplay>
-            <TodoDisplay></TodoDisplay>
-            <TodoDisplay></TodoDisplay>
-            <TodoDisplay></TodoDisplay>
-            <TodoDisplay></TodoDisplay>
-            <TodoDisplay></TodoDisplay>
-            <TodoDisplay></TodoDisplay>
-            <TodoDisplay></TodoDisplay>
-            <TodoDisplay></TodoDisplay>
-            <TodoDisplay></TodoDisplay>
           </div>
           <div>
             {!showCard && (
