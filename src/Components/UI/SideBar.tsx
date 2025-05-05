@@ -34,7 +34,7 @@ export function SideBar(props: SideBarProps) {
             onClick={handleOpen}
           ></Button>
           {open ? (
-            <div className="absolute bg-slate-50 shadow-lg md:w-2/12 w-3/12 rounded-xl p-2 flex justify-center">
+            <div className="absolute bg-slate-50 border border-gray-300 shadow-lg md:w-2/12 w-3/12 rounded-xl p-1 flex justify-center">
               <div className="w-full">
                 <Button
                   variant="footer"

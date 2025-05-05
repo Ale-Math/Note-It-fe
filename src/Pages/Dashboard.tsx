@@ -15,7 +15,7 @@ export function Dashboard() {
   };
 
   return (
-    <div className="lg:max-w-7xl md:max-w-5xl sm:max-w-3xl max-w-xl min-h-full h-screen bg-slate-50 font-mono">
+    <div className="lg:max-w-7xl md:max-w-5xl sm:max-w-3xl max-w-xl h-screen font-mono ">
       <div className="flex">
         <SideBar toggle={cardToggle}></SideBar>
         <div className="w-4/5 md:p-20 p-10 space-y-5">

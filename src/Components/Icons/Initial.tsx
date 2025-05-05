@@ -6,7 +6,7 @@ export function Initial() {
   const initial = name.charAt(0);
 
   return (
-    <p className="bg-orange-400 text-white font-bold md:w-7 md:h-7 w-5 h-5 md:pt-1 text-center rounded-full md:text-sm text-xs">
+    <p className="bg-orange-300 border-2 border-orange-500 text-white font-bold md:w-7 md:h-7 w-5 h-5 md:pt-0.5 text-center rounded-full md:text-sm text-xs">
       {initial}
     </p>
   );

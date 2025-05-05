@@ -40,21 +40,21 @@ export function TodoCard(props: TodoCardProps) {
   }
 
   return (
-    <div className="flex bg-slate-50">
+    <div className="flex ">
       <div className="md:w-5/6 w-full border rounded-xl h-32 focus-within:border-gray-600">
         <div className="flex-col flex p-4 space-y-1">
           <input
             // @ts-ignore
             ref={taskRef}
             autoFocus
-            className=" bg-slate-50 md:text-sm text-xs font-semibold outline-none "
+            className=" md:text-sm text-xs font-semibold outline-none "
             placeholder="Task name"
             type="text"
           ></input>
           <input
             // @ts-ignore
             ref={descriptionRef}
-            className=" bg-slate-50 md:text-sm text-xs outline-none"
+            className="  md:text-sm text-xs outline-none"
             placeholder="Description"
             type="text"
           ></input>
