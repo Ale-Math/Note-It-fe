@@ -3,7 +3,7 @@ import { ReactElement } from "react";
 interface ButtonProps {
   variant: "primary" | "secondary" | "tertiary" | "shadow" | "footer" | "auth";
   size: "sm" | "md" | "lg" | "xl" | "xl2";
-  text: String;
+  text?: String;
   onClick: () => void;
   width?: String;
   icon?: ReactElement;
