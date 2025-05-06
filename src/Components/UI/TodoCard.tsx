@@ -1,9 +1,11 @@
-import { useRef } from "react";
+import { Dispatch, SetStateAction, useRef } from "react";
 import { Button } from "./Button";
 import axios from "axios";
 
 interface TodoCardProps {
   toggle: () => void;
+  setLoadTodos: Dispatch<SetStateAction<boolean>>;
+  loadTodos: boolean;
 }
 
 export function TodoCard(props: TodoCardProps) {
@@ -34,6 +36,7 @@ export function TodoCard(props: TodoCardProps) {
       taskRef.current.value = "";
       // @ts-ignore
       descriptionRef.current.value = "";
+      props.setLoadTodos(!props.loadTodos);
     } catch (e) {
       console.log(e);
     }

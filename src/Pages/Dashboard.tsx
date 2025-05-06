@@ -3,12 +3,14 @@ import { PlusIcon } from "../Components/Icons/PlusIcon";
 import { Button } from "../Components/UI/Button";
 import { TodoCard } from "../Components/UI/TodoCard";
 import { SideBar } from "../Components/UI/SideBar";
-import { useTodo } from "../Hooks/useTodo";
 import { TodoDisplay } from "../Components/UI/TodoDisplay";
+import { useTodo } from "../Hooks/useTodo";
 
 export function Dashboard() {
   const [showCard, setShowCard] = useState(false);
-  const todo = useTodo();
+  const [loadTodos, setLoadTodos] = useState(false);
+
+  const todo = useTodo(loadTodos);
 
   const cardToggle = () => {
     setShowCard(!showCard);
@@ -23,7 +25,14 @@ export function Dashboard() {
             What do you want to do today?
           </p>
           <div className="w-4/5">
-            <TodoDisplay></TodoDisplay>
+            {todo.map(({ todo, description }) => (
+              <TodoDisplay
+                setLoadTodos={setLoadTodos}
+                loadTodos={loadTodos}
+                todo={todo}
+                description={description}
+              ></TodoDisplay>
+            ))}
           </div>
           <div>
             {!showCard && (
@@ -38,7 +47,13 @@ export function Dashboard() {
                 decoration="text-gray-600 group"
               ></Button>
             )}
-            {showCard && <TodoCard toggle={cardToggle}></TodoCard>}
+            {showCard && (
+              <TodoCard
+                setLoadTodos={setLoadTodos}
+                loadTodos={loadTodos}
+                toggle={cardToggle}
+              ></TodoCard>
+            )}
           </div>
         </div>
       </div>

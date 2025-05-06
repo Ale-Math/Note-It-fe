@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-export function useTodo() {
+export function useTodo(loadTodos: boolean) {
   const [todos, setTodos] = useState([]);
 
   useEffect(() => {
@@ -15,7 +15,7 @@ export function useTodo() {
       .then((response) => {
         setTodos(response.data.allTodos);
       });
-  }, []);
+  }, [loadTodos]);
 
   return todos;
 }
