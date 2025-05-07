@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useRef } from "react";
+import { Dispatch, SetStateAction, useRef, useState } from "react";
 import { Button } from "./Button";
 import axios from "axios";
 
@@ -11,6 +11,11 @@ interface TodoCardProps {
 export function TodoCard(props: TodoCardProps) {
   const taskRef = useRef("");
   const descriptionRef = useRef("");
+  const [inputValue, setInputValue] = useState("");
+
+  const handleInputChange = (event: any) => {
+    setInputValue(event.target.value);
+  };
 
   async function addTodo() {
     const data = localStorage.getItem("token");
@@ -53,6 +58,7 @@ export function TodoCard(props: TodoCardProps) {
             className=" md:text-sm text-xs font-semibold outline-none "
             placeholder="Task name"
             type="text"
+            onChange={handleInputChange}
           ></input>
           <input
             // @ts-ignore
@@ -71,11 +77,12 @@ export function TodoCard(props: TodoCardProps) {
             decoration="text-xs p-2"
           />
           <Button
+            disabled={!inputValue}
             variant="primary"
             text="Add task"
             size="xl2"
             onClick={addTodo}
-            decoration="text-xs"
+            decoration="text-xs disabled:cursor-not-allowed disabled:bg-orange-200"
           />
         </div>
       </div>
