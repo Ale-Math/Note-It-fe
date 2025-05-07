@@ -27,15 +27,15 @@ export function TodoDisplay(props: TodoProps) {
   }
 
   return (
-    <div className="border-b flex justify-between  py-2 group items-center">
+    <div className="border-b flex justify-between  py-3 group items-center">
       <div className="flex space-x-2 items-center">
         <input type="checkbox" onClick={() => {}} className="w-4 h-4"></input>
         <div>
-          <p className="text-gray-600 text-sm">{props.todo}</p>
+          <p className="text-gray-600 text-xs md:text-sm">{props.todo}</p>
           <p className="text-gray-600 text-xs">{props.description}</p>
         </div>
       </div>
-      <div className="hidden group-hover:block space-x-2">
+      <div className="hidden group-hover:flex space-x-2 ">
         <Button
           icon={<EditIcon />}
           variant="secondary"

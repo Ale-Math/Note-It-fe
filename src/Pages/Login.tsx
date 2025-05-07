@@ -32,8 +32,8 @@ export function Login() {
         <a href="/">
           <Logo />
         </a>
-        <div className="w-full flex items-center">
-          <div className="w-1/2 space-y-10">
+        <div className="w-full flex items-start md:items-center">
+          <div className="w-4/5 md:w-1/2 space-y-5 md:space-y-5">
             <p className="lg:text-3xl md:text-xl text-md font-extrabold">
               Log in
             </p>
@@ -60,7 +60,7 @@ export function Login() {
                 width="w-full"
               ></Button>
             </div>
-            <div className="space-y-6 flex-col flex w-5/6">
+            <div className="space-y-6 flex-col flex w-full md:w-5/6 pb-10 md:pb-0">
               <p className="text-xs">
                 <a className="underline text-orange-500 cursor-pointer">
                   Forgot your password?
@@ -80,7 +80,7 @@ export function Login() {
               <p className="text-xs flex justify-center">
                 Don't have an account?&nbsp;
                 <a
-                  href="/signup"
+                  href="/loader"
                   className="underline text-orange-500 cursor-pointer"
                 >
                   Sign up

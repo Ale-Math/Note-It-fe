@@ -24,7 +24,7 @@ export function Dashboard() {
           <p className="md:text-2xl text-xl font-bold">
             What do you want to do today?
           </p>
-          <div className="w-4/5">
+          <div className="w-full md:w-4/5">
             {todo.map(({ todo, description }) => (
               <TodoDisplay
                 setLoadTodos={setLoadTodos}

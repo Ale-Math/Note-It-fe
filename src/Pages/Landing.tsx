@@ -49,28 +49,28 @@ export function Landing() {
               ></Button>
             </div>
           </div>
-          <div className="md:w-2/3 w-full md:pl-2 flex justify-center">
-            <img src="/appbg.avif" className=" bg-orange-50 rounded-2xl"></img>
+          <div className="md:w-2/3 w-full md:p-10 p-5 bg-red-50 rounded-2xl bg-gradient-to-br from-yellow-100 via-orange-200 to-red-300">
+            <img src="/Dashboard.png" className="rounded-md"></img>
           </div>
         </div>
       </div>
-      <div className="flex items-center justify-center bg-[url(/bg-image.avif)] py-20 mt-20 bg-cover md:bg-cover">
-        <div className="md:space-y-0 flex-col flex  md:flex-row justify-around md:text-xl italic font-serif w-5/6 text-center items-center">
+      <div className="flex items-center justify-center bg-[url(/bg-image.avif)] py-20 mt-20 bg-cover md:bg-cover ">
+        <div className="md:space-y-0 flex-col flex  md:flex-row justify-around md:text-xl italic text-lg font-serif w-5/6 text-center items-center space-y-10">
           <div className="md:pb-0 pb-3 flex-col flex items-center space-y-5 md:space-y-10 md:w-1/3">
             <h1>
               “Simple, straightforward,<br></br> and super powerful”
             </h1>
-            <img src="/verge.png" className="md:w-28 md:h-5 w-18 h-3"></img>
+            <img src="/verge.png" className=" w-28 h-5"></img>
           </div>
-          <div className=" md:py-0 py-3 md:w-1/3 flex-col flex items-center space-y-5 md:space-y-8 border-gray-300 border-y-2 md:border-y-0 md:border-x-2 border-x-0">
+          <div className=" md:py-0 py-10 px-20 md:px-0 md:w-1/3 flex-col flex items-center space-y-5 md:space-y-8 border-gray-300 border-y-2 md:border-y-0 md:border-x-2 border-x-0">
             <h1>
               “The best to-do list app <br></br> on the market”
             </h1>
-            <img src="/pcmag.png" className="md:w-8 md:h-11 w-6 h-8"></img>
+            <img src="/pcmag.png" className=" w-8 h-11"></img>
           </div>
           <div className=" md:w-1/3 flex-col flex items-center md:space-y-12 space-y-5">
             <h1>“Nothing short of stellar”</h1>
-            <img src="/techradar.png" className="md:w-32 md:h-5 w-20 h-4"></img>
+            <img src="/techradar.png" className=" w-32 h-5"></img>
           </div>
         </div>
       </div>
@@ -104,9 +104,15 @@ export function Landing() {
             </div>
           </div>
           <div className=" md:w-1/2 w-full md:space-y-20 pt-10">
-            <img src="/appbg.avif" className=" bg-orange-50 rounded-2xl"></img>
+            <img
+              src="/Dashboard.png"
+              className=" bg-orange-50 rounded-2xl"
+            ></img>
             <br></br>
-            <img src="/appbg.avif" className=" bg-orange-50 rounded-2xl"></img>
+            <img
+              src="/Dashboard.png"
+              className=" bg-orange-50 rounded-2xl"
+            ></img>
           </div>
         </div>
       </div>
