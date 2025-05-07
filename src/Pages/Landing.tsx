@@ -20,8 +20,8 @@ export function Landing() {
     <div className="lg:max-w-7xl md:max-w-5xl sm:max-w-3xl max-w-xl mx-auto bg-slate-50 font-mono relative">
       <Header></Header>
       <div className="flex justify-center">
-        <div className="flex flex-col md:flex-row justify-between p-5 w-11/12 items-center md:space-x-5 space-y-5">
-          <div className="space-y-5 md:w-1/3 w-full">
+        <div className="flex flex-col md:flex-row justify-between p-5 w-11/12 items-center gap-10">
+          <div className="space-y-5 md:w-2/5 w-full">
             <p className="md:text-6xl text-4xl font-bold pb-3 ">
               Organize your work and life, finally.
             </p>
@@ -49,7 +49,7 @@ export function Landing() {
               ></Button>
             </div>
           </div>
-          <div className="md:w-2/3 w-full md:p-10 p-5 bg-red-50 rounded-2xl bg-gradient-to-br from-yellow-100 via-orange-200 to-red-300">
+          <div className="md:w-3/5 w-full md:p-10 p-5 bg-red-50 rounded-2xl bg-gradient-to-br from-yellow-100 via-orange-200 to-red-300">
             <img src="/Dashboard.png" className="rounded-md"></img>
           </div>
         </div>
@@ -132,11 +132,10 @@ export function Landing() {
           </div>
           <div className="flex-col flex md:flex-row justify-center md:pt-20 space-y-3 md:space-y-0">
             <Button
-              autoFocus="autofocus"
               variant="tertiary"
               size="xl"
               text="Work"
-              decoration="lg:text-lg md:text-md text-sm font-semibold focus:outline-none"
+              decoration="lg:text-lg md:text-md text-sm font-semibold"
               onClick={() => {
                 setCards(<WorkCard />);
               }}
