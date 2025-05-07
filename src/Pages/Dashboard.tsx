@@ -25,8 +25,9 @@ export function Dashboard() {
             What do you want to do today?
           </p>
           <div className="w-full md:w-4/5">
-            {todo.map(({ todo, description }) => (
+            {todo.map(({ todo, description, _id }) => (
               <TodoDisplay
+                key={_id}
                 setLoadTodos={setLoadTodos}
                 loadTodos={loadTodos}
                 todo={todo}

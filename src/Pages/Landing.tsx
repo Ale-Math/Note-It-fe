@@ -75,9 +75,9 @@ export function Landing() {
         </div>
       </div>
       <div className="flex justify-center py-36">
-        <div className="w-11/12 flex md:flex-row flex-col justify-center">
-          <div className=" flex-col items-center md:w-1/2 w-full space-y-48">
-            <div className="space-y-7">
+        <div className="w-11/12 flex flex-col space-y-20 ">
+          <div className="flex-col flex md:flex-row space-y-10 md:space-y-0">
+            <div className="space-y-7 md:w-1/2 w-full">
               <p className="lg:text-lg md:text-md text-sm font-bold text-orange-700">
                 Clear your mind
               </p>
@@ -90,7 +90,15 @@ export function Landing() {
                 easy-flowing, natural language.
               </p>
             </div>
-            <div className="space-y-7">
+            <div className="md:w-1/2 w-full">
+              <img
+                src="/Dashboard.png"
+                className=" bg-orange-50 rounded-2xl"
+              ></img>
+            </div>
+          </div>
+          <div className=" flex-col flex md:flex-row space-y-10 md:space-y-0">
+            <div className="space-y-7 md:w-1/2 w-full">
               <p className="lg:text-lg md:text-md text-sm font-bold text-cyan-800 ">
                 Focus on what's important
               </p>
@@ -102,17 +110,12 @@ export function Landing() {
                 using custom filters. See only what you need, when you need it.
               </p>
             </div>
-          </div>
-          <div className=" md:w-1/2 w-full md:space-y-20 pt-10">
-            <img
-              src="/Dashboard.png"
-              className=" bg-orange-50 rounded-2xl"
-            ></img>
-            <br></br>
-            <img
-              src="/Dashboard.png"
-              className=" bg-orange-50 rounded-2xl"
-            ></img>
+            <div className="md:w-1/2 w-full">
+              <img
+                src="/Dashboard.png"
+                className=" bg-orange-50 rounded-2xl"
+              ></img>
+            </div>
           </div>
         </div>
       </div>
@@ -129,10 +132,11 @@ export function Landing() {
           </div>
           <div className="flex-col flex md:flex-row justify-center md:pt-20 space-y-3 md:space-y-0">
             <Button
+              autoFocus="autofocus"
               variant="tertiary"
               size="xl"
               text="Work"
-              decoration="lg:text-lg md:text-md text-sm font-semibold"
+              decoration="lg:text-lg md:text-md text-sm font-semibold focus:outline-none"
               onClick={() => {
                 setCards(<WorkCard />);
               }}

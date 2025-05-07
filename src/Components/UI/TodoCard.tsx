@@ -13,7 +13,7 @@ export function TodoCard(props: TodoCardProps) {
   const descriptionRef = useRef("");
   const [inputValue, setInputValue] = useState("");
 
-  const handleInputChange = (event: any) => {
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
   };
 
