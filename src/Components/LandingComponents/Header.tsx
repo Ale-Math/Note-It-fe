@@ -27,6 +27,7 @@ export function Header() {
           onClick={() => {
             navigate("/loginloader");
           }}
+          decoration="outline-none"
         ></Button>
         <Button
           variant="primary"
