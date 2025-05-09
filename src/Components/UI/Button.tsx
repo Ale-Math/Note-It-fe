@@ -23,7 +23,7 @@ const variantStyles = {
   tertiary:
     "bg-orange-100 text-black rounded-lg hover:bg-orange-200 font-mono focus:bg-orange-300",
   shadow:
-    "lg:text-lg md:text-md text-sm lg:absolute bg-gradient-to-r from-yellow-300 via-orange-500 to-red-600 text-white rounded-2xl font-bold font-mono border-b-8 border-orange-300 duration-300 ease-in-out  hover:border-b-4 hover:bg-gradient-to-br hover:translate-y-1 active:border-b-0 active:translate-y-2",
+    "lg:text-lg md:text-md text-sm absolute bg-gradient-to-r from-yellow-500 via-orange-500 to-red-500 text-white rounded-2xl font-bold font-mono border-b-8 border-orange-300 duration-300 ease-in-out  hover:border-b-4 hover:bg-gradient-to-br hover:translate-y-1 active:border-b-0 active:translate-y-2",
   footer:
     " text-gray-600 font-mono md:text-sm text-xs flex items-center hover:text-orange-600 ",
   auth: "text-black rounded-xl border border-solid flex lg:py-3 items-center px-4 justify-center font-extrabold lg:text-lg md:text-md text-sm font-mono hover:bg-orange-50",

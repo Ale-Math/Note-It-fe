@@ -49,11 +49,8 @@ export function Landing() {
               ></Button>
             </div>
           </div>
-          <div className="md:w-3/5 w-full md:p-10 p-5 bg-red-50 shadow rounded-2xl bg-gradient-to-br from-yellow-100 via-orange-200 to-red-300">
-            <img
-              src="/Dashboard.png"
-              className="rounded-md outline-orange-600 outline-double shadow"
-            ></img>
+          <div className="outline-orange-600 outline-double md:w-3/5 w-full md:p-10 p-5 bg-red-50 shadow rounded-2xl bg-gradient-to-br from-yellow-100 via-orange-200 to-red-300">
+            <img src="/Dashboard.png" className="rounded-md  shadow"></img>
           </div>
         </div>
       </div>
@@ -81,7 +78,7 @@ export function Landing() {
         <div className="w-11/12 flex flex-col space-y-20 ">
           <div className="flex-col flex md:flex-row space-y-10 md:space-y-0">
             <div className="space-y-7 md:w-1/2 w-full">
-              <p className="lg:text-lg md:text-md text-sm font-bold text-orange-700">
+              <p className="lg:text-lg md:text-md text-sm font-bold text-green-800">
                 Clear your mind
               </p>
               <p className="lg:text-5xl md:text-3xl text-xl font-bold">
@@ -93,11 +90,15 @@ export function Landing() {
                 easy-flowing, natural language.
               </p>
             </div>
-            <div className="md:w-1/2 w-full">
-              <img
-                src="/Dashboard.png"
-                className=" bg-orange-50 rounded-2xl"
-              ></img>
+            <div className="md:w-1/2 w-full flex">
+              <div className=" w-full md:p-10 p-5 bg-red-50 shadow rounded-2xl bg-gradient-to-br from-green-800 via-red-300 to-red-200">
+                <video
+                  src="./src/assets/TaskVideo.mp4"
+                  autoPlay
+                  loop
+                  className="rounded-md"
+                />
+              </div>
             </div>
           </div>
           <div className=" flex-col flex md:flex-row space-y-10 md:space-y-0">
@@ -113,11 +114,15 @@ export function Landing() {
                 using custom filters. See only what you need, when you need it.
               </p>
             </div>
-            <div className="md:w-1/2 w-full">
-              <img
-                src="/Dashboard.png"
-                className=" bg-orange-50 rounded-2xl"
-              ></img>
+            <div className="md:w-1/2 w-full flex justify-center">
+              <div className="w-full md:p-10 p-5 shadow rounded-2xl bg-gradient-to-br from-cyan-800 via-red-300 to-red-200">
+                <video
+                  src="./src/assets/TaskVideo.mp4"
+                  autoPlay
+                  loop
+                  className="rounded-md"
+                />
+              </div>
             </div>
           </div>
         </div>
