@@ -25,12 +25,13 @@ export function Dashboard() {
             What do you want to do today?
           </p>
           <div className="w-full md:w-4/5">
-            {todo.map(({ todo, description, _id }) => (
+            {todo.map(({ todo, description, done, _id }) => (
               <TodoDisplay
                 key={_id}
                 setLoadTodos={setLoadTodos}
                 loadTodos={loadTodos}
                 todo={todo}
+                done={done}
                 description={description}
               ></TodoDisplay>
             ))}

@@ -9,6 +9,7 @@ interface TodoProps {
   description: string;
   setLoadTodos: Dispatch<SetStateAction<boolean>>;
   loadTodos: boolean;
+  done: boolean;
 }
 
 export function TodoDisplay(props: TodoProps) {
@@ -92,8 +93,8 @@ export function TodoDisplay(props: TodoProps) {
           </div>
         )}
       </div>
-      <div className="hidden group-hover:flex space-x-2 ">
-        {!editArea ? (
+      {!editArea ? (
+        <div className="hidden group-hover:flex space-x-2 ">
           <Button
             icon={<EditIcon />}
             variant="secondary"
@@ -101,16 +102,7 @@ export function TodoDisplay(props: TodoProps) {
             onClick={toggleEdit}
             decoration="text-gray-600"
           ></Button>
-        ) : (
-          <Button
-            text="Save"
-            variant="tertiary"
-            size="xl2"
-            onClick={() => editTodo(props.todo)}
-            decoration="text-xs p-2"
-          ></Button>
-        )}
-        {!editArea ? (
+
           <Button
             icon={<DeleteIcon />}
             variant="secondary"
@@ -118,7 +110,17 @@ export function TodoDisplay(props: TodoProps) {
             onClick={() => deleteTodo(props.todo)}
             decoration="text-gray-600"
           ></Button>
-        ) : (
+        </div>
+      ) : (
+        <div className="space-x-2 ">
+          <Button
+            text="Save"
+            variant="tertiary"
+            size="xl2"
+            onClick={() => editTodo(props.todo)}
+            decoration="text-xs p-2"
+          ></Button>
+
           <Button
             text="Cancel"
             variant="tertiary"
@@ -126,8 +128,8 @@ export function TodoDisplay(props: TodoProps) {
             onClick={toggleEdit}
             decoration="text-xs p-2"
           ></Button>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 }
