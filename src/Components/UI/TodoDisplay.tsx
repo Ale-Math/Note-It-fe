@@ -16,10 +16,15 @@ export function TodoDisplay(props: TodoProps) {
   const [editArea, setEditArea] = useState(false);
   const newTodoRef = useRef("");
   const newDescriptionRef = useRef("");
+  const [inputValue, setInputValue] = useState("");
 
   function toggleEdit() {
     setEditArea(!editArea);
   }
+
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setInputValue(event.target.value);
+  };
 
   async function deleteTodo(todo: string) {
     const getData = localStorage.getItem("token") as "";
@@ -81,6 +86,7 @@ export function TodoDisplay(props: TodoProps) {
               type="text"
               defaultValue={props.todo}
               className="text-gray-600 text-xs md:text-sm outline-none w-full"
+              onChange={handleInputChange}
             ></input>
             <input
               // @ts-ignore
@@ -89,6 +95,7 @@ export function TodoDisplay(props: TodoProps) {
               type="text"
               defaultValue={props.description}
               className="text-gray-600 text-xs outline-none"
+              onChange={handleInputChange}
             ></input>
           </div>
         )}
@@ -114,11 +121,12 @@ export function TodoDisplay(props: TodoProps) {
       ) : (
         <div className="space-x-2 ">
           <Button
+            disabled={!inputValue}
             text="Save"
             variant="tertiary"
             size="xl2"
             onClick={() => editTodo(props.todo)}
-            decoration="text-xs p-2"
+            decoration="text-xs p-2 disabled:cursor-not-allowed disabled:bg-orange-50 disabled:text-gray-400 disabled:hover:bg-orange-50"
           ></Button>
 
           <Button

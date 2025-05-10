@@ -93,9 +93,10 @@ export function Landing() {
             <div className="md:w-1/2 w-full flex">
               <div className=" w-full md:p-10 p-5 bg-red-50 shadow rounded-2xl bg-gradient-to-br from-green-800 via-red-300 to-red-200">
                 <video
-                  src="./src/assets/TaskVideo.mp4"
+                  src="./src/assets/AddTaskVideo.mp4"
                   autoPlay
                   loop
+                  muted
                   className="rounded-md"
                 />
               </div>
@@ -117,9 +118,10 @@ export function Landing() {
             <div className="md:w-1/2 w-full flex justify-center">
               <div className="w-full md:p-10 p-5 shadow rounded-2xl bg-gradient-to-br from-cyan-800 via-red-300 to-red-200">
                 <video
-                  src="./src/assets/TaskVideo.mp4"
+                  src="./src/assets/AddTaskVideo.mp4"
                   autoPlay
                   loop
+                  muted
                   className="rounded-md"
                 />
               </div>
