@@ -65,7 +65,7 @@ export function Pricing() {
           description="Manage your teamwork and business, too"
           price={500}
           image="/Business.png"
-          priceInfo="per user/month ₹6234 billed yearly"
+          priceInfo="per user/month ₹6000 billed yearly"
         />
       </div>
       <div className="bg-gradient-to-b from-slate-50 via-orange-50 to-orange-100 pt-48">
