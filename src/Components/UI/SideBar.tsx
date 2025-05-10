@@ -12,7 +12,7 @@ interface SideBarProps {
 
 export function SideBar(props: SideBarProps) {
   const [open, setOpen] = useState(false);
-  const handleOpen = () => {
+  const logoutCard = () => {
     setOpen(!open);
   };
 
@@ -31,7 +31,7 @@ export function SideBar(props: SideBarProps) {
             spacePost="&nbsp;"
             postIcon={<DropArrow />}
             decoration="flex items-center relative"
-            onClick={handleOpen}
+            onClick={logoutCard}
           ></Button>
           {open ? (
             <div className="absolute bg-slate-50 border border-orange-300 shadow md:w-2/12 w-3/12 rounded-xl p-1 flex justify-center">
