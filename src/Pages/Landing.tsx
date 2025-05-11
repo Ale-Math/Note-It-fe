@@ -5,7 +5,7 @@ import { WorkCard } from "../Components/LandingComponents/WorkCard";
 import { PersonalCard } from "../Components/LandingComponents/PersonalCard";
 import { EducationCard } from "../Components/LandingComponents/EducationCard";
 import { Button } from "../Components/UI/Button";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ManagementCard } from "../Components/LandingComponents/ManagementCard";
 import { MarketingCard } from "../Components/LandingComponents/MarketingCard";
 import { CustomerSupportCard } from "../Components/LandingComponents/CustomerSupportCard";
@@ -18,7 +18,7 @@ export function Landing() {
   const navigate = useNavigate();
   const videoRef = useRef<HTMLVideoElement>(null);
   if (videoRef.current) {
-    videoRef.current.playbackRate = 2.0;
+    videoRef.current.playbackRate = 2.5;
   }
 
   return (
@@ -54,14 +54,14 @@ export function Landing() {
               ></Button>
             </div>
           </div>
-          <div className="outline-orange-600 outline-double md:w-3/5 w-full md:p-10 p-5 bg-red-50 shadow rounded-2xl bg-gradient-to-br from-yellow-100 via-orange-200 to-red-300">
+          <div className="outline-orange-600 outline-double md:w-3/5 w-full p-5 bg-red-50 shadow rounded-2xl bg-gradient-to-br from-yellow-100 via-orange-200 to-red-300">
             <img src="/Dashboard.png" className="rounded-md  shadow"></img>
           </div>
         </div>
       </div>
       <div className="flex items-center justify-center bg-[url(/bg-image.avif)] py-20 mt-20 bg-cover md:bg-cover ">
-        <div className="md:space-y-0 flex-col flex  md:flex-row justify-around md:text-xl italic text-lg font-serif w-5/6 text-center items-center space-y-10">
-          <div className="md:pb-0 pb-3 flex-col flex items-center space-y-5 md:space-y-10 md:w-1/3">
+        <div className="italic md:space-y-0 flex-col flex  md:flex-row justify-around md:text-xl text-lg font-serif w-5/6 text-center items-center space-y-10">
+          <div className="md:pb-0 pb-3 flex-col flex items-center space-y-5 md:space-y-10 md:w-1/3 ">
             <h1>
               “Simple, straightforward,<br></br> and super powerful”
             </h1>
@@ -80,9 +80,9 @@ export function Landing() {
         </div>
       </div>
       <div className="flex justify-center py-36">
-        <div className="w-11/12 flex flex-col space-y-20 ">
-          <div className="flex-col flex md:flex-row space-y-10 md:space-y-0">
-            <div className="space-y-7 md:w-1/2 w-full">
+        <div className="w-11/12  flex flex-col md:flex-row space-y-20 md:space-y-0">
+          <div className="md:w-1/2 w-full space-y-28 ">
+            <div className="space-y-7">
               <p className="lg:text-lg md:text-md text-sm font-bold text-green-800">
                 Clear your mind
               </p>
@@ -95,21 +95,7 @@ export function Landing() {
                 easy-flowing, natural language.
               </p>
             </div>
-            <div className="md:w-1/2 w-full flex">
-              <div className=" w-full md:p-10 p-5 bg-red-50 shadow rounded-2xl bg-gradient-to-br from-green-800 via-red-300 to-red-200">
-                <video
-                  ref={videoRef}
-                  src="./src/assets/AddTaskVideo.mp4"
-                  autoPlay
-                  loop
-                  muted
-                  className="rounded-md"
-                />
-              </div>
-            </div>
-          </div>
-          <div className=" flex-col flex md:flex-row space-y-10 md:space-y-0">
-            <div className="space-y-7 md:w-1/2 w-full">
+            <div className="space-y-7">
               <p className="lg:text-lg md:text-md text-sm font-bold text-cyan-800 ">
                 Focus on what's important
               </p>
@@ -121,8 +107,23 @@ export function Landing() {
                 using custom filters. See only what you need, when you need it.
               </p>
             </div>
-            <div className="md:w-1/2 w-full flex justify-center">
-              <div className="w-full md:p-10 p-5 shadow rounded-2xl bg-gradient-to-br from-cyan-800 via-red-300 to-red-200">
+          </div>
+          <div className=" md:w-1/2 w-full space-y-28 ">
+            <div className="sticky top-48">
+              <div className="w-full md:p-10 p-5 bg-red-50 shadow rounded-2xl bg-gradient-to-br from-green-800 via-red-300 to-red-200">
+                <video
+                  ref={videoRef}
+                  src="./src/assets/AddTaskVideo.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  className="rounded-md"
+                />
+              </div>
+            </div>
+
+            <div className="sticky top-48">
+              <div className="w-full md:p-10 p-5 bg-red-50 shadow rounded-2xl bg-gradient-to-br from-cyan-800 via-red-300 to-red-200">
                 <video
                   src="./src/assets/AddTaskVideo.mp4"
                   autoPlay
