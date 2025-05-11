@@ -11,6 +11,7 @@ import { MarketingCard } from "../Components/LandingComponents/MarketingCard";
 import { CustomerSupportCard } from "../Components/LandingComponents/CustomerSupportCard";
 import { Footer } from "../Components/LandingComponents/Footer";
 import { useNavigate } from "react-router-dom";
+import { Carousel } from "../Components/UI/Carousel";
 
 export function Landing() {
   const [cards, setCards] = useState(<WorkCard />);
@@ -200,20 +201,22 @@ export function Landing() {
         </div>
       </div>
       <div className="flex justify-center">
-        <div className="w-11/12">
+        <div className="w-11/12 flex-col md:flex-row flex items-center">
           <div className="md:w-1/2 w-4/5 space-y-8">
-            <p className="text-orange-600 font-bold lg:text-xl md:text-lg text-md">
+            <p className="text-orange-600 font-bold lg:text-xl md:text-lg text-md text-center md:text-start ">
               In it for the long haul
             </p>
-            <p className="font-extrabold lg:text-4xl md:text-2xl text-xl">
+            <p className="font-extrabold lg:text-4xl md:text-2xl text-xl text-center md:text-start">
               A task manager you can trust for life
             </p>
-            <p className="text-gray-600 lg:text-2xl md:text-xl text-lg">
+            <p className="text-gray-600 lg:text-2xl md:text-xl text-lg text-center md:text-start">
               We've been building Note it! for 18 years and 68 days. Rest
               assuorange that we'll never sell out to the highest bidder.
             </p>
           </div>
-          <div className="w-1/2"></div>
+          <div className="md:w-1/2 w-4/5 pt-10 md:pt-0">
+            <Carousel />
+          </div>
         </div>
       </div>
       <div className=" bg-gradient-to-b from-slate-50 via-orange-50 to-orange-100 pt-48">
