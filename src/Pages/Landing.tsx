@@ -5,7 +5,7 @@ import { WorkCard } from "../Components/LandingComponents/WorkCard";
 import { PersonalCard } from "../Components/LandingComponents/PersonalCard";
 import { EducationCard } from "../Components/LandingComponents/EducationCard";
 import { Button } from "../Components/UI/Button";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { ManagementCard } from "../Components/LandingComponents/ManagementCard";
 import { MarketingCard } from "../Components/LandingComponents/MarketingCard";
 import { CustomerSupportCard } from "../Components/LandingComponents/CustomerSupportCard";
@@ -16,6 +16,10 @@ import { Carousel } from "../Components/UI/Carousel";
 export function Landing() {
   const [cards, setCards] = useState(<WorkCard />);
   const navigate = useNavigate();
+  const videoRef = useRef<HTMLVideoElement>(null);
+  if (videoRef.current) {
+    videoRef.current.playbackRate = 2.0;
+  }
 
   return (
     <div className="lg:max-w-7xl md:max-w-5xl sm:max-w-3xl max-w-xl mx-auto bg-slate-50 font-mono relative">
@@ -94,6 +98,7 @@ export function Landing() {
             <div className="md:w-1/2 w-full flex">
               <div className=" w-full md:p-10 p-5 bg-red-50 shadow rounded-2xl bg-gradient-to-br from-green-800 via-red-300 to-red-200">
                 <video
+                  ref={videoRef}
                   src="./src/assets/AddTaskVideo.mp4"
                   autoPlay
                   loop
