@@ -16,11 +16,28 @@ import { Carousel } from "../Components/UI/Carousel";
 export function Landing() {
   const [cards, setCards] = useState(<WorkCard />);
   const navigate = useNavigate();
+  const [scrolled, setScrolled] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   if (videoRef.current) {
     videoRef.current.playbackRate = 2.5;
   }
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      if (scrollY > 1200) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
     <div className="lg:max-w-7xl md:max-w-5xl sm:max-w-3xl max-w-xl mx-auto bg-slate-50 font-mono relative">
       <Header></Header>
@@ -108,31 +125,34 @@ export function Landing() {
               </p>
             </div>
           </div>
-          <div className=" md:w-1/2 w-full space-y-28 ">
-            <div className="sticky top-48">
-              <div className="w-full md:p-10 p-5 bg-red-50 shadow rounded-2xl bg-gradient-to-br from-green-800 via-red-300 to-red-200">
-                <video
-                  ref={videoRef}
-                  src="./src/assets/AddTaskVideo.mp4"
-                  autoPlay
-                  loop
-                  muted
-                  className="rounded-md"
-                />
-              </div>
-            </div>
 
-            <div className="sticky top-48">
-              <div className="w-full md:p-10 p-5 bg-red-50 shadow rounded-2xl bg-gradient-to-br from-cyan-800 via-red-300 to-red-200">
-                <video
-                  src="./src/assets/AddTaskVideo.mp4"
-                  autoPlay
-                  loop
-                  muted
-                  className="rounded-md"
-                />
+          <div className=" md:w-1/2 w-full space-y-28 ">
+            {!scrolled ? (
+              <div className="sticky top-48">
+                <div className="w-full md:p-10 p-5 bg-red-50 shadow rounded-2xl bg-gradient-to-br from-green-800 via-red-300 to-red-200">
+                  <video
+                    ref={videoRef}
+                    src="./src/assets/AddTaskVideo.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    className="rounded-md"
+                  />
+                </div>
               </div>
-            </div>
+            ) : (
+              <div className="sticky top-48">
+                <div className="w-full md:p-10 p-5 bg-red-50 shadow rounded-2xl bg-gradient-to-br from-cyan-800 via-red-300 to-red-200">
+                  <video
+                    src="./src/assets/AddTaskVideo.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    className="rounded-md"
+                  />
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>

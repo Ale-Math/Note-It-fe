@@ -103,7 +103,7 @@ export function Pricing() {
         </div>
         <div className="relative flex-col flex items-center pb-48 space-y-5">
           <p className="md:text-4xl text-2xl font-bold md:w-3/5 w-4/5 text-center">
-            Join 30 million+ people who rely on Todoist to manage work and life
+            Join 30 million+ people who rely on noteIt! to manage work and life
           </p>
           <p className="md:text-xl w-4/5  text-md text-gray-600 text-center">
             Plus tens of thousands of teams from companies of all sizes.

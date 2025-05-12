@@ -4,12 +4,18 @@ import { Button } from "../Components/UI/Button";
 import { InfoCard } from "../Components/UI/InfoCard";
 import { useRef } from "react";
 import axios from "axios";
+import { GoogleIcon } from "../Components/Icons/Google";
+import { useGoogleLogin } from "@react-oauth/google";
 
 export function SignUp() {
   const navigate = useNavigate();
   const nameRef = useRef<HTMLInputElement>(null);
   const emailRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
+
+  const login = useGoogleLogin({
+    onSuccess: (tokenResponse) => console.log(tokenResponse),
+  });
 
   async function signup() {
     function Capitalize(str: string | undefined) {
@@ -50,12 +56,23 @@ export function SignUp() {
         <a href="/">
           <Logo />
         </a>
-        <div className="w-full flex md:items-center items-start">
+        <div className="w-full flex md:items-center items-start pb-10">
           <div className="md:w-1/2 w-5/6 space-y-6">
             <p className="lg:text-3xl md:text-xl text-md font-extrabold">
               Sign up
             </p>
             <div className="w-5/6 space-y-5 flex flex-col items-center">
+              <div className="w-full">
+                <Button
+                  variant="secondary"
+                  text="Continue with Google"
+                  size="md"
+                  onClick={() => login()}
+                  space="&nbsp;&nbsp;"
+                  icon={<GoogleIcon />}
+                  decoration="flex items-center font-bold w-full justify-center border"
+                ></Button>
+              </div>
               <div className="border-t border-solid w-full"></div>
               <InfoCard
                 ref={nameRef}
@@ -84,7 +101,7 @@ export function SignUp() {
                 width="w-full"
               ></Button>
             </div>
-            <div className="space-y-6 flex-col flex w-full md:w-5/6 pb-10 md:pb-0">
+            <div className="space-y-6 flex-col flex w-full md:w-5/6">
               <p className="text-xs text-center md:text-left">
                 By continuing with Google, or Email, you agree to NoteIt's{" "}
                 <a className="underline text-orange-500 cursor-pointer">
@@ -107,10 +124,7 @@ export function SignUp() {
               </p>
             </div>
           </div>
-          <div
-            className="w-1/2 backdrop-blur-xs
-"
-          >
+          <div className="w-1/2 backdrop-blur-xs">
             <img src="/Signup.jpg" alt="picture" />
           </div>
         </div>

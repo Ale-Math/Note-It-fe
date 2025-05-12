@@ -4,11 +4,17 @@ import { Button } from "../Components/UI/Button";
 import { InfoCard } from "../Components/UI/InfoCard";
 import { useRef } from "react";
 import axios from "axios";
+import { useGoogleLogin } from "@react-oauth/google";
+import { GoogleIcon } from "../Components/Icons/Google";
 
 export function Login() {
   const emailRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
+
+  const login = useGoogleLogin({
+    onSuccess: (tokenResponse) => console.log(tokenResponse),
+  });
 
   async function signin() {
     const email = emailRef.current?.value;
@@ -32,12 +38,23 @@ export function Login() {
         <a href="/">
           <Logo />
         </a>
-        <div className="w-full flex items-start md:items-center">
+        <div className="w-full flex items-start md:items-center pb-10">
           <div className="w-4/5 md:w-1/2 space-y-5 md:space-y-5">
             <p className="lg:text-3xl md:text-xl text-md font-extrabold">
               Log in
             </p>
             <div className="w-5/6 space-y-5 flex flex-col items-center">
+              <div className="w-full">
+                <Button
+                  variant="secondary"
+                  text="Continue with Google"
+                  size="md"
+                  onClick={() => login()}
+                  space="&nbsp;&nbsp;"
+                  icon={<GoogleIcon />}
+                  decoration="flex items-center font-bold w-full justify-center border rounded-xl"
+                ></Button>
+              </div>
               <div className="border-t border-solid w-full"></div>
               <InfoCard
                 ref={emailRef}
@@ -88,10 +105,7 @@ export function Login() {
               </p>
             </div>
           </div>
-          <div
-            className="w-1/2
-"
-          >
+          <div className="w-1/2">
             <img src="/Signup.jpg" alt="picture" />
           </div>
         </div>
