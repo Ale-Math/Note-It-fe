@@ -12,8 +12,24 @@ export function Login() {
   const passwordRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
 
-  const login = useGoogleLogin({
-    onSuccess: (tokenResponse) => console.log(tokenResponse),
+  const auth = useGoogleLogin({
+    onSuccess: async (tokenResponse) => {
+      const response = await axios.get(
+        `https://www.googleapis.com/oauth2/v3/userinfo?access_token=${tokenResponse.access_token}`
+      );
+      localStorage.setItem("picture", response.data.picture);
+
+      const signinResponse = await axios.post(
+        `${import.meta.env.VITE_BACKEND_URL}/api/v1/signin`,
+        {
+          email: response.data.email,
+          password: response.data.email,
+        }
+      );
+      const jwt = signinResponse.data.token;
+      localStorage.setItem("token", jwt);
+      navigate("/dashboardLoader");
+    },
   });
 
   async function signin() {
@@ -29,7 +45,7 @@ export function Login() {
     );
     const jwt = response.data.token;
     localStorage.setItem("token", jwt);
-    navigate("/dashboard");
+    navigate("/dashboardLoader");
   }
 
   return (
@@ -49,7 +65,7 @@ export function Login() {
                   variant="secondary"
                   text="Continue with Google"
                   size="md"
-                  onClick={() => login()}
+                  onClick={() => auth()}
                   space="&nbsp;&nbsp;"
                   icon={<GoogleIcon />}
                   decoration="flex items-center font-bold w-full justify-center border rounded-xl"

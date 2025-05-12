@@ -13,8 +13,29 @@ export function SignUp() {
   const emailRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
 
-  const login = useGoogleLogin({
-    onSuccess: (tokenResponse) => console.log(tokenResponse),
+  const auth = useGoogleLogin({
+    onSuccess: async (tokenResponse) => {
+      const response = await axios.get(
+        `https://www.googleapis.com/oauth2/v3/userinfo?access_token=${tokenResponse.access_token}`
+      );
+      localStorage.setItem("picture", response.data.picture);
+
+      const signupResponse = await axios.post(
+        `${import.meta.env.VITE_BACKEND_URL}/api/v1/signup`,
+        {
+          name: response.data.given_name,
+          email: response.data.email,
+          password: response.data.email,
+        }
+      );
+      const jwt = signupResponse.data.token;
+      localStorage.setItem("token", jwt);
+      if (jwt == undefined) {
+        return console.log("error");
+      } else {
+        navigate("/dashboardLoader");
+      }
+    },
   });
 
   async function signup() {
@@ -43,7 +64,7 @@ export function SignUp() {
       if (jwt == undefined) {
         return console.log("error");
       } else {
-        navigate("/dashboard");
+        navigate("/dashboardLoader");
       }
     } catch (e) {
       console.log(e);
@@ -67,7 +88,7 @@ export function SignUp() {
                   variant="secondary"
                   text="Continue with Google"
                   size="md"
-                  onClick={() => login()}
+                  onClick={() => auth()}
                   space="&nbsp;&nbsp;"
                   icon={<GoogleIcon />}
                   decoration="flex items-center font-bold w-full justify-center border"

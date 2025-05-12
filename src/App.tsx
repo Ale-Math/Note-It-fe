@@ -7,6 +7,7 @@ import { Login } from "./Pages/Login";
 import { Dashboard } from "./Pages/Dashboard";
 import { Pricing } from "./Pages/Pricing";
 import { LoginLoader } from "./Pages/LoginLoader";
+import { DashboardLoader } from "./Pages/DashboardLoader";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/loginloader" element={<LoginLoader />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/dashboardLoader" element={<DashboardLoader />} />
         <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </BrowserRouter>
