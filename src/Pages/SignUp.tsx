@@ -2,16 +2,19 @@ import { useNavigate } from "react-router-dom";
 import { Logo } from "../Components/Icons/Logo";
 import { Button } from "../Components/UI/Button";
 import { InfoCard } from "../Components/UI/InfoCard";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import axios from "axios";
 import { GoogleIcon } from "../Components/Icons/Google";
 import { useGoogleLogin } from "@react-oauth/google";
+import { zodSignupSchema } from "../Components/ZodSchema";
+import { ErrorMessage } from "../Components/UI/ErrorMessage";
 
 export function SignUp() {
   const navigate = useNavigate();
   const nameRef = useRef<HTMLInputElement>(null);
   const emailRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
+  const [errorMessage, setErrorMessage] = useState();
 
   const auth = useGoogleLogin({
     onSuccess: async (tokenResponse) => {
@@ -19,21 +22,28 @@ export function SignUp() {
         `https://www.googleapis.com/oauth2/v3/userinfo?access_token=${tokenResponse.access_token}`
       );
       localStorage.setItem("picture", response.data.picture);
+      try {
+        const signupResponse = await axios.post(
+          `${import.meta.env.VITE_BACKEND_URL}/api/v1/signup`,
+          {
+            name: response.data.given_name,
+            email: response.data.email,
+            password: response.data.email,
+          }
+        );
+        //@ts-ignore
+        setErrorMessage("User Already exists, Please go to Login!");
 
-      const signupResponse = await axios.post(
-        `${import.meta.env.VITE_BACKEND_URL}/api/v1/signup`,
-        {
-          name: response.data.given_name,
-          email: response.data.email,
-          password: response.data.email,
+        const jwt = signupResponse.data.token;
+        localStorage.setItem("token", jwt);
+        if (jwt == undefined) {
+          return console.log("error");
+        } else {
+          navigate("/dashboardLoader");
         }
-      );
-      const jwt = signupResponse.data.token;
-      localStorage.setItem("token", jwt);
-      if (jwt == undefined) {
-        return console.log("error");
-      } else {
-        navigate("/dashboardLoader");
+      } catch (e) {
+        // @ts-ignore
+        setErrorMessage("User Already exists, Please go to Login!");
       }
     },
   });
@@ -46,28 +56,31 @@ export function SignUp() {
         return str.charAt(0).toUpperCase() + str.slice(1);
       }
     }
-
-    const name = Capitalize(nameRef.current?.value);
-    const email = emailRef.current?.value;
-    const password = passwordRef.current?.value;
+    const data = {
+      name: Capitalize(nameRef.current?.value),
+      email: emailRef.current?.value,
+      password: passwordRef.current?.value,
+    };
     try {
-      const response = await axios.post(
-        `${import.meta.env.VITE_BACKEND_URL}/api/v1/signup`,
-        {
-          name,
-          email,
-          password,
-        }
-      );
-      const jwt = response.data.token;
-      localStorage.setItem("token", jwt);
-      if (jwt == undefined) {
-        return console.log("error");
-      } else {
-        navigate("/dashboardLoader");
+      zodSignupSchema.parse(data);
+    } catch (error) {
+      setErrorMessage(error.issues[0].message.toString());
+    }
+
+    const response = await axios.post(
+      `${import.meta.env.VITE_BACKEND_URL}/api/v1/signup`,
+      {
+        name: data.name,
+        email: data.email,
+        password: data.password,
       }
-    } catch (e) {
-      console.log(e);
+    );
+    const jwt = response.data.token;
+    localStorage.setItem("token", jwt);
+    if (jwt == undefined) {
+      return console.log("error");
+    } else {
+      navigate("/dashboardLoader");
     }
   }
 
@@ -94,6 +107,8 @@ export function SignUp() {
                   decoration="flex items-center font-bold w-full justify-center border"
                 ></Button>
               </div>
+              {errorMessage && <ErrorMessage message={errorMessage} />}
+
               <div className="border-t border-solid w-full"></div>
               <InfoCard
                 ref={nameRef}

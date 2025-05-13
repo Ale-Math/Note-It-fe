@@ -2,14 +2,15 @@ import { useNavigate } from "react-router-dom";
 import { Logo } from "../Components/Icons/Logo";
 import { Button } from "../Components/UI/Button";
 import { InfoCard } from "../Components/UI/InfoCard";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import axios from "axios";
 import { useGoogleLogin } from "@react-oauth/google";
 import { GoogleIcon } from "../Components/Icons/Google";
 import { zodSigninSchema } from "../Components/ZodSchema";
-import { ErrorCard } from "../Components/UI/ErrorCard";
+import { ErrorMessage } from "../Components/UI/ErrorMessage";
 
 export function Login() {
+  const [errorMessage, setErrorMessage] = useState();
   const emailRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
@@ -20,17 +21,21 @@ export function Login() {
         `https://www.googleapis.com/oauth2/v3/userinfo?access_token=${tokenResponse.access_token}`
       );
       localStorage.setItem("picture", response.data.picture);
-
-      const signinResponse = await axios.post(
-        `${import.meta.env.VITE_BACKEND_URL}/api/v1/signin`,
-        {
-          email: response.data.email,
-          password: response.data.email,
-        }
-      );
-      const jwt = signinResponse.data.token;
-      localStorage.setItem("token", jwt);
-      navigate("/dashboardLoader");
+      try {
+        const signinResponse = await axios.post(
+          `${import.meta.env.VITE_BACKEND_URL}/api/v1/signin`,
+          {
+            email: response.data.email,
+            password: response.data.email,
+          }
+        );
+        const jwt = signinResponse.data.token;
+        localStorage.setItem("token", jwt);
+        navigate("/dashboardLoader");
+      } catch (e) {
+        // @ts-ignore
+        setErrorMessage("Please Signup First!");
+      }
     },
   });
 
@@ -42,10 +47,8 @@ export function Login() {
 
     try {
       zodSigninSchema.parse(data);
-      console.log("ok it's good");
     } catch (error) {
-      ErrorCard(error.issues[0].message);
-      return;
+      setErrorMessage(error.issues[0].message.toString());
     }
 
     const response = await axios.post(
@@ -83,6 +86,7 @@ export function Login() {
                   decoration="flex items-center font-bold w-full justify-center border rounded-xl"
                 ></Button>
               </div>
+              {errorMessage && <ErrorMessage message={errorMessage} />}
               <div className="border-t border-solid w-full"></div>
               <InfoCard
                 ref={emailRef}
