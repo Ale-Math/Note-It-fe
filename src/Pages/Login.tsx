@@ -6,6 +6,8 @@ import { useRef } from "react";
 import axios from "axios";
 import { useGoogleLogin } from "@react-oauth/google";
 import { GoogleIcon } from "../Components/Icons/Google";
+import { zodSigninSchema } from "../Components/ZodSchema";
+import { ErrorCard } from "../Components/UI/ErrorCard";
 
 export function Login() {
   const emailRef = useRef<HTMLInputElement>(null);
@@ -33,14 +35,24 @@ export function Login() {
   });
 
   async function signin() {
-    const email = emailRef.current?.value;
-    const password = passwordRef.current?.value;
+    const data = {
+      email: emailRef.current?.value,
+      password: passwordRef.current?.value,
+    };
+
+    try {
+      zodSigninSchema.parse(data);
+      console.log("ok it's good");
+    } catch (error) {
+      ErrorCard(error.issues[0].message);
+      return;
+    }
 
     const response = await axios.post(
       `${import.meta.env.VITE_BACKEND_URL}/api/v1/signin`,
       {
-        email,
-        password,
+        email: data.email,
+        password: data.password,
       }
     );
     const jwt = response.data.token;
