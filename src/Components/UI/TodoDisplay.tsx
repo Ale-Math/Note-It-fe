@@ -17,7 +17,7 @@ export function TodoDisplay(props: TodoProps) {
   const newTodoRef = useRef("");
   const newDescriptionRef = useRef("");
   const [inputValue, setInputValue] = useState("");
-  const [isDone, setIsDone] = useState(props.done);
+  const [isDone, setIsDone] = useState(false);
 
   function toggleEdit() {
     setEditArea(!editArea);
@@ -89,7 +89,7 @@ export function TodoDisplay(props: TodoProps) {
       <div className="flex space-x-2 items-center w-5/6">
         {!editArea && (
           <input
-            type="radio"
+            type="checkbox"
             checked={props.done}
             onChange={() => markDone(props.todo)}
             onClick={() => markDone(props.todo)}
