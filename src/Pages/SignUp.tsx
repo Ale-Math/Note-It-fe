@@ -56,13 +56,13 @@ export function SignUp() {
         return str.charAt(0).toUpperCase() + str.slice(1);
       }
     }
-    const data = {
+    const zodData = {
       name: Capitalize(nameRef.current?.value),
       email: emailRef.current?.value,
       password: passwordRef.current?.value,
     };
     try {
-      zodSignupSchema.parse(data);
+      zodSignupSchema.parse(zodData);
     } catch (error) {
       setErrorMessage(error.issues[0].message.toString());
     }
@@ -70,9 +70,9 @@ export function SignUp() {
     const response = await axios.post(
       `${import.meta.env.VITE_BACKEND_URL}/api/v1/signup`,
       {
-        name: data.name,
-        email: data.email,
-        password: data.password,
+        name: zodData.name,
+        email: zodData.email,
+        password: zodData.password,
       }
     );
     const jwt = response.data.token;

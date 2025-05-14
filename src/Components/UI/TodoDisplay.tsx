@@ -17,6 +17,7 @@ export function TodoDisplay(props: TodoProps) {
   const newTodoRef = useRef("");
   const newDescriptionRef = useRef("");
   const [inputValue, setInputValue] = useState("");
+  const [isDone, setIsDone] = useState(props.done);
 
   function toggleEdit() {
     setEditArea(!editArea);
@@ -25,6 +26,24 @@ export function TodoDisplay(props: TodoProps) {
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
   };
+
+  async function markDone(todo: string) {
+    setIsDone(!isDone);
+    const getData = localStorage.getItem("token") as "";
+
+    await axios.put(
+      `${import.meta.env.VITE_BACKEND_URL}/api/v1/tododone/${todo}`,
+      {
+        done: isDone,
+      },
+      {
+        headers: {
+          authorization: getData,
+        },
+      }
+    );
+    props.setLoadTodos(!props.loadTodos);
+  }
 
   async function deleteTodo(todo: string) {
     const getData = localStorage.getItem("token") as "";
@@ -69,7 +88,13 @@ export function TodoDisplay(props: TodoProps) {
     <div className="border-b flex justify-between  py-3 group items-center">
       <div className="flex space-x-2 items-center w-5/6">
         {!editArea && (
-          <input type="checkbox" onClick={() => {}} className="w-4 h-4"></input>
+          <input
+            type="radio"
+            checked={props.done}
+            onChange={() => markDone(props.todo)}
+            onClick={() => markDone(props.todo)}
+            className="w-4 h-4"
+          ></input>
         )}
         {!editArea ? (
           <div>
