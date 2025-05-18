@@ -10,7 +10,7 @@ import { zodSigninSchema } from "../Components/ZodSchema";
 import { ErrorMessage } from "../Components/UI/ErrorMessage";
 
 export function Login() {
-  const [errorMessage, setErrorMessage] = useState();
+  const [errorMessage, setErrorMessage] = useState("");
   const emailRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
@@ -51,16 +51,20 @@ export function Login() {
       setErrorMessage(error.issues[0].message.toString());
     }
 
-    const response = await axios.post(
-      `${import.meta.env.VITE_BACKEND_URL}/api/v1/signin`,
-      {
-        email: data.email,
-        password: data.password,
-      }
-    );
-    const jwt = response.data.token;
-    localStorage.setItem("token", jwt);
-    navigate("/dashboardLoader");
+    try {
+      const response = await axios.post(
+        `${import.meta.env.VITE_BACKEND_URL}/api/v1/signin`,
+        {
+          email: data.email,
+          password: data.password,
+        }
+      );
+      const jwt = response.data.token;
+      localStorage.setItem("token", jwt);
+      navigate("/dashboardLoader");
+    } catch (error) {
+      setErrorMessage(error.message.toString());
+    }
   }
 
   return (
