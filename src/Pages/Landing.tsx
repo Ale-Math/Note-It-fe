@@ -132,7 +132,7 @@ export function Landing() {
                 <div className="w-full md:p-10 p-5 bg-red-50 shadow rounded-2xl bg-gradient-to-br from-green-800 via-red-300 to-red-200">
                   <video
                     ref={videoRef}
-                    src="./src/assets/AddTaskVideo.mp4"
+                    src="/AddTaskVideo.mp4"
                     autoPlay
                     loop
                     muted
@@ -144,7 +144,7 @@ export function Landing() {
               <div className="sticky top-48">
                 <div className="w-full md:p-10 p-5 bg-red-50 shadow rounded-2xl bg-gradient-to-br from-cyan-800 via-red-300 to-red-200">
                   <video
-                    src="./src/assets/AddTaskVideo.mp4"
+                    src="/AddTaskVideo.mp4"
                     autoPlay
                     loop
                     muted
