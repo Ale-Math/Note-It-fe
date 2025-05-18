@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { Logo } from "../../public/Logo";
+import { Logo } from "../Components/Icons/Logo";
 import { Button } from "../Components/UI/Button";
 import { InfoCard } from "../Components/UI/InfoCard";
 import { useRef, useState } from "react";

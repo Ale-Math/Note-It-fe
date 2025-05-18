@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { Logo } from "../../../public/Logo";
+import { Logo } from "../Icons/Logo";
 import { Button } from "../UI/Button";
 
 export function Header() {
