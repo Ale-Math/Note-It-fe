@@ -25,5 +25,5 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src", "src/assets"]
+  "include": ["src", "src/assets", "public/Logo.tsx"]
 }
