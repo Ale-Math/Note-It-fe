@@ -8,6 +8,7 @@ import { Dashboard } from "./Pages/Dashboard";
 import { Pricing } from "./Pages/Pricing";
 import { LoginLoader } from "./Pages/LoginLoader";
 import { DashboardLoader } from "./Pages/DashboardLoader";
+import { PageNotFound } from "./Pages/PageNotFound";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/dashboardLoader" element={<DashboardLoader />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>
   );
