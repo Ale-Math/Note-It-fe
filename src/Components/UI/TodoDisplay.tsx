@@ -86,7 +86,7 @@ export function TodoDisplay(props: TodoProps) {
 
   return (
     <div className="border-b flex justify-between  py-3 group items-center">
-      <div className="flex space-x-2 items-center w-5/6">
+      <div className="flex space-x-2 items-center w-full">
         {!editArea && (
           <input
             type="checkbox"
@@ -107,6 +107,7 @@ export function TodoDisplay(props: TodoProps) {
               // @ts-ignore
 
               ref={newTodoRef}
+              placeholder="Title"
               autoFocus
               type="text"
               defaultValue={props.todo}
@@ -117,6 +118,7 @@ export function TodoDisplay(props: TodoProps) {
               // @ts-ignore
 
               ref={newDescriptionRef}
+              placeholder="Description"
               type="text"
               defaultValue={props.description}
               className="text-gray-600 text-xs outline-none"
@@ -144,7 +146,7 @@ export function TodoDisplay(props: TodoProps) {
           ></Button>
         </div>
       ) : (
-        <div className="space-x-2 ">
+        <div className="flex space-x-2 ">
           <Button
             disabled={!inputValue}
             text="Save"

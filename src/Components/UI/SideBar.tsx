@@ -7,9 +7,12 @@ import { Initial } from "../Icons/Initial";
 import { Logout } from "../Icons/Logout";
 import { Completed } from "../Icons/Completed";
 import { ShareIcon } from "../Icons/ShareIcon";
+import { useNavigate } from "react-router-dom";
+import { PendingTasks } from "../Icons/PendingTasks";
 
 interface SideBarProps {
-  toggle: () => void;
+  toggle?: (() => void) | undefined;
+  disabled?: boolean;
 }
 
 export function SideBar(props: SideBarProps) {
@@ -17,7 +20,7 @@ export function SideBar(props: SideBarProps) {
   const logoutCard = () => {
     setOpen(!open);
   };
-
+  const navigate = useNavigate();
   const name = useFindName();
 
   return (
@@ -60,11 +63,26 @@ export function SideBar(props: SideBarProps) {
       </div>
       <div className="p-2 hover:bg-orange-100 group w-full">
         <Button
+          disabled={props.disabled}
           variant="footer"
           size="sm"
           text="Add task"
           onClick={props.toggle}
           icon={<PlusIcon />}
+          space="&nbsp;"
+          width="w-4/5"
+          decoration="text-gray-600 w-full disabled:cursor-not-allowed "
+        ></Button>
+      </div>
+      <div className="p-2 hover:bg-orange-100 group w-full mt-3">
+        <Button
+          variant="footer"
+          size="sm"
+          text="Pending tasks"
+          onClick={() => {
+            navigate("/dashboard");
+          }}
+          icon={<PendingTasks />}
           space="&nbsp;"
           width="w-4/5"
           decoration="text-gray-600 w-full "
@@ -75,7 +93,9 @@ export function SideBar(props: SideBarProps) {
           variant="footer"
           size="sm"
           text="Completed tasks"
-          onClick={() => {}}
+          onClick={() => {
+            navigate("/completedtodos");
+          }}
           icon={<Completed />}
           space="&nbsp;"
           width="w-4/5"

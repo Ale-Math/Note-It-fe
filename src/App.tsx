@@ -9,6 +9,7 @@ import { Pricing } from "./Pages/Pricing";
 import { LoginLoader } from "./Pages/LoginLoader";
 import { DashboardLoader } from "./Pages/DashboardLoader";
 import { PageNotFound } from "./Pages/PageNotFound";
+import { CompletedDashboard } from "./Pages/CompletedDashboard";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/dashboardLoader" element={<DashboardLoader />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/completedtodos" element={<CompletedDashboard />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>

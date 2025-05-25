@@ -4,7 +4,7 @@ interface ButtonProps {
   variant: "primary" | "secondary" | "tertiary" | "shadow" | "footer" | "auth";
   size: "sm" | "md" | "lg" | "xl" | "xl2";
   text?: String;
-  onClick: () => void;
+  onClick: (() => void) | undefined;
   width?: String;
   icon?: ReactElement;
   postIcon?: ReactElement;

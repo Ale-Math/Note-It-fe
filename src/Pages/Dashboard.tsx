@@ -6,19 +6,21 @@ import { SideBar } from "../Components/UI/SideBar";
 import { TodoDisplay } from "../Components/UI/TodoDisplay";
 import { useTodo } from "../Hooks/useTodo";
 import { PageNotFound } from "./PageNotFound";
+import { useFindName } from "../Hooks/useFindName";
 
 export function Dashboard() {
   const [showCard, setShowCard] = useState(false);
   const [loadTodos, setLoadTodos] = useState(false);
 
   const todo = useTodo(loadTodos);
+  const length = todo.length;
+  const name = useFindName();
 
   const cardToggle = () => {
     setShowCard(!showCard);
   };
 
   const token = localStorage.getItem("token");
-  console.log(token);
 
   return (
     <div>
@@ -30,17 +32,41 @@ export function Dashboard() {
               <p className="md:text-2xl text-xl font-bold">
                 What do you want to do today?
               </p>
-              <div className="w-full md:w-4/5">
-                {todo.map(({ todo, description, done, _id }) => (
-                  <TodoDisplay
-                    key={_id}
-                    setLoadTodos={setLoadTodos}
-                    loadTodos={loadTodos}
-                    todo={todo}
-                    done={done}
-                    description={description}
-                  ></TodoDisplay>
-                ))}
+              <div>
+                {" "}
+                {length ? (
+                  <p className="text-start text-xs text-gray-600">
+                    Double-click on the checkbox to complete task.
+                  </p>
+                ) : (
+                  <div></div>
+                )}{" "}
+              </div>
+              <div>
+                {length ? (
+                  <div className="w-full">
+                    {todo.map(({ todo, description, done, _id }) => (
+                      <TodoDisplay
+                        key={_id}
+                        setLoadTodos={setLoadTodos}
+                        loadTodos={loadTodos}
+                        todo={todo}
+                        done={done}
+                        description={description}
+                      ></TodoDisplay>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="ml-20 my-10 flex flex-col items-center w-4/5">
+                    <img className="w-2/5 pb-3" src="/NoTodos.png"></img>
+                    <p className="md:text-sm text-xs text-center">
+                      Your peace of mind is priceless {name}!
+                    </p>
+                    <p className="text-xs text-gray-600 text-center">
+                      No tasks to show here.
+                    </p>
+                  </div>
+                )}
               </div>
               <div>
                 {!showCard && (
