@@ -5,6 +5,8 @@ import { DropArrow } from "../Icons/DownArrow";
 import { useFindName } from "../../Hooks/useFindName";
 import { Initial } from "../Icons/Initial";
 import { Logout } from "../Icons/Logout";
+import { Completed } from "../Icons/Completed";
+import { ShareIcon } from "../Icons/ShareIcon";
 
 interface SideBarProps {
   toggle: () => void;
@@ -19,7 +21,7 @@ export function SideBar(props: SideBarProps) {
   const name = useFindName();
 
   return (
-    <div className="w-2/5 md:w-1/5 bg-orange-50 h-screen">
+    <div className="w-2/5 md:w-1/4 bg-orange-50 border-r h-screen sticky top-0 ">
       <div className="p-4 flex space-x-2 items-center">
         <div>
           <Button
@@ -34,7 +36,7 @@ export function SideBar(props: SideBarProps) {
             onClick={logoutCard}
           ></Button>
           {open ? (
-            <div className="absolute bg-slate-50 border border-orange-300 shadow md:w-2/12 w-3/12 rounded-xl p-1 flex justify-center">
+            <div className="absolute bg-slate-50 border border-orange-300 shadow-lg w-3/5 rounded-lg p-1 flex justify-center">
               <div className="w-full">
                 <Button
                   variant="footer"
@@ -56,7 +58,7 @@ export function SideBar(props: SideBarProps) {
         </div>
         <div></div>
       </div>
-      <div className="m-4 hover:bg-orange-100 group">
+      <div className="p-2 hover:bg-orange-100 group w-full">
         <Button
           variant="footer"
           size="sm"
@@ -68,13 +70,29 @@ export function SideBar(props: SideBarProps) {
           decoration="text-gray-600 w-full "
         ></Button>
       </div>
-      <div className="border-t mt-10 p-4">
+      <div className="p-2 hover:bg-orange-100 group w-full mt-3">
         <Button
           variant="footer"
           size="sm"
-          text="My Shared Projects"
+          text="Completed tasks"
           onClick={() => {}}
-          decoration="text-gray-600 w-full flex hover:bg-orange-100"
+          icon={<Completed />}
+          space="&nbsp;"
+          width="w-4/5"
+          decoration="text-gray-600 w-full "
+        ></Button>
+      </div>
+      <div className="border mt-10 mb-3"></div>
+      <div className="p-2 hover:bg-orange-100 group w-full">
+        <Button
+          variant="footer"
+          size="sm"
+          text="Shared tasks"
+          onClick={() => {}}
+          icon={<ShareIcon />}
+          space="&nbsp;"
+          width="w-4/5"
+          decoration="text-gray-600 w-full "
         ></Button>
       </div>
     </div>
