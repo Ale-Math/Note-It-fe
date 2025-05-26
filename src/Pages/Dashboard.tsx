@@ -6,7 +6,7 @@ import { SideBar } from "../Components/UI/SideBar";
 import { TodoDisplay } from "../Components/UI/TodoDisplay";
 import { useTodo } from "../Hooks/useTodo";
 import { PageNotFound } from "./PageNotFound";
-import { useFindName } from "../Hooks/useFindName";
+import { Loading } from "../Components/UI/Loading";
 
 export function Dashboard() {
   const [showCard, setShowCard] = useState(false);
@@ -14,7 +14,6 @@ export function Dashboard() {
 
   const todo = useTodo(loadTodos);
   const length = todo.length;
-  const name = useFindName();
 
   const cardToggle = () => {
     setShowCard(!showCard);
@@ -27,20 +26,19 @@ export function Dashboard() {
       {token ? (
         <div className="lg:max-w-screen md:max-w-5xl sm:max-w-3xl max-w-xl  font-mono ">
           <div className="flex">
-            <SideBar toggle={cardToggle}></SideBar>
+            <SideBar toggle={cardToggle} pendingFocus="bg-orange-100"></SideBar>
             <div className="w-4/5 md:p-20 p-10 space-y-5">
               <p className="md:text-2xl text-xl font-bold">
                 What do you want to do today?
               </p>
               <div>
-                {" "}
                 {length ? (
                   <p className="text-start text-xs text-gray-600">
                     Double-click on the checkbox to complete task.
                   </p>
                 ) : (
                   <div></div>
-                )}{" "}
+                )}
               </div>
               <div>
                 {length ? (
@@ -57,15 +55,11 @@ export function Dashboard() {
                     ))}
                   </div>
                 ) : (
-                  <div className="ml-20 my-10 flex flex-col items-center w-4/5">
-                    <img className="w-2/5 pb-3" src="/NoTodos.png"></img>
-                    <p className="md:text-sm text-xs text-center">
-                      Your peace of mind is priceless {name}!
-                    </p>
-                    <p className="text-xs text-gray-600 text-center">
-                      No tasks to show here.
-                    </p>
-                  </div>
+                  <Loading
+                    image="/NoTodos.png"
+                    title="Your peace of mind is priceless "
+                    message="No tasks to show here."
+                  />
                 )}
               </div>
               <div>

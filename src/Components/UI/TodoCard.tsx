@@ -11,10 +11,10 @@ interface TodoCardProps {
 export function TodoCard(props: TodoCardProps) {
   const taskRef = useRef("");
   const descriptionRef = useRef("");
-  const [inputValue, setInputValue] = useState("");
+  const [inputValue, setInputValue] = useState(false);
 
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValue(event.target.value);
+  const handleInputChange = () => {
+    setInputValue(true);
   };
 
   async function addTodo() {
@@ -42,6 +42,10 @@ export function TodoCard(props: TodoCardProps) {
       // @ts-ignore
       descriptionRef.current.value = "";
       props.setLoadTodos(!props.loadTodos);
+      setInputValue(false);
+      // @ts-ignore
+
+      taskRef.current.focus();
     } catch (e) {
       console.log(e);
     }

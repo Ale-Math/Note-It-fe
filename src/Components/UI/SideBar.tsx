@@ -13,6 +13,9 @@ import { PendingTasks } from "../Icons/PendingTasks";
 interface SideBarProps {
   toggle?: (() => void) | undefined;
   disabled?: boolean;
+  pendingFocus?: string;
+  completedFocus?: string;
+  sharedFocus?: string;
 }
 
 export function SideBar(props: SideBarProps) {
@@ -74,7 +77,9 @@ export function SideBar(props: SideBarProps) {
           decoration="text-gray-600 w-full disabled:cursor-not-allowed "
         ></Button>
       </div>
-      <div className="p-2 hover:bg-orange-100 group w-full mt-3">
+      <div
+        className={`p-2 hover:bg-orange-100 group w-full my-3 ${props.pendingFocus}`}
+      >
         <Button
           variant="footer"
           size="sm"
@@ -88,7 +93,9 @@ export function SideBar(props: SideBarProps) {
           decoration="text-gray-600 w-full "
         ></Button>
       </div>
-      <div className="p-2 hover:bg-orange-100 group w-full mt-3">
+      <div
+        className={`p-2 hover:bg-orange-100 group w-full ${props.completedFocus}`}
+      >
         <Button
           variant="footer"
           size="sm"
@@ -103,12 +110,16 @@ export function SideBar(props: SideBarProps) {
         ></Button>
       </div>
       <div className="border mt-10 mb-3"></div>
-      <div className="p-2 hover:bg-orange-100 group w-full">
+      <div
+        className={`p-2 hover:bg-orange-100 group w-full ${props.sharedFocus}`}
+      >
         <Button
           variant="footer"
           size="sm"
           text="Shared tasks"
-          onClick={() => {}}
+          onClick={() => {
+            navigate("/sharedtodos");
+          }}
           icon={<ShareIcon />}
           space="&nbsp;"
           width="w-4/5"

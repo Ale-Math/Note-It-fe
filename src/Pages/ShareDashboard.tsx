@@ -5,7 +5,7 @@ import { PageNotFound } from "./PageNotFound";
 import { useCompletedTodos } from "../Hooks/useCompletedTodos";
 import { Loading } from "../Components/UI/Loading";
 
-export function CompletedDashboard() {
+export function ShareDashboard() {
   const [loadTodos, setLoadTodos] = useState(false);
 
   const todo = useCompletedTodos(loadTodos);
@@ -17,14 +17,12 @@ export function CompletedDashboard() {
       {token ? (
         <div className="lg:max-w-screen md:max-w-5xl sm:max-w-3xl max-w-xl  font-mono ">
           <div className="flex">
-            <SideBar disabled={true} completedFocus="bg-orange-100"></SideBar>
+            <SideBar disabled={true} sharedFocus="bg-orange-100"></SideBar>
             <div className="w-4/5 md:p-20 p-10 space-y-5">
-              <p className="md:text-2xl text-xl font-bold">
-                Your Completed Tasks:
-              </p>
+              <p className="md:text-2xl text-xl font-bold">Your Shared Tasks</p>
               <div>
                 {length ? (
-                  <div className="w-full line-through hover:no-underline decoration-gray-600 ">
+                  <div className="w-full">
                     {todo.map(({ todo, description, done, _id }) => (
                       <TodoDisplay
                         key={_id}
