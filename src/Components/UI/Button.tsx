@@ -13,6 +13,7 @@ interface ButtonProps {
   decoration?: string;
   disabled?: boolean;
   autoFocus?: any;
+  reference?: any;
 }
 
 const variantStyles = {
@@ -40,6 +41,7 @@ const sizeStyles = {
 export function Button(props: ButtonProps) {
   return (
     <button
+      ref={props.reference}
       autoFocus={props.autoFocus}
       disabled={props.disabled}
       className={`${variantStyles[props.variant]} ${sizeStyles[props.size]} ${

@@ -73,9 +73,9 @@ export function Login() {
         <a href="/">
           <Logo />
         </a>
-        <div className="w-full flex items-start md:items-center pb-10">
-          <div className="w-4/5 md:w-1/2 space-y-5 md:space-y-5">
-            <p className="lg:text-3xl md:text-xl text-md font-extrabold">
+        <div className="  w-full flex items-start md:items-center pb-10">
+          <div className="  w-full md:w-1/2 space-y-5 md:space-y-5">
+            <p className="lg:text-3xl  md:text-2xl text-xl font-extrabold">
               Log in
             </p>
             <div className="w-5/6 space-y-5 flex flex-col items-center">
@@ -141,7 +141,7 @@ export function Login() {
               </p>
             </div>
           </div>
-          <div className="w-1/2">
+          <div className="w-1/12 md:w-1/2 invisible md:visible md:flex">
             <img src="/Signup.jpg" alt="picture" />
           </div>
         </div>

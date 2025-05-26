@@ -11,6 +11,7 @@ interface TodoCardProps {
 export function TodoCard(props: TodoCardProps) {
   const taskRef = useRef("");
   const descriptionRef = useRef("");
+  const addTaskRef = useRef(null);
   const [inputValue, setInputValue] = useState(false);
 
   const handleInputChange = () => {
@@ -51,6 +52,13 @@ export function TodoCard(props: TodoCardProps) {
     }
   }
 
+  const enterKeyPressed = (event: any) => {
+    if (event.keyCode === 13) {
+      // @ts-ignore
+      addTaskRef?.current?.click();
+    }
+  };
+
   return (
     <div className="flex ">
       <div className="w-full border rounded-xl h-32 focus-within:border-gray-600">
@@ -63,6 +71,7 @@ export function TodoCard(props: TodoCardProps) {
             placeholder="Task name"
             type="text"
             onChange={handleInputChange}
+            onKeyDown={enterKeyPressed}
           ></input>
           <input
             // @ts-ignore
@@ -70,6 +79,7 @@ export function TodoCard(props: TodoCardProps) {
             className="  md:text-sm text-xs outline-none"
             placeholder="Description"
             type="text"
+            onKeyDown={enterKeyPressed}
           ></input>
         </div>
         <div className="border-t flex justify-end space-x-2 p-3">
@@ -87,6 +97,7 @@ export function TodoCard(props: TodoCardProps) {
             size="xl2"
             onClick={addTodo}
             decoration="text-xs disabled:cursor-not-allowed disabled:bg-orange-200"
+            reference={addTaskRef}
           />
         </div>
       </div>

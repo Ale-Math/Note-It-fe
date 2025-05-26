@@ -14,6 +14,7 @@ export function useFindName() {
       })
       .then((response) => {
         setName(response.data.data[0].name);
+        localStorage.setItem("name", response.data.data[0].name);
       });
   }, []);
 

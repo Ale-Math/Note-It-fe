@@ -8,8 +8,8 @@ interface InfoCardProps {
 
 export function InfoCard(props: InfoCardProps) {
   return (
-    <div className="border border-solid rounded-xl w-full  h-14 p-2 hover:bg-orange-50 group text-xs md:text-md">
-      <div className="">
+    <div className="border border-solid rounded-xl w-full h-11 md:h-14 p-2 hover:bg-orange-50 group text-xs md:text-md">
+      <div>
         <p>{props.heading}</p>
       </div>
       <div>

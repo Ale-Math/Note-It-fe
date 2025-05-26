@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Button } from "./Button";
 import { PlusIcon } from "../Icons/PlusIcon";
 import { DropArrow } from "../Icons/DownArrow";
-import { useFindName } from "../../Hooks/useFindName";
 import { Initial } from "../Icons/Initial";
 import { Logout } from "../Icons/Logout";
 import { Completed } from "../Icons/Completed";
@@ -24,10 +23,10 @@ export function SideBar(props: SideBarProps) {
     setOpen(!open);
   };
   const navigate = useNavigate();
-  const name = useFindName();
+  const name = localStorage.getItem("name")!;
 
   return (
-    <div className="w-2/5 md:w-1/4 bg-orange-50 border-r h-screen sticky top-0 ">
+    <div className="w-2/6 md:w-1/4 bg-orange-50 border-r h-screen sticky top-0 ">
       <div className="p-4 flex space-x-2 items-center">
         <div>
           <Button
@@ -74,7 +73,7 @@ export function SideBar(props: SideBarProps) {
           icon={<PlusIcon />}
           space="&nbsp;"
           width="w-4/5"
-          decoration="text-gray-600 w-full disabled:cursor-not-allowed "
+          decoration="text-gray-600 w-full disabled:cursor-not-allowed disabled:invisible "
         ></Button>
       </div>
       <div

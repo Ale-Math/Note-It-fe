@@ -38,7 +38,7 @@ export function ShareDashboard() {
                   <Loading
                     image="/NoCompleted.png"
                     title="Nothing to show here "
-                    message="You don't have any completed tasks yet!"
+                    message="You don't have any shared tasks yet!"
                   />
                 )}
               </div>
