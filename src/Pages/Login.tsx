@@ -33,7 +33,6 @@ export function Login() {
         localStorage.setItem("token", jwt);
         navigate("/dashboardLoader");
       } catch (e) {
-        // @ts-ignore
         setErrorMessage("Please Signup First!");
       }
     },

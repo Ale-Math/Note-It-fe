@@ -14,7 +14,7 @@ export function SignUp() {
   const nameRef = useRef<HTMLInputElement>(null);
   const emailRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
-  const [errorMessage, setErrorMessage] = useState();
+  const [errorMessage, setErrorMessage] = useState("");
 
   const auth = useGoogleLogin({
     onSuccess: async (tokenResponse) => {
@@ -31,7 +31,6 @@ export function SignUp() {
             password: response.data.email,
           }
         );
-        //@ts-ignore
         setErrorMessage("User Already exists, Please go to Login!");
 
         const jwt = signupResponse.data.token;
@@ -42,7 +41,6 @@ export function SignUp() {
           navigate("/dashboardLoader");
         }
       } catch (e) {
-        // @ts-ignore
         setErrorMessage("User Already exists, Please go to Login!");
       }
     },

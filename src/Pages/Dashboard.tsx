@@ -56,7 +56,7 @@ export function Dashboard() {
                   </div>
                 ) : (
                   <Loading
-                    image="/NoTodos.png"
+                    image="/Peace.png"
                     title="Your peace of mind is priceless "
                     message="No tasks to show here."
                   />

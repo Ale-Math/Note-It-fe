@@ -19,7 +19,9 @@ export function ShareDashboard() {
           <div className="flex">
             <SideBar disabled={true} sharedFocus="bg-orange-100"></SideBar>
             <div className="w-4/5 md:p-20 p-10 space-y-5">
-              <p className="md:text-2xl text-xl font-bold">Your Shared Tasks</p>
+              <p className="md:text-2xl text-xl font-bold">
+                Your Shared Projects
+              </p>
               <div>
                 {length ? (
                   <div className="w-full">
@@ -36,9 +38,9 @@ export function ShareDashboard() {
                   </div>
                 ) : (
                   <Loading
-                    image="/NoCompleted.png"
+                    image="/NoTodos.png"
                     title="Nothing to show here "
-                    message="You don't have any shared tasks yet!"
+                    message="You don't have any shared projects yet!"
                   />
                 )}
               </div>

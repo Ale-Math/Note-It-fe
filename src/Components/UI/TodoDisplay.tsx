@@ -14,8 +14,8 @@ interface TodoProps {
 
 export function TodoDisplay(props: TodoProps) {
   const [editArea, setEditArea] = useState(false);
-  const newTodoRef = useRef("");
-  const newDescriptionRef = useRef("");
+  const newTodoRef = useRef<HTMLInputElement>(null);
+  const newDescriptionRef = useRef<HTMLInputElement>(null);
   const [inputValue, setInputValue] = useState("");
   const [isDone, setIsDone] = useState(false);
 
@@ -59,14 +59,11 @@ export function TodoDisplay(props: TodoProps) {
     props.setLoadTodos(!props.loadTodos);
   }
 
-  async function editTodo(todo: any) {
+  async function editTodo(todo: string) {
     const getData = localStorage.getItem("token") as "";
-    // @ts-ignore
 
     const newTodo = newTodoRef.current?.value;
-    // @ts-ignore
-
-    const newDescription = newDescriptionRef.current.value;
+    const newDescription = newDescriptionRef.current?.value;
 
     await axios.put(
       `${import.meta.env.VITE_BACKEND_URL}/api/v1/updatetodo/${todo}`,
@@ -104,8 +101,6 @@ export function TodoDisplay(props: TodoProps) {
         ) : (
           <div className="flex flex-col w-full ">
             <input
-              // @ts-ignore
-
               ref={newTodoRef}
               placeholder="Title"
               autoFocus
@@ -115,8 +110,6 @@ export function TodoDisplay(props: TodoProps) {
               onChange={handleInputChange}
             ></input>
             <input
-              // @ts-ignore
-
               ref={newDescriptionRef}
               placeholder="Description"
               type="text"

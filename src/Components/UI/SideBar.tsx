@@ -115,7 +115,7 @@ export function SideBar(props: SideBarProps) {
         <Button
           variant="footer"
           size="sm"
-          text="Shared tasks"
+          text="Shared Projects"
           onClick={() => {
             navigate("/sharedtodos");
           }}

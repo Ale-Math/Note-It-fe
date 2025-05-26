@@ -15,13 +15,23 @@ export function CompletedDashboard() {
   return (
     <div>
       {token ? (
-        <div className="lg:max-w-screen md:max-w-5xl sm:max-w-3xl max-w-xl  font-mono ">
+        <div className="lg:max-w-screen md:max-w-5xl sm:max-w-3xl max-w-xl font-mono ">
           <div className="flex">
             <SideBar disabled={true} completedFocus="bg-orange-100"></SideBar>
             <div className="w-4/5 md:p-20 p-10 space-y-5">
               <p className="md:text-2xl text-xl font-bold">
                 Your Completed Tasks:
               </p>
+              <div>
+                {length ? (
+                  <p className="text-start text-xs text-gray-600">
+                    Click on the checkbox to move the task back to "Pending
+                    tasks" queue.
+                  </p>
+                ) : (
+                  <div></div>
+                )}
+              </div>
               <div>
                 {length ? (
                   <div className="w-full line-through hover:no-underline decoration-gray-600 ">

@@ -9,9 +9,9 @@ interface TodoCardProps {
 }
 
 export function TodoCard(props: TodoCardProps) {
-  const taskRef = useRef("");
-  const descriptionRef = useRef("");
-  const addTaskRef = useRef(null);
+  const taskRef = useRef<HTMLInputElement>(null);
+  const descriptionRef = useRef<HTMLInputElement>(null);
+  const addTaskRef = useRef<HTMLButtonElement>(null);
   const [inputValue, setInputValue] = useState(false);
 
   const handleInputChange = () => {
@@ -20,9 +20,7 @@ export function TodoCard(props: TodoCardProps) {
 
   async function addTodo() {
     const data = localStorage.getItem("token");
-    // @ts-ignore
     const todo = taskRef.current?.value;
-    // @ts-ignore
     const description = descriptionRef.current?.value;
 
     try {
@@ -38,15 +36,17 @@ export function TodoCard(props: TodoCardProps) {
           },
         }
       );
-      // @ts-ignore
-      taskRef.current.value = "";
-      // @ts-ignore
-      descriptionRef.current.value = "";
+      if (taskRef.current !== null) {
+        taskRef.current.value = "";
+      }
+      if (descriptionRef.current !== null) {
+        descriptionRef.current.value = "";
+      }
       props.setLoadTodos(!props.loadTodos);
       setInputValue(false);
-      // @ts-ignore
-
-      taskRef.current.focus();
+      if (taskRef.current !== null) {
+        taskRef.current.focus();
+      }
     } catch (e) {
       console.log(e);
     }
@@ -54,7 +54,6 @@ export function TodoCard(props: TodoCardProps) {
 
   const enterKeyPressed = (event: any) => {
     if (event.keyCode === 13) {
-      // @ts-ignore
       addTaskRef?.current?.click();
     }
   };
@@ -64,7 +63,6 @@ export function TodoCard(props: TodoCardProps) {
       <div className="w-full border rounded-xl h-32 focus-within:border-gray-600">
         <div className="flex-col flex p-4 space-y-1">
           <input
-            // @ts-ignore
             ref={taskRef}
             autoFocus
             className=" md:text-sm text-xs font-semibold outline-none "
@@ -74,7 +72,6 @@ export function TodoCard(props: TodoCardProps) {
             onKeyDown={enterKeyPressed}
           ></input>
           <input
-            // @ts-ignore
             ref={descriptionRef}
             className="  md:text-sm text-xs outline-none"
             placeholder="Description"

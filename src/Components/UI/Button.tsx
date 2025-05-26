@@ -1,4 +1,4 @@
-import { ReactElement } from "react";
+import { ReactElement, Ref } from "react";
 
 interface ButtonProps {
   variant: "primary" | "secondary" | "tertiary" | "shadow" | "footer" | "auth";
@@ -12,8 +12,7 @@ interface ButtonProps {
   spacePost?: string;
   decoration?: string;
   disabled?: boolean;
-  autoFocus?: any;
-  reference?: any;
+  reference?: Ref<HTMLButtonElement>;
 }
 
 const variantStyles = {
@@ -42,7 +41,6 @@ export function Button(props: ButtonProps) {
   return (
     <button
       ref={props.reference}
-      autoFocus={props.autoFocus}
       disabled={props.disabled}
       className={`${variantStyles[props.variant]} ${sizeStyles[props.size]} ${
         props.width
