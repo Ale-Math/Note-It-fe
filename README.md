@@ -1,54 +1,120 @@
-# React + TypeScript + Vite
+# Note-It
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, fast, and modular note-taking web application built with **React**, **TypeScript**, and **TailwindCSS** for the frontend. Deployed app available at https://noteit.alexandermathew.co.in
 
-Currently, two official plugins are available:
+## Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [About](#about)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Project Structure](#project-structure)
+- [Getting Started](#getting-started)
+- [Scripts](#scripts)
+- [Deployment](#deployment)
+- [Contributing](#contributing)
+- [License](#license)
 
-## Expanding the ESLint configuration
+## About
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+**Note-It** is a project for a note-taking application. The app allows users to manage, organize, and share notes efficiently.  
+It is designed for speed, maintainability, and an intuitive user experience.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Features
+
+- User authentication (Login/SignUp)
+- Personal dashboard for notes
+- Completed notes dashboard
+- Note sharing functionality
+- Pricing page
+- Responsive, modern UI
+- Modular component-based architecture
+
+## Tech Stack
+
+- **React 19** + **TypeScript**
+- **Vite** (development/build)
+- **TailwindCSS** (styling)
+- **Zod** (schema validation)
+- **React Router** (navigation)
+- **Axios** (HTTP requests)
+- **dotenv** (environment variables)
+
+## Project Structure
+
+```
+src/
+├── Components/          # Reusable UI and logic components
+│   ├── Icons/           # Icon components
+│   ├── LandingComponents/ # Components for the landing page
+│   ├── UI/              # Basic UI elements
+│   └── ZodSchema.tsx    # Schema validation with Zod
+├── Hooks/               # Custom React hooks
+├── Pages/               # Application pages (routes)
+│   ├── Dashboard.tsx
+│   ├── CompletedDashboard.tsx
+│   ├── Landing.tsx
+│   ├── Login.tsx
+│   ├── SignUp.tsx
+│   ├── Pricing.tsx
+│   ├── ShareDashboard.tsx
+│   └── PageNotFound.tsx
+├── assets/              # Static assets (images, etc.)
+├── App.tsx              # Main App component
+├── main.tsx             # Entry point
+├── index.css            # Global styles
+└── vite-env.d.ts        # Vite environment types
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Getting Started
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Prerequisites
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+- **Node.js** (>= 16 recommended)
+- **npm** (>= 8 recommended)
+
+### Installation
+
+Clone the repository and install dependencies:
+
+```bash
+git clone https://github.com/Ale-Math/Note-It-fe.git
+cd Note-It-fe
+npm install
 ```
+
+### Running Locally
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+The app will be available at [https://localhost:5173](http://localhost:5173) by default.
+
+### Environment Variables
+
+Create a `.env` file for any required environment variables.  
+You can use `.env.example` as a reference.
+
+## Scripts
+
+- `npm run dev` – Start development server
+- `npm run build` – Build for production
+
+The deployed app is available at:  
+https://noteit.alexandermathew.co.in
+
+## Contributing
+
+Pull requests are welcome! Please open an issue or discussion for major changes.  
+Consider the following before contributing:
+
+- Use conventional commit messages
+- Ensure code passes linting (`npm run lint`)
+- Write clear, maintainable code
+- Add/update documentation as needed
+
+## License
+
+© Alexander Mathew
