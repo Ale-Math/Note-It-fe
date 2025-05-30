@@ -21,7 +21,7 @@ export function Pricing() {
             Choose your path to productivity
           </p>
           <p className="lg:text-xl md:text-lg text-md text-gray-600 text-center">
-            Use Todoist for free forever or upgrade to unlock our most powerful
+            Use Noteit for free forever or upgrade to unlock our most powerful
             features for work and collaboration.
           </p>
           <div className="py-10 flex justify-center">
