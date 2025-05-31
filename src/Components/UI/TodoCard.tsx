@@ -20,8 +20,8 @@ export function TodoCard(props: TodoCardProps) {
 
   async function addTodo() {
     const data = localStorage.getItem("token");
-    const todo = taskRef.current?.value;
-    const description = descriptionRef.current?.value;
+    const todo = taskRef.current?.value.trim();
+    const description = descriptionRef.current?.value.trim();
 
     try {
       await axios.post(
