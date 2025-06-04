@@ -148,7 +148,7 @@ export function Landing() {
                     autoPlay
                     loop
                     muted
-                    className="rounded-md hover:scale-110 transition duration-700"
+                    className="rounded-md hover:scale-105 transition duration-700"
                   />
                 </div>
               </div>
