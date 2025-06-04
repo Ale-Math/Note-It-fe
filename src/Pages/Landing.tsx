@@ -129,7 +129,7 @@ export function Landing() {
           <div className=" md:w-1/2 w-full space-y-28 ">
             {!scrolled ? (
               <div className="sticky top-48">
-                <div className="w-full md:p-5 p-5 bg-red-50 shadow rounded-2xl bg-gradient-to-br from-green-800 via-red-300 to-red-200">
+                <div className="w-full md:p-5 p-2 bg-red-50 shadow rounded-2xl bg-gradient-to-br from-green-800 via-red-300 to-red-200">
                   <video
                     ref={videoRef}
                     src="/AddTask.mp4"
@@ -142,7 +142,7 @@ export function Landing() {
               </div>
             ) : (
               <div className="sticky top-48">
-                <div className="w-full md:p-10 p-5 bg-red-50 shadow rounded-2xl bg-gradient-to-br from-cyan-800 via-red-300 to-red-200">
+                <div className="w-full md:p-5 p-2 bg-red-50 shadow rounded-2xl bg-gradient-to-br from-cyan-800 via-red-300 to-red-200">
                   <video
                     src="/AddTask.mp4"
                     autoPlay
