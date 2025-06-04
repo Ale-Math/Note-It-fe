@@ -237,7 +237,7 @@ export function Landing() {
             </p>
             <p className="text-gray-600 lg:text-2xl md:text-xl text-lg text-center md:text-start">
               We've been building Note it! for 18 years and 68 days. Rest
-              assuorange that we'll never sell out to the highest bidder.
+              assured that we'll never sell out to the highest bidder.
             </p>
           </div>
           <div className="md:w-1/2 w-4/5 pt-10 md:pt-0">
