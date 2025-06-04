@@ -71,8 +71,8 @@ export function Landing() {
               ></Button>
             </div>
           </div>
-          <div className="outline-orange-600 outline-double md:w-3/5 w-full p-5 bg-red-50 shadow rounded-2xl bg-gradient-to-br from-yellow-100 via-orange-200 to-red-300">
-            <img src="/Dashboard.png" className="rounded-md  shadow"></img>
+          <div className="mb-20  md:w-3/5 w-full p-5 bg-red-50  rounded-2xl bg-gradient-to-br from-red-100 via-orange-200 to-red-300">
+            <img src="/Landing.png" className="rounded-md"></img>
           </div>
         </div>
       </div>
