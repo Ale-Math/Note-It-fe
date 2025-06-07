@@ -59,6 +59,7 @@ export function Dashboard() {
                     image="/Peace.png"
                     title="Your peace of mind is priceless "
                     message="No tasks to show here."
+                    showCard={showCard}
                   />
                 )}
               </div>
