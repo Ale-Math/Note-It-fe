@@ -31,6 +31,8 @@ export function Dashboard() {
               <p className="md:text-2xl text-xl font-bold">
                 What do you want to do today?
               </p>
+              <div className="border"></div>
+
               <div>
                 {length ? (
                   <p className="text-start text-xs text-gray-600">

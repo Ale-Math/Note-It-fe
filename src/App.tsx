@@ -11,6 +11,7 @@ import { DashboardLoader } from "./Pages/DashboardLoader";
 import { PageNotFound } from "./Pages/PageNotFound";
 import { CompletedDashboard } from "./Pages/CompletedDashboard";
 import { ShareDashboard } from "./Pages/ShareDashboard";
+import { CreateProject } from "./Pages/CreateProject";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/dashboardLoader" element={<DashboardLoader />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/completedtodos" element={<CompletedDashboard />} />
+        <Route path="/createproject" element={<CreateProject />} />
         <Route path="/sharedtodos" element={<ShareDashboard />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>

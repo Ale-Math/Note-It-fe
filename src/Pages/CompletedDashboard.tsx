@@ -22,6 +22,8 @@ export function CompletedDashboard() {
               <p className="md:text-2xl text-xl font-bold">
                 Your Completed Tasks:
               </p>
+              <div className="border"></div>
+
               <div>
                 {length ? (
                   <p className="text-start text-xs text-gray-600">

@@ -8,6 +8,8 @@ import { Completed } from "../Icons/Completed";
 import { ShareIcon } from "../Icons/ShareIcon";
 import { useNavigate } from "react-router-dom";
 import { PendingTasks } from "../Icons/PendingTasks";
+import { useProjectName } from "../../Hooks/useProjectName";
+import { ProjectDisplay } from "./ProjectDisplay";
 
 interface SideBarProps {
   toggle?: (() => void) | undefined;
@@ -15,6 +17,7 @@ interface SideBarProps {
   pendingFocus?: string;
   completedFocus?: string;
   sharedFocus?: string;
+  loadProject?: any;
 }
 
 export function SideBar(props: SideBarProps) {
@@ -24,6 +27,7 @@ export function SideBar(props: SideBarProps) {
   };
   const navigate = useNavigate();
   const name = localStorage.getItem("name")!;
+  const project = useProjectName(props.loadProject);
 
   return (
     <div className="w-2/6 md:w-1/4 bg-orange-50 border-r h-screen sticky top-0 ">
@@ -110,20 +114,25 @@ export function SideBar(props: SideBarProps) {
       </div>
       <div className="border mt-10 mb-3"></div>
       <div
-        className={`p-2 hover:bg-orange-100 group w-full ${props.sharedFocus}`}
+        className={`p-2 mb-2 hover:bg-orange-100 group w-full ${props.sharedFocus}`}
       >
         <Button
           variant="footer"
           size="sm"
-          text="Shared Projects"
+          text="Create Project"
           onClick={() => {
-            navigate("/sharedtodos");
+            navigate("/createproject");
           }}
           icon={<ShareIcon />}
           space="&nbsp;"
           width="w-4/5"
           decoration="text-gray-600 w-full "
         ></Button>
+      </div>
+      <div>
+        {project.map(({ _id, project }) => (
+          <ProjectDisplay project={project} key={_id}></ProjectDisplay>
+        ))}
       </div>
     </div>
   );
