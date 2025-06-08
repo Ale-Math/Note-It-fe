@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import { Button } from "./Button";
 import { PlusIcon } from "../Icons/PlusIcon";
 import { DropArrow } from "../Icons/DownArrow";
@@ -18,6 +18,9 @@ interface SideBarProps {
   completedFocus?: string;
   sharedFocus?: string;
   loadProject?: any;
+  createProjectFocus?: string;
+  setDashReload: Dispatch<SetStateAction<boolean>>;
+  dashReload: boolean;
 }
 
 export function SideBar(props: SideBarProps) {
@@ -27,7 +30,7 @@ export function SideBar(props: SideBarProps) {
   };
   const navigate = useNavigate();
   const name = localStorage.getItem("name")!;
-  const project = useProjectName(props.loadProject);
+  const projectDetails = useProjectName(props.loadProject);
 
   return (
     <div className="w-2/6 md:w-1/4 bg-orange-50 border-r h-screen sticky top-0 ">
@@ -114,7 +117,7 @@ export function SideBar(props: SideBarProps) {
       </div>
       <div className="border mt-10 mb-3"></div>
       <div
-        className={`p-2 mb-2 hover:bg-orange-100 group w-full ${props.sharedFocus}`}
+        className={`p-2 mb-2 hover:bg-orange-100 group w-full ${props.createProjectFocus}`}
       >
         <Button
           variant="footer"
@@ -130,8 +133,18 @@ export function SideBar(props: SideBarProps) {
         ></Button>
       </div>
       <div>
-        {project.map(({ _id, project }) => (
-          <ProjectDisplay project={project} key={_id}></ProjectDisplay>
+        {projectDetails.map(({ _id, project }) => (
+          <ProjectDisplay
+            project={project}
+            key={_id}
+            onclick={() => {
+              // @ts-ignore
+              localStorage.setItem("projectname", project);
+              navigate("/sharedtodos");
+              // @ts-ignore
+              props.setDashReload(!props.dashReload);
+            }}
+          ></ProjectDisplay>
         ))}
       </div>
     </div>

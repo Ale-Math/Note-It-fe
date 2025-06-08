@@ -4,6 +4,7 @@ import { Button } from "./Button";
 interface ProjectDisplayProps {
   project: String;
   sharedUser?: String;
+  onclick: () => void;
 }
 
 export function ProjectDisplay(props: ProjectDisplayProps) {
@@ -13,7 +14,7 @@ export function ProjectDisplay(props: ProjectDisplayProps) {
         variant="footer"
         size="sm"
         text={props.project}
-        onClick={() => {}}
+        onClick={props.onclick}
         icon={<HashIcon />}
         space="&nbsp;"
         width="w-4/5"

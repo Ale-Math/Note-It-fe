@@ -49,7 +49,7 @@ export function CreateProject() {
             <SideBar
               loadProject={loadProject}
               disabled={true}
-              sharedFocus="bg-orange-100"
+              createProjectFocus="bg-orange-100"
             ></SideBar>
             <div className="w-4/5 md:p-20 p-10 space-y-5">
               <p className="md:text-2xl text-xl font-bold">Create Project </p>
