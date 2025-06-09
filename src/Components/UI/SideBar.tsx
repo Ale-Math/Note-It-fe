@@ -19,8 +19,8 @@ interface SideBarProps {
   sharedFocus?: string;
   loadProject?: any;
   createProjectFocus?: string;
-  setDashReload: Dispatch<SetStateAction<boolean>>;
-  dashReload: boolean;
+  setDashReload?: Dispatch<SetStateAction<boolean>>;
+  dashReload?: boolean;
 }
 
 export function SideBar(props: SideBarProps) {
