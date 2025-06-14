@@ -62,8 +62,8 @@ export function TodoDisplay(props: TodoProps) {
   async function editTodo(todo: string) {
     const getData = localStorage.getItem("token") as "";
 
-    const newTodo = newTodoRef.current?.value;
-    const newDescription = newDescriptionRef.current?.value;
+    const newTodo = newTodoRef.current?.value.trim();
+    const newDescription = newDescriptionRef.current?.value.trim();
 
     await axios.put(
       `${import.meta.env.VITE_BACKEND_URL}/api/v1/updatetodo/${todo}`,
