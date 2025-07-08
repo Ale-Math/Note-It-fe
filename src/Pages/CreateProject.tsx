@@ -64,7 +64,7 @@ export function CreateProject() {
                 />
                 <InfoCard
                   ref={emailRef}
-                  heading="Enter Complete Email"
+                  heading="Enter the Complete Email"
                   placeholder="Who would you like to collaborate with?"
                   type="text"
                 />
