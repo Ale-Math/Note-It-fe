@@ -58,13 +58,13 @@ export function CreateProject() {
               <div className="space-y-5 pt-10 pl-5 flex flex-col w-4/5 items-center  p-10 ">
                 <InfoCard
                   ref={projectRef}
-                  heading="Enter the Project Name"
+                  heading="Enter the Project Name!"
                   placeholder="What would you like to name your project?"
                   type="text"
                 />
                 <InfoCard
                   ref={emailRef}
-                  heading="Enter the Complete Email"
+                  heading="Enter the Complete Email!"
                   placeholder="Who would you like to collaborate with?"
                   type="text"
                 />
